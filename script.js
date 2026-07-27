@@ -1,15 +1,23 @@
+# Latitude Stone Website V3
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach((entry)=>{
-    if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-  });
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+Upload every file and the `assets` folder to the root of the existing GitHub repository. GitHub will replace files with matching names and add the new interior pages.
 
-const toggle=document.querySelector('.menu-toggle');
-const nav=document.querySelector('.nav');
-toggle.addEventListener('click',()=>{
-  const open=nav.classList.toggle('open');
-  toggle.setAttribute('aria-expanded',open);
-});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+## Files
+- index.html
+- services.html
+- markets.html
+- about.html
+- insights.html
+- contact.html
+- styles.css
+- script.js
+- .nojekyll
+- assets/dallas-sunset.jpg
+- assets/architecture.jpg
+
+## Still to finalize before official launch
+- Darin's approved headshot
+- Business email and phone
+- Form delivery service
+- TREC disclosures and links
+- Final licensed hero photography
