@@ -1,17 +1,17 @@
-# Latitude Stone Real Estate Group — GitHub Pages Version 1
+# Latitude Stone Real Estate Group Website
 
-Upload every file in this folder to the root of a GitHub repository.
+A responsive static website built for GitHub Pages.
 
-## Publish
-1. Open the repository and select **Settings**.
-2. Select **Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Choose **main** and **/(root)**.
-5. Click **Save**.
+## Publish on GitHub Pages
+1. Create a new GitHub repository.
+2. Upload `index.html`, `styles.css`, `script.js`, and `hero-skyline.jpg` to the repository root.
+3. Open **Settings → Pages**.
+4. Under **Build and deployment**, choose **Deploy from a branch**.
+5. Select the `main` branch and `/root`, then save.
 
-## Before the public launch
-- Replace the founder portrait placeholder with Darin’s approved photo.
-- Add the correct business email and phone number.
-- Add TREC license details, IABS, and Consumer Protection Notice links.
-- Connect the contact form to the chosen email/form service.
-- Confirm the final counties and service descriptions.
+## Before launch
+- Replace the founder portrait placeholder with an approved professional photo.
+- Confirm service descriptions and counties served.
+- Add the correct email, phone number, TREC license information, IABS, and Consumer Protection Notice links.
+- Connect the contact form to Formspree, Netlify Forms, HubSpot, or another form service.
+- Replace the generated skyline concept with a properly licensed final image if desired.
