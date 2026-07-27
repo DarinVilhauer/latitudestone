@@ -1,6 +1,17 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090a0a"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><title>Markets | Latitude Stone</title><meta name="description" content="North Texas commercial real estate markets."></head><body><header class="site-header" id="siteHeader">
-<a class="brand" href="index.html" aria-label="Latitude Stone home"><span class="brand-mark"><svg viewBox="0 0 92 62" aria-hidden="true"><path d="M5 56 25 7l21 49M25 7h42l20 49H5M46 56V7" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></span><span class="brand-copy"><strong>LATITUDE STONE</strong><small>REAL ESTATE GROUP</small></span></a>
-<button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
-<nav class="nav"><a href="services.html">Services</a><a href="markets.html">Markets</a><a href="about.html">About</a><a href="insights.html">Insights</a><a href="contact.html">Contact</a></nav>
-<a class="header-cta" href="contact.html">Start a conversation <span>↗</span></a>
-</header><main><section class="subhero"><div class="subhero-img"></div><div class="subhero-overlay"></div><div class="subhero-content reveal"><span>Markets</span><h1>North Texas.<br>Opportunity in motion.</h1><p>Local knowledge across Collin, Denton, and Dallas Counties.</p></div></section><section class="county-grid"><article><span>01</span><h2>Collin County</h2><p>One of North Texas's most dynamic growth markets, with expanding corporate, industrial, retail, and mixed-use development.</p></article><article><span>02</span><h2>Denton County</h2><p>Strong residential growth, strategic transportation access, and increasing demand across commercial asset classes.</p></article><article><span>03</span><h2>Dallas County</h2><p>An established commercial hub offering deep transaction activity, institutional investment, and broad business connectivity.</p></article></section><section class="corridor-section"><div><span>Market perspective</span><h2>Local context changes the answer.</h2></div><p>Latitude Stone evaluates more than current pricing. We consider growth patterns, access, surrounding development, ownership dynamics, and the long-term story of each location.</p></section></main><footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 92 62" aria-hidden="true"><path d="M5 56 25 7l21 49M25 7h42l20 49H5M46 56V7" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></span><span class="brand-copy"><strong>LATITUDE STONE</strong><small>REAL ESTATE GROUP</small></span></a><div class="footer-message">A higher perspective on<br>commercial real estate.</div><div class="footer-links"><a href="services.html">Services</a><a href="markets.html">Markets</a><a href="about.html">About</a><a href="insights.html">Insights</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Latitude Stone Real Estate Group, LLC</span><span>TREC Information About Brokerage Services</span><span>Consumer Protection Notice</span></div></footer><script src="script.js"></script></body></html>
+# Latitude Stone Real Estate Group — GitHub Pages Version 1
+
+Upload every file in this folder to the root of a GitHub repository.
+
+## Publish
+1. Open the repository and select **Settings**.
+2. Select **Pages**.
+3. Under **Build and deployment**, select **Deploy from a branch**.
+4. Choose **main** and **/(root)**.
+5. Click **Save**.
+
+## Before the public launch
+- Replace the founder portrait placeholder with Darin’s approved photo.
+- Add the correct business email and phone number.
+- Add TREC license details, IABS, and Consumer Protection Notice links.
+- Connect the contact form to the chosen email/form service.
+- Confirm the final counties and service descriptions.
