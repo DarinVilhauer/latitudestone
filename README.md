@@ -1,16 +1,12 @@
-# Latitude Stone Homepage v3.0 Final Review
+# Latitude Stone Homepage RC1
 
-Upload the contents of this folder to the root of the GitHub repository.
+Upload every file and the `assets` folder to the root of the GitHub repository.
 
-## Included homepage updates
-- Three-image hero rotation: existing skyscraper, Dallas skyline, and Texas flags
-- Centered, balanced What We Do cards with clearer icons and consistent copy length
-- Cream Our Market map with no territory boundary and corrected anchor offset
-- Updated Meet Darin transaction metric
-- Refined Why Latitude Stone icons and alignment
-- Smaller Market Intelligence cards with construction and mixed-use imagery
-- Clean final consultation background without visible ghost text
+Suggested commit message: `Homepage Release Candidate RC1`
 
+After GitHub Pages deploys, use Ctrl + Shift + R to refresh.
 
-## Version 4.0 lock-in pass
-Includes final homepage review updates: sharper approved hero and insight imagery, clearer custom icons, geographically grounded DFW map, consistent anchor landing, full-width Market Intelligence background, equal insight cards, and final consultation/footer landing behavior.
+## Third-party asset notices
+
+- DFW freeway map base by Chriszwolle, Wikimedia Commons, licensed CC BY-SA 3.0. The map was recolored and labeled for this website.
+- Interface icons are Font Awesome Free 6.7.2 by Fonticons, Inc. Icons are licensed CC BY 4.0; code is MIT licensed.
