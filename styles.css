@@ -106,3 +106,54 @@ main section[id]{scroll-margin-top:76px}
 #insights .insight-grid article{overflow:hidden!important;border:0!important}
 #insights .insight-grid article::before{display:none!important}
 @media(max-width:1180px){#insights .insight-intro{transform:none!important}}
+
+/* v1.2 targeted correction pass */
+/* Consistent professional outlined icon system */
+.material-symbols-outlined{
+  font-family:'Material Symbols Outlined';
+  font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;
+  text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;
+  direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;
+  font-feature-settings:'liga';
+  font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 48;
+}
+.service-material-icon{
+  color:var(--gold);font-size:62px;margin:0 auto 27px;
+  width:72px;height:72px;display:flex;align-items:center;justify-content:center;
+}
+.market-material-icon{
+  color:var(--gold);font-size:25px;width:44px;height:44px;flex:0 0 44px;
+  border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-sizing:border-box;
+}
+/* Remove legacy inline icon rules from visual flow */
+.service-card svg,.market-points svg{display:none!important}
+
+/* Accurate DFW map based directly on the supplied Google Earth reference */
+.market-map{
+  background-image:url('assets/metroplex-map-accurate.jpg')!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-color:var(--cream)!important;
+}
+
+/* Market Intelligence: align intro with Why Latitude and move cards slightly right */
+#insights .insight-intro{
+  transform:none!important;
+  padding-left:0!important;
+  margin-left:0!important;
+  align-self:start;
+}
+#insights.insights{
+  grid-template-columns:minmax(330px,390px) minmax(0,1000px)!important;
+  gap:70px!important;
+  justify-content:center!important;
+  padding-left:60px!important;
+  padding-right:60px!important;
+}
+#insights .insight-grid{transform:translateX(28px)}
+@media(max-width:1180px){
+  #insights.insights{grid-template-columns:1fr!important;padding-left:28px!important;padding-right:28px!important}
+  #insights .insight-grid{transform:none}
+}

@@ -1,10 +1,9 @@
-# Latitude Stone Homepage Release
+# Latitude Stone Homepage v1.2 Candidate
 
-Upload all files and the `assets` folder to the root of the GitHub repository.
+Targeted update only:
+- True high-resolution Dallas skyline for Hero slide 2
+- One consistent professional Material Symbols outline icon system sitewide
+- Accurate DFW map based on the user-supplied Google Earth reference
+- Market Intelligence intro aligned with Why Latitude Stone; cards shifted slightly right
 
-Included refinements:
-- High-resolution Dallas skyline and Texas hero slides
-- Professional outline service icons
-- Branded DFW market map based on accurate freeway geometry
-- Rebalanced Market Intelligence text block
-- New construction crane and retail center imagery with clean, flush card tops
+Upload all files and the `assets` folder to the root of the GitHub Pages repository.
