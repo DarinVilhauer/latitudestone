@@ -80,3 +80,16 @@ main section[id]{scroll-margin-top:76px}
 
 @media(max-width:1180px){.insights{grid-template-columns:1fr!important}.insight-intro{padding-left:0}}
 @media(max-width:860px){.hero{min-height:calc(100vh - 70px)}}
+
+
+/* Homepage v1.0 final precision pass */
+.hero-slide:nth-child(2){background-position:center 46%;}
+.hero-slide:nth-child(3){background-position:center 42%;}
+.service-card .service-line-icon{display:block;width:68px;height:68px;margin:0 auto 27px;fill:none!important;stroke:var(--gold)!important;stroke-width:1.8!important;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.service-card .service-line-icon.handshake-icon{width:76px;height:68px}
+.market-map{background-image:url('assets/metroplex-map-light.svg')!important;background-size:cover!important;background-position:center!important;background-color:var(--cream)!important}
+#insights .insight-intro{transform:translateX(-72px);padding-left:0!important}
+#insights .insight-grid img{display:block!important;margin:0!important;border:0!important;outline:0!important;object-fit:cover!important;object-position:center!important}
+#insights .insight-grid article{border-top:0!important;overflow:hidden!important}
+#insights .insight-grid article::before{display:none!important}
+@media(max-width:1180px){#insights .insight-intro{transform:none}}
