@@ -20,3 +20,10 @@ function startHero(){if(reduceMotion||slides.length<2)return;clearInterval(heroT
 dots.forEach((dot,i)=>dot.addEventListener('click',()=>{showSlide(i);startHero();}));
 document.addEventListener('visibilitychange',()=>{if(document.hidden)clearInterval(heroTimer);else startHero();});
 startHero();
+
+
+const headerConsultation=document.querySelector('.header-cta');
+headerConsultation?.addEventListener('click',(event)=>{
+  event.preventDefault();
+  window.scrollTo({top:document.documentElement.scrollHeight-window.innerHeight,behavior:reduceMotion?'auto':'smooth'});
+});

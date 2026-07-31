@@ -22,3 +22,32 @@ main section[id]{scroll-margin-top:76px}
 .insight-grid h3{font-size:21px;min-height:52px}
 .contact-cta{background-image:linear-gradient(90deg,#040b12 0%,#040b12 34%,rgba(4,11,18,.94) 52%,rgba(4,11,18,.7) 100%),url('assets/hero-building.jpg');background-position:center,center 64%;}
 @media(max-width:1180px){main section[id]{scroll-margin-top:76px}.insights{max-width:none;grid-template-columns:1fr}.insight-grid{max-width:none}}
+
+
+/* Homepage lock-in pass: July 31, 2026 */
+/* Keep every navigation destination clear of the sticky header. */
+main section[id]{scroll-margin-top:76px}
+#why,#insights{min-height:calc(100vh - 76px)}
+#why{padding-bottom:max(150px,12vh)}
+#insights{width:100%;max-width:none;margin:0;background:var(--cream);padding-bottom:max(155px,12vh)}
+
+/* Approved high-clarity icon treatment. */
+.service-card svg{width:70px;height:70px;stroke-width:3;vector-effect:non-scaling-stroke;color:var(--gold)}
+.service-card .handshake-icon{width:76px;height:76px;stroke-width:3.25}
+.market-points svg{stroke-width:2.6}
+.darin-eyebrow{color:var(--gold)!important}
+
+/* Full-width Market Intelligence chapter and equal cards. */
+.insights{grid-template-columns:minmax(270px,330px) minmax(0,1050px);justify-content:center;gap:68px}
+.insight-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.insight-grid article{display:flex;flex-direction:column;min-width:0;height:100%}
+.insight-grid img{width:100%;height:155px;object-fit:cover;filter:contrast(1.03) saturate(1.02)}
+.insight-grid article>div{display:flex;flex-direction:column;flex:1}
+.insight-grid h3{min-height:54px}
+.insight-grid p{margin-top:auto}
+
+/* The final consultation link lands at the document bottom via script. */
+#contact{scroll-margin-top:0}
+
+@media(max-width:1180px){#why,#insights{min-height:auto}.insights{grid-template-columns:1fr}.insight-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:860px){.insight-grid{grid-template-columns:1fr}}

@@ -10,3 +10,7 @@ Upload the contents of this folder to the root of the GitHub repository.
 - Refined Why Latitude Stone icons and alignment
 - Smaller Market Intelligence cards with construction and mixed-use imagery
 - Clean final consultation background without visible ghost text
+
+
+## Version 4.0 lock-in pass
+Includes final homepage review updates: sharper approved hero and insight imagery, clearer custom icons, geographically grounded DFW map, consistent anchor landing, full-width Market Intelligence background, equal insight cards, and final consultation/footer landing behavior.
