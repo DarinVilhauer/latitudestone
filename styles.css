@@ -157,3 +157,73 @@ main section[id]{scroll-margin-top:76px}
   #insights.insights{grid-template-columns:1fr!important;padding-left:28px!important;padding-right:28px!important}
   #insights .insight-grid{transform:none}
 }
+
+/* v1.4 complete coordinated correction pass */
+/* Hero image 2: recognizable high-resolution Dallas skyline at dusk */
+.hero-slide:nth-child(2){background-position:center center!important;filter:contrast(1.04) saturate(1.06)!important}
+
+/* One professional, readable outline icon family */
+.service-material-icon,.market-material-icon{display:none!important}
+.service-card .service-icon{
+  display:block!important;
+  width:84px!important;
+  height:84px!important;
+  margin:0 auto 24px!important;
+  fill:none!important;
+  stroke:var(--gold)!important;
+  stroke-width:2.35!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+  vector-effect:non-scaling-stroke!important;
+}
+.service-card .service-icon.handshake-icon{width:92px!important;height:84px!important}
+.market-points .market-icon{
+  display:block!important;
+  width:46px!important;
+  height:46px!important;
+  flex:0 0 46px!important;
+  padding:10px!important;
+  border:1px solid var(--gold)!important;
+  border-radius:50%!important;
+  fill:none!important;
+  stroke:var(--gold)!important;
+  stroke-width:2!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+
+/* Geographic accuracy comes directly from the user's supplied Google Earth reference. */
+.market-map{
+  background-image:url('assets/metroplex-map-reference.jpg')!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-color:var(--cream)!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Market Intelligence uses the same left content grid as Why Latitude Stone. */
+#insights.insights{
+  grid-template-columns:minmax(360px,34%) minmax(0,1fr)!important;
+  gap:72px!important;
+  justify-content:stretch!important;
+  padding-left:clamp(28px,4vw,68px)!important;
+  padding-right:clamp(28px,4vw,68px)!important;
+}
+#insights .insight-intro{
+  transform:none!important;
+  padding-left:0!important;
+  margin-left:0!important;
+  align-self:start!important;
+}
+#insights .insight-grid{
+  transform:translateX(34px)!important;
+  width:calc(100% - 34px)!important;
+}
+.photo-credit{font-size:9px!important;color:#697782!important;margin-left:auto!important}
+.photo-credit a{color:#82909a!important}
+@media(max-width:1180px){
+  #insights.insights{grid-template-columns:1fr!important;gap:38px!important}
+  #insights .insight-grid{transform:none!important;width:100%!important}
+  .photo-credit{margin-left:0!important}
+}
