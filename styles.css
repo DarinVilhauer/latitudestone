@@ -331,3 +331,17 @@ main section[id]{scroll-margin-top:76px}
   #insights .insight-intro h2{white-space:normal}
   #insights .insight-grid{transform:none!important;width:100%!important}
 }
+
+/* v1.6: custom Latitude Stone icon artwork and approved distant Dallas hero */
+.custom-icon{display:block;object-fit:contain;background:transparent}
+.service-card img.service-icon.custom-icon{
+  width:76px!important;height:76px!important;margin:0 auto 24px!important;
+}
+.market-points img.market-icon.custom-icon{
+  width:54px!important;height:54px!important;flex:0 0 54px!important;
+  padding:8px!important;border:1.5px solid var(--gold)!important;border-radius:50%!important;
+}
+.pillars img.pillar-icon.custom-icon{
+  width:58px!important;height:58px!important;margin:0 auto!important;
+}
+.hero-slide:nth-child(2){background-position:center 50%!important;filter:contrast(1.07) saturate(1.08)!important}
