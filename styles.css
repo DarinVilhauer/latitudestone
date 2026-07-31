@@ -3,3 +3,22 @@
 @media(max-width:1180px){.site-header nav{gap:17px}.site-header nav a{font-size:9px}.service-grid{grid-template-columns:repeat(3,1fr)}.market{grid-template-columns:1fr}.market-map{min-height:500px}.meet-darin{grid-template-columns:40% 60%;gap:40px}.why{grid-template-columns:1fr}.why-intro{max-width:700px}.insights{grid-template-columns:1fr}.insight-intro{max-width:500px}}
 @media(max-width:860px){.site-header{height:70px}.site-header nav{position:absolute;left:0;right:0;top:70px;background:#040b12;display:none;flex-direction:column;align-items:flex-start;padding:25px}.site-header nav.open{display:flex}.header-cta{display:none}.menu-toggle{display:block;margin-left:auto}.hero{min-height:650px}.hero-copy{width:82%;padding-left:28px}.hero h1{font-size:60px}.section{padding:90px 28px}.service-grid{grid-template-columns:1fr 1fr}.market{padding:0}.market-copy{padding:90px 28px}.meet-darin{grid-template-columns:1fr}.portrait-wrap{max-width:520px}.darin-copy{padding-right:0}.pillars{grid-template-columns:1fr 1fr;gap:35px 0}.pillars article:nth-child(3){border-left:0}.insight-grid{grid-template-columns:1fr}.contact-cta{padding:120px 28px 135px}.cta-inner{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-bottom{flex-direction:column}.compliance-links{justify-content:flex-start}}
 @media(max-width:560px){.wordmark{min-width:0}.wordmark strong{font-size:15px}.hero{min-height:690px}.hero-copy{width:100%;padding:110px 22px 80px}.hero-overlay{background:linear-gradient(90deg,rgba(4,11,18,.97),rgba(4,11,18,.72),rgba(4,11,18,.35))}.hero h1{font-size:49px}.service-grid{grid-template-columns:1fr}.market-points{grid-template-columns:1fr}.market-map{min-height:380px}.darin-details{grid-template-columns:1fr}.darin-details span+span{border-left:0;border-top:1px solid rgba(255,255,255,.18)}.pillars{grid-template-columns:1fr}.pillars article{border-left:0;border-top:1px solid rgba(255,255,255,.22);padding:30px 10px;grid-template-rows:auto}.footer-grid{grid-template-columns:1fr}.cta-button{min-width:100%}.footer-bottom{margin-top:45px}}
+
+/* Homepage final-review refinements */
+main section[id]{scroll-margin-top:76px}
+.service-card{align-items:center;text-align:center;padding:42px 25px 34px;min-height:360px}
+.service-card svg{width:68px;height:68px;stroke-width:2.5;margin-bottom:26px}
+.service-card p{text-align:center;max-width:270px;margin:0 auto;color:#d5dde3}
+.market-map{background-image:url('assets/metroplex-map-light.jpg');background-color:var(--cream);background-position:center;background-size:cover;mix-blend-mode:normal}
+.market-points svg{stroke-width:2.2}
+.why .eyebrow{color:var(--gold)}
+.pillars{padding-top:32px}
+.pillars article{grid-template-rows:74px 58px 16px auto}
+.pillars svg{width:54px;height:54px;stroke-width:2.15}
+.insights{grid-template-columns:minmax(260px,320px) minmax(0,1100px);justify-content:space-between;gap:70px;max-width:1600px;margin:0 auto}
+.insight-grid{gap:18px}
+.insight-grid img{height:155px}
+.insight-grid article>div{padding:21px 22px 23px}
+.insight-grid h3{font-size:21px;min-height:52px}
+.contact-cta{background-image:linear-gradient(90deg,#040b12 0%,#040b12 34%,rgba(4,11,18,.94) 52%,rgba(4,11,18,.7) 100%),url('assets/hero-building.jpg');background-position:center,center 64%;}
+@media(max-width:1180px){main section[id]{scroll-margin-top:76px}.insights{max-width:none;grid-template-columns:1fr}.insight-grid{max-width:none}}
