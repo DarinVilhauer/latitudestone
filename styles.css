@@ -93,3 +93,16 @@ main section[id]{scroll-margin-top:76px}
 #insights .insight-grid article{border-top:0!important;overflow:hidden!important}
 #insights .insight-grid article::before{display:none!important}
 @media(max-width:1180px){#insights .insight-intro{transform:none}}
+
+
+/* Latitude Stone release polish */
+.hero-slide:nth-child(2){background-position:center 48%;}
+.hero-slide:nth-child(3){background-position:center 45%;}
+.service-card .service-line-icon{width:66px!important;height:66px!important;fill:none!important;stroke:var(--gold)!important;stroke-width:2.6!important;stroke-linecap:square!important;stroke-linejoin:miter!important;vector-effect:non-scaling-stroke!important}
+.service-card .service-line-icon.handshake-icon{width:72px!important;height:66px!important;stroke-width:2.7!important}
+.market-map{background-image:url('assets/metroplex-map-light.jpg')!important;background-size:cover!important;background-position:center!important}
+#insights .insight-intro{transform:translateX(-112px)!important;padding-left:0!important}
+#insights .insight-grid img{display:block!important;margin:0!important;padding:0!important;border:0!important;outline:0!important;height:155px!important;object-fit:cover!important;object-position:center!important}
+#insights .insight-grid article{overflow:hidden!important;border:0!important}
+#insights .insight-grid article::before{display:none!important}
+@media(max-width:1180px){#insights .insight-intro{transform:none!important}}
