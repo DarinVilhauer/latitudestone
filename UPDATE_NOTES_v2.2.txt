@@ -1,0 +1,13 @@
+Latitude Stone Homepage v2.2
+
+Applied updates:
+- Our Market and Why Latitude Stone use the same light gray as What We Do cards.
+- Typography in those sections changed to black/dark gray.
+- Full-color market map retained.
+- All section eyebrow labels use muted brass.
+- Header and footer REAL ESTATE GROUP use muted brass.
+- Footer headings Company, What we do, and Resources use muted brass.
+- Hero headline reduced and forced to two lines on desktop.
+- What We Do service titles made slightly bolder.
+- Meet Darin metrics made slightly bolder with darker separators.
+- Why Latitude Stone pillar titles made slightly bolder.

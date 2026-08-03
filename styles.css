@@ -665,3 +665,110 @@ footer .footer-bottom{
 .home-page .eyebrow{
   color:var(--latitude-brass)!important;
 }
+
+
+/* v2.2 — light gray chapters, muted brass labels, final hierarchy polish */
+:root{
+  --latitude-light-gray:#f2f3f4;
+  --latitude-brass:#b5a078;
+  --latitude-text:#0a1015;
+  --latitude-body:#3f474d;
+  --latitude-rule:#aeb4b9;
+}
+
+/* Hero headline: two-line, lighter architectural treatment */
+.hero-copy{width:min(1120px,72vw)!important}
+.hero h1{
+  max-width:1120px!important;
+  font-size:clamp(48px,4.7vw,78px)!important;
+  font-weight:400!important;
+  line-height:1.03!important;
+  letter-spacing:-.045em!important;
+}
+
+/* Light gray chapter backgrounds with dark typography */
+#market.market,
+#market .market-copy,
+#why.why{
+  background:var(--latitude-light-gray)!important;
+  color:var(--latitude-text)!important;
+}
+#market .market-copy h2,
+#market .market-points h3,
+#why h2,
+#why .pillars h3{
+  color:var(--latitude-text)!important;
+}
+#market .body-copy,
+#market .market-points p,
+#why .why-intro>p:last-child,
+#why .pillars p{
+  color:var(--latitude-body)!important;
+}
+
+/* Keep the approved full-color map */
+#market .market-map{
+  background-image:url('assets/metroplex-map-reference.jpg')!important;
+  background-color:var(--latitude-light-gray)!important;
+  filter:none!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+}
+
+/* One muted brass accent across labels and rules */
+.home-page .eyebrow,
+.home-page .site-header .wordmark span,
+.footer-brand span,
+.footer-grid b{
+  color:var(--latitude-brass)!important;
+}
+.title-divider,
+#what-we-do .title-divider,
+#market .market-points .market-divider,
+#why .pillar-divider{
+  background:var(--latitude-brass)!important;
+}
+
+/* What we do: make titles clearly stronger than body copy */
+#what-we-do .service-card h3{
+  font-weight:600!important;
+}
+#what-we-do .service-card p{
+  font-weight:400!important;
+}
+
+/* Meet Darin credibility metrics */
+#darin .darin-details span{
+  font-weight:500!important;
+}
+#darin .darin-details{
+  border-top-color:#bcc2c7!important;
+  border-bottom-color:#bcc2c7!important;
+}
+#darin .darin-details span+span{
+  border-left-color:#bcc2c7!important;
+}
+
+/* Why Latitude Stone pillar hierarchy */
+#why .pillars h3{
+  font-weight:600!important;
+}
+#why .pillars p{
+  font-weight:400!important;
+}
+
+/* Footer light theme with brass hierarchy */
+footer .footer-brand span,
+footer .footer-grid b{
+  color:var(--latitude-brass)!important;
+}
+
+@media(max-width:1180px){
+  .hero-copy{width:min(900px,82vw)!important}
+  .hero h1{font-size:clamp(46px,6vw,68px)!important}
+}
+@media(max-width:760px){
+  .hero-copy{width:calc(100% - 40px)!important}
+  .hero h1{font-size:clamp(40px,10vw,58px)!important}
+  .hero h1 br{display:none}
+}
