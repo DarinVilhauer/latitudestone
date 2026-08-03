@@ -1,0 +1,10 @@
+Latitude Stone v1.8 changes:
+- Transparent hero header that becomes dark on scroll
+- Slightly enlarged wordmark
+- Avenir-style sans serif typography throughout
+- Sentence case labels, navigation, buttons, and titles
+- Transparent gold-outline CTAs with gold-fill hover
+- Icons removed from What we do, Our market, and Why Latitude Stone
+- Short gold dividers added above titles
+- Hero #2 replaced with selected Dallas bridge/skyline image
+- Meet Darin, CTA layout, footer structure, map, and insight card imagery otherwise retained

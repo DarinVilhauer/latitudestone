@@ -27,3 +27,9 @@ headerConsultation?.addEventListener('click',(event)=>{
   event.preventDefault();
   window.scrollTo({top:document.documentElement.scrollHeight-window.innerHeight,behavior:reduceMotion?'auto':'smooth'});
 });
+
+
+const siteHeader=document.querySelector('.site-header');
+const updateHeaderState=()=>siteHeader?.classList.toggle('scrolled',window.scrollY>48);
+updateHeaderState();
+window.addEventListener('scroll',updateHeaderState,{passive:true});

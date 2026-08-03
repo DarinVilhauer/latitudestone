@@ -347,67 +347,71 @@ main section[id]{scroll-margin-top:76px}
 .hero-slide:nth-child(2){background-position:center 50%!important;filter:contrast(1.07) saturate(1.08)!important}
 
 
-/* v1.7 final: approved Dallas hero image and icon-free gold divider system */
-.hero-slide:nth-child(2){
-  background-image:url('assets/hero-dallas.jpg')!important;
-  background-position:center center!important;
-  background-size:cover!important;
-  filter:contrast(1.03) saturate(1.03)!important;
+/* v1.8 modern header, restrained gold, Avenir typography, no-icon system */
+:root{
+  --sans:'Avenir Next',Avenir,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --serif:var(--sans);
 }
-
-/* Remove all legacy icon artwork in the three approved sections. */
-#what-we-do .service-icon,
-#what-we-do .service-material-icon,
-#market .market-icon,
-#market .fa-market-icon,
-#market .market-material-icon,
-#why .pillar-icon,
-#why .pillar-material-icon{
-  display:none!important;
+body{font-family:var(--sans);font-weight:400}
+.home-page .site-header{
+  position:fixed;top:0;left:0;right:0;
+  background:linear-gradient(180deg,rgba(2,7,12,.62),rgba(2,7,12,.12));
+  border-bottom:1px solid rgba(255,255,255,.14);
+  backdrop-filter:none;
+  transition:background .28s ease,backdrop-filter .28s ease,border-color .28s ease;
 }
-
-/* Restrained gold divider replacing decorative icons. */
-.title-gold-rule{
-  display:block;
-  width:48px;
-  height:2px;
-  margin:10px auto 28px;
-  background:var(--gold);
-  border:0;
-  border-radius:0;
-  flex:0 0 auto;
+.home-page .site-header.scrolled{
+  background:rgba(3,9,15,.96);
+  backdrop-filter:blur(14px);
+  border-color:rgba(255,255,255,.1);
 }
-
-#what-we-do .service-card{
-  justify-content:flex-start;
+.wordmark{min-width:265px}
+.wordmark strong{font-size:20px;letter-spacing:.17em;font-weight:500}
+.wordmark span{font-size:9px;letter-spacing:.31em}
+.site-header nav a{
+  text-transform:none;font-size:12px;letter-spacing:0;font-weight:500;
 }
-#what-we-do .service-card .title-gold-rule{
-  margin-top:18px;
-  margin-bottom:26px;
+.outline-button,.gold-button{
+  background:transparent!important;color:var(--gold)!important;border:1px solid var(--gold)!important;
+  text-transform:none!important;font-size:12px!important;letter-spacing:.01em!important;font-weight:500!important;
+  transition:background .25s ease,color .25s ease,transform .25s ease!important;
 }
-#what-we-do .service-card h3{
-  margin-top:0;
+.outline-button:hover,.gold-button:hover{background:var(--gold)!important;color:var(--ink)!important;filter:none!important;transform:translateY(-2px)}
+.hero{min-height:100vh!important}
+.hero-copy{padding-top:150px!important}
+.hero h1{
+  font-family:var(--sans)!important;font-weight:700!important;letter-spacing:-.045em!important;
+  line-height:.98!important;font-size:clamp(58px,6vw,94px)!important;
 }
-
-#market .market-points article{
-  align-items:flex-start;
+.hero-slide:nth-child(2){background-position:center 48%!important;filter:contrast(1.04) saturate(1.04)!important}
+.section h2,.contact-cta h2,.insight-grid h3{
+  font-family:var(--sans)!important;font-weight:300!important;letter-spacing:-.04em!important;
 }
-#market .market-gold-rule{
-  width:34px;
-  height:2px;
-  margin:7px 16px 0 0;
+.eyebrow,.service-card h3,.market-points h3,.pillars h3,.insight-grid small,
+.darin-details span,.footer-grid b{
+  text-transform:none!important;letter-spacing:.04em!important;font-weight:500!important;
 }
-
-#why .pillar-gold-rule{
-  width:42px;
-  margin-top:8px;
-  margin-bottom:24px;
+.eyebrow{font-size:14px}
+.service-card h3,.pillars h3{font-size:15px}
+.title-divider{
+  display:block;width:44px;height:1px;background:var(--gold);margin:16px auto 24px;
 }
-#why .pillars article h3{
-  margin-top:0;
+.service-card .title-divider{margin-top:18px}
+.service-card{justify-content:flex-start;padding-top:48px}
+.service-card img.service-icon,.service-card svg,.service-card .service-material-icon,.service-card .fa-icon,
+.market-points img.market-icon,.market-points svg,.market-points .market-material-icon,.market-points .fa-market-icon,
+.pillars img.pillar-icon,.pillars svg{display:none!important}
+.market-points article{display:block!important}
+.market-points .market-divider{margin:0 0 14px}
+.pillars article{
+  grid-template-rows:44px 58px auto!important;padding-top:8px!important;
 }
-
-@media(max-width:760px){
-  #market .market-gold-rule{margin-right:12px}
-  .title-gold-rule{width:42px}
+.pillars .pillar-divider{margin:0 auto 20px}
+.pillars h3{align-self:start}
+.insight-grid h3{font-size:22px}
+#insights .insight-intro h2{font-weight:300!important}
+@media(max-width:860px){
+  .home-page .site-header{background:rgba(3,9,15,.9)}
+  .hero-copy{padding-top:125px!important}
+  .wordmark strong{font-size:18px}
 }
