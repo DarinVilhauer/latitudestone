@@ -1,0 +1,13 @@
+Latitude Stone Homepage v1.9 – Monochrome Design Study
+
+Changes included:
+- Removed gold from the interface in favor of black, white, and gray tones.
+- Transparent header retained; active navigation and outlined buttons are now white/gray.
+- Hero headline reduced from bold to regular/medium visual weight.
+- Section headlines use the same modern sans-serif visual system.
+- Service titles are slightly stronger than the body copy.
+- What We Do cards changed from dark blue to charcoal gray.
+- Our Market and Market Intelligence backgrounds changed from cream to white.
+- Our Market satellite image changed to a soft white/gray monochrome treatment.
+- Dividers, labels, footer accents, metrics, and hover states changed from gold to neutral gray.
+- Existing page content, layout, photos, and section order preserved.
