@@ -772,3 +772,58 @@ footer .footer-grid b{
   .hero h1{font-size:clamp(40px,10vw,58px)!important}
   .hero h1 br{display:none}
 }
+
+/* v2.3 — final brass hierarchy and market clarity corrections */
+:root{
+  --latitude-brass:#b5a078;
+}
+
+/* Section labels: use one consistent muted brass */
+#what-we-do .eyebrow,
+#market .market-copy .eyebrow,
+#darin .darin-eyebrow,
+#why .eyebrow,
+#insights .insight-intro .eyebrow{
+  color:var(--latitude-brass)!important;
+}
+
+/* What we do: brass rules inside all five cards */
+#what-we-do .service-card .title-divider,
+#what-we-do .service-card .service-divider,
+#what-we-do .service-card .mini-rule{
+  background-color:var(--latitude-brass)!important;
+}
+
+/* Our market: brass rules and clearer full-color map */
+#market .market-points .market-divider,
+#market .market-points .title-divider{
+  background-color:var(--latitude-brass)!important;
+}
+#market .market-map{
+  filter:contrast(1.10) saturate(1.08) brightness(1.01)!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Meet Darin: brass framework around stronger credibility metrics */
+#darin .darin-details{
+  border-top-color:var(--latitude-brass)!important;
+  border-bottom-color:var(--latitude-brass)!important;
+}
+#darin .darin-details span{
+  font-weight:600!important;
+}
+#darin .darin-details span+span{
+  border-left-color:var(--latitude-brass)!important;
+}
+
+/* Why Latitude Stone: brass rules and restored column dividers */
+#why .pillar-divider{
+  background-color:var(--latitude-brass)!important;
+}
+#why .pillars article{
+  border-left:0!important;
+}
+#why .pillars article+article{
+  border-left:1px solid var(--latitude-brass)!important;
+}
