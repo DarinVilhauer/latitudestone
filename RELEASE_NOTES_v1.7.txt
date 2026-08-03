@@ -1,0 +1,7 @@
+Latitude Stone Homepage v1.7
+
+Changes applied:
+- Replaced Hero slide #2 with the approved wider Dallas skyline/bridge image.
+- Removed icons from What We Do, Our Market, and Why Latitude Stone.
+- Added consistent short gold dividers above the associated titles.
+- All other homepage content and sections remain unchanged.

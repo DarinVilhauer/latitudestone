@@ -345,3 +345,69 @@ main section[id]{scroll-margin-top:76px}
   width:58px!important;height:58px!important;margin:0 auto!important;
 }
 .hero-slide:nth-child(2){background-position:center 50%!important;filter:contrast(1.07) saturate(1.08)!important}
+
+
+/* v1.7 final: approved Dallas hero image and icon-free gold divider system */
+.hero-slide:nth-child(2){
+  background-image:url('assets/hero-dallas.jpg')!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  filter:contrast(1.03) saturate(1.03)!important;
+}
+
+/* Remove all legacy icon artwork in the three approved sections. */
+#what-we-do .service-icon,
+#what-we-do .service-material-icon,
+#market .market-icon,
+#market .fa-market-icon,
+#market .market-material-icon,
+#why .pillar-icon,
+#why .pillar-material-icon{
+  display:none!important;
+}
+
+/* Restrained gold divider replacing decorative icons. */
+.title-gold-rule{
+  display:block;
+  width:48px;
+  height:2px;
+  margin:10px auto 28px;
+  background:var(--gold);
+  border:0;
+  border-radius:0;
+  flex:0 0 auto;
+}
+
+#what-we-do .service-card{
+  justify-content:flex-start;
+}
+#what-we-do .service-card .title-gold-rule{
+  margin-top:18px;
+  margin-bottom:26px;
+}
+#what-we-do .service-card h3{
+  margin-top:0;
+}
+
+#market .market-points article{
+  align-items:flex-start;
+}
+#market .market-gold-rule{
+  width:34px;
+  height:2px;
+  margin:7px 16px 0 0;
+}
+
+#why .pillar-gold-rule{
+  width:42px;
+  margin-top:8px;
+  margin-bottom:24px;
+}
+#why .pillars article h3{
+  margin-top:0;
+}
+
+@media(max-width:760px){
+  #market .market-gold-rule{margin-right:12px}
+  .title-gold-rule{width:42px}
+}
