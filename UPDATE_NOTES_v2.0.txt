@@ -1,0 +1,13 @@
+Latitude Stone Homepage v2.0 — Background and Map Update
+
+Changes applied:
+- What we do: white background with soft gray service cards.
+- Our market: black background with white text.
+- Our market map: restored the original full-color satellite image without the washed-out grayscale filter.
+- Meet Darin: white background with dark text and neutral borders.
+- Why Latitude Stone: remains black.
+- Market intelligence: remains white.
+- Ready to get started: remains black.
+- Footer: changed from black to white with dark text.
+
+No content, image, navigation, or section-order changes were made.

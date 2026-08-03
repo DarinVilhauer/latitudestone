@@ -525,3 +525,124 @@ body{font-family:var(--sans);font-weight:400}
 @media(max-width:860px){
   .home-page .site-header{background:rgba(3,8,13,.9)}
 }
+
+/* v2.0 — alternating monochrome section backgrounds + full-color market map */
+
+/* What we do: white section with soft gray cards */
+#what-we-do.services{
+  background:#ffffff!important;
+  color:#0a1015!important;
+}
+#what-we-do .eyebrow{color:#767d83!important}
+#what-we-do .service-card{
+  background:#f2f3f4!important;
+  border-color:#d9dde0!important;
+  box-shadow:none!important;
+}
+#what-we-do .service-card:hover{
+  background:#eceeef!important;
+  border-color:#b9c0c5!important;
+}
+#what-we-do .service-card h3{
+  color:#11171c!important;
+  font-weight:500!important;
+}
+#what-we-do .service-card p{
+  color:#42494f!important;
+  font-weight:300!important;
+}
+#what-we-do .title-divider{background:#9aa0a5!important}
+
+/* Our market: black copy panel with original full-color map */
+#market.market{
+  background:#050a0f!important;
+  color:#f6f7f8!important;
+}
+#market .market-copy{
+  background:#050a0f!important;
+  color:#f6f7f8!important;
+}
+#market .market-copy .eyebrow{color:#9ca3a9!important}
+#market .market-copy h2{color:#f6f7f8!important}
+#market .body-copy{color:#c8cdd2!important}
+#market .market-points h3{color:#f2f4f5!important}
+#market .market-points p{color:#c2c8cd!important}
+#market .market-points .market-divider{background:#858c92!important}
+#market .market-map{
+  background-color:#050a0f!important;
+  background-image:url('assets/metroplex-map-reference.jpg')!important;
+  background-position:center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  filter:none!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Meet Darin: white section */
+#darin.meet-darin{
+  background:#ffffff!important;
+  color:#0a1015!important;
+}
+#darin .darin-eyebrow{color:#767d83!important}
+#darin h2{color:#0a1015!important}
+#darin .darin-copy p{color:#3f474d!important}
+#darin .portrait-wrap img{border-color:#d9dde0!important}
+#darin .darin-details{
+  border-top-color:#d7dce0!important;
+  border-bottom-color:#d7dce0!important;
+}
+#darin .darin-details span{
+  color:#30373d!important;
+}
+#darin .darin-details span+span{border-left-color:#d7dce0!important}
+#darin .gold-button{
+  color:#11171c!important;
+  border-color:#444b51!important;
+}
+#darin .gold-button:hover{
+  background:#11171c!important;
+  color:#ffffff!important;
+}
+
+/* Why Latitude Stone remains black */
+#why.why{
+  background:#050a0f!important;
+  color:#f6f7f8!important;
+}
+
+/* Market intelligence remains white */
+#insights.insights{
+  background:#ffffff!important;
+  color:#0a1015!important;
+}
+
+/* Ready to get started remains black */
+#contact.contact-cta{
+  background-color:#050a0f!important;
+}
+
+/* Footer: white */
+footer{
+  background:#ffffff!important;
+  color:#0a1015!important;
+  border-top:1px solid #dfe3e6!important;
+}
+footer .footer-brand strong{color:#0a1015!important}
+footer .footer-brand span{color:#6f767c!important}
+footer .footer-grid b{color:#454c52!important}
+footer .footer-grid a,
+footer .footer-grid p{color:#5c646a!important}
+footer .footer-grid a:hover,
+footer .compliance-links a:hover{color:#0a1015!important}
+footer .footer-bottom{
+  border-top-color:#dfe3e6!important;
+  color:#7a8288!important;
+}
+
+@media(max-width:560px){
+  #darin .darin-details span+span{
+    border-left:0!important;
+    border-top:1px solid #d7dce0!important;
+  }
+}
