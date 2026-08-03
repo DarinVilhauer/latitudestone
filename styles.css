@@ -646,3 +646,22 @@ footer .footer-bottom{
     border-top:1px solid #d7dce0!important;
   }
 }
+
+/* v2.1 — softer charcoal chapters + restrained brass accents */
+:root{
+  --latitude-charcoal:#303338;
+  --latitude-brass:#b5a078;
+}
+
+/* Replace the two near-black content chapters with a softer charcoal gray. */
+#market.market,
+#market .market-copy,
+#why.why{
+  background-color:var(--latitude-charcoal)!important;
+}
+
+/* Muted brass is limited to small category labels and the header descriptor. */
+.home-page .site-header .wordmark span,
+.home-page .eyebrow{
+  color:var(--latitude-brass)!important;
+}

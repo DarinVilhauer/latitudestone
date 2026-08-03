@@ -1,0 +1,8 @@
+Latitude Stone Homepage v2.1
+
+Changes from v2.0:
+- Our market background changed from near-black to softer charcoal gray (#303338).
+- Why Latitude Stone background changed from near-black to softer charcoal gray (#303338).
+- All section category labels use a restrained muted brass accent (#B5A078).
+- “REAL ESTATE GROUP” beneath the header wordmark uses the same muted brass accent.
+- No other layout, copy, image, map, button, or section changes.
