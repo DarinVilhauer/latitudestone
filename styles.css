@@ -958,3 +958,35 @@ footer .footer-grid b{
 @media(max-width:760px){
   #what-we-do .eyebrow,#market .eyebrow,#darin .eyebrow,#why .eyebrow,#insights .eyebrow,#contact .eyebrow{font-size:15px!important}
 }
+
+/* v2.5 — final section alignment and Hero #1 update */
+
+/* What we do: center each title / divider / description block vertically */
+#what-we-do .service-card{
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+#what-we-do .service-card h3,
+#what-we-do .service-card p{
+  width:100%;
+  text-align:center!important;
+}
+
+/* Meet Darin: lock the section label to the sitewide muted brass */
+#darin .eyebrow,
+#darin .darin-eyebrow{
+  color:var(--latitude-brass)!important;
+}
+
+/* Why Latitude Stone: center each pillar block both vertically and horizontally */
+#why .pillars article{
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+#why .pillars h3,
+#why .pillars p{
+  width:100%;
+  text-align:center!important;
+}

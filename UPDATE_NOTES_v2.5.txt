@@ -1,0 +1,9 @@
+Latitude Stone Homepage v2.5
+
+Changes from v2.4:
+- Replaced Hero image #1 with the new high-resolution Dallas tower photograph.
+- Kept Hero images #2 and #3 unchanged.
+- Vertically centered the title, muted brass divider, and description in all five What We Do cards.
+- Explicitly corrected the Meet Darin section label to muted brass.
+- Vertically and horizontally centered all four Why Latitude Stone pillar blocks while preserving the muted brass dividers.
+- No other homepage layout, copy, or image changes.
