@@ -827,3 +827,134 @@ footer .footer-grid b{
 #why .pillars article+article{
   border-left:1px solid var(--latitude-brass)!important;
 }
+
+/* v2.4 — homepage final hierarchy and brass system */
+:root{--latitude-brass:#b5a078}
+
+/* One consistent section-label system */
+#what-we-do .eyebrow,
+#market .eyebrow,
+#darin .eyebrow,
+#why .eyebrow,
+#insights .eyebrow,
+#contact .eyebrow{
+  color:var(--latitude-brass)!important;
+  font-size:16px!important;
+  line-height:1.2!important;
+  font-weight:500!important;
+  letter-spacing:.045em!important;
+  text-transform:none!important;
+}
+
+/* Header, hero and CTA controls */
+.home-page .site-header nav a:after{
+  background:var(--latitude-brass)!important;
+}
+.home-page .outline-button,
+.home-page .gold-button{
+  background:transparent!important;
+  color:var(--latitude-brass)!important;
+  border-color:var(--latitude-brass)!important;
+}
+.home-page .outline-button:hover,
+.home-page .gold-button:hover{
+  background:var(--latitude-brass)!important;
+  color:#080d12!important;
+}
+
+/* What we do: title, rule, copy */
+#what-we-do .service-card{
+  justify-content:flex-start!important;
+}
+#what-we-do .service-card h3{
+  order:1;
+  min-height:auto!important;
+  margin:0 0 18px!important;
+  font-weight:600!important;
+}
+#what-we-do .service-card .title-divider{
+  order:2;
+  width:44px!important;
+  height:1px!important;
+  margin:0 auto 24px!important;
+  background:var(--latitude-brass)!important;
+}
+#what-we-do .service-card p{
+  order:3;
+  margin:0!important;
+}
+
+/* Our market: stronger titles, reordered rules, more breathing room */
+#market .market-points{
+  margin-top:62px!important;
+}
+#market .market-points h3{
+  margin:0 0 12px!important;
+  font-weight:600!important;
+  color:var(--latitude-text)!important;
+}
+#market .market-points .title-divider{
+  display:block!important;
+  width:44px!important;
+  height:1px!important;
+  margin:0 0 14px!important;
+  background:var(--latitude-brass)!important;
+}
+#market .market-points p{margin:0!important}
+#market .market-map{
+  filter:contrast(1.16) saturate(1.12) brightness(1.02)!important;
+}
+
+/* Meet Darin */
+#darin .darin-details{
+  border-top-color:var(--latitude-brass)!important;
+  border-bottom-color:var(--latitude-brass)!important;
+}
+#darin .darin-details span{
+  font-weight:600!important;
+}
+#darin .darin-details span+span{
+  border-left-color:var(--latitude-brass)!important;
+}
+#darin .gold-button{
+  border-color:var(--latitude-brass)!important;
+  color:var(--latitude-brass)!important;
+}
+
+/* Why Latitude Stone: title, rule, copy; restored dividers */
+#why .pillars article{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  padding-top:8px!important;
+}
+#why .pillars article+article{
+  border-left:1px solid var(--latitude-brass)!important;
+}
+#why .pillars h3{
+  order:1;
+  margin:0 0 18px!important;
+  font-weight:600!important;
+}
+#why .pillars .title-divider{
+  order:2;
+  width:44px!important;
+  height:1px!important;
+  margin:0 auto 24px!important;
+  background:var(--latitude-brass)!important;
+}
+#why .pillars p{
+  order:3;
+  margin:0!important;
+}
+
+/* Final CTA */
+#contact .cta-button{
+  border-color:var(--latitude-brass)!important;
+  color:var(--latitude-brass)!important;
+}
+
+@media(max-width:760px){
+  #what-we-do .eyebrow,#market .eyebrow,#darin .eyebrow,#why .eyebrow,#insights .eyebrow,#contact .eyebrow{font-size:15px!important}
+}
