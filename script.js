@@ -33,3 +33,44 @@ const siteHeader=document.querySelector('.site-header');
 const updateHeaderState=()=>siteHeader?.classList.toggle('scrolled',window.scrollY>48);
 updateHeaderState();
 window.addEventListener('scroll',updateHeaderState,{passive:true});
+
+// Latitude Stone CRE Community modal
+const communityModal=document.querySelector('#community-modal');
+const communityTrigger=document.querySelector('.community-trigger');
+const communityForm=document.querySelector('#community-form');
+const communityCloseButtons=[...document.querySelectorAll('[data-community-close]')];
+const roleInputs=[...document.querySelectorAll('input[name="role"]')];
+const rolePanels=[...document.querySelectorAll('[data-role-panel]')];
+let communityLastFocus=null;
+
+function openCommunityModal(){
+  if(!communityModal)return;
+  communityLastFocus=document.activeElement;
+  communityModal.classList.add('open');
+  communityModal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+  setTimeout(()=>communityModal.querySelector('input[name="name"]')?.focus(),0);
+}
+function closeCommunityModal(){
+  if(!communityModal)return;
+  communityModal.classList.remove('open');
+  communityModal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+  communityLastFocus?.focus?.();
+}
+communityTrigger?.addEventListener('click',openCommunityModal);
+communityCloseButtons.forEach(button=>button.addEventListener('click',closeCommunityModal));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&communityModal?.classList.contains('open'))closeCommunityModal();});
+roleInputs.forEach(input=>input.addEventListener('change',()=>{
+  rolePanels.forEach(panel=>{panel.hidden=panel.dataset.rolePanel!==input.value;});
+}));
+communityForm?.addEventListener('submit',event=>{
+  event.preventDefault();
+  if(!communityForm.reportValidity())return;
+  const data=new FormData(communityForm);
+  const lines=[];
+  for(const [key,value] of data.entries())if(String(value).trim())lines.push(`${key.replaceAll('_',' ')}: ${value}`);
+  const subject=encodeURIComponent('Latitude Stone CRE Community Signup');
+  const body=encodeURIComponent(lines.join('\n'));
+  window.location.href=`mailto:info@latitudestonerealestate.com?subject=${subject}&body=${body}`;
+});

@@ -1,0 +1,8 @@
+Latitude Stone Homepage v2.6
+- Market Intelligence left copy changed to “Stay ahead of the market.”
+- Added “Join the Latitude Stone CRE Community” CTA.
+- Added responsive split-panel signup modal with Dallas skyline image.
+- Removed Tenant and Service Provider role choices.
+- Added minimal conditional fields based on selected role.
+- Modal can be closed by X, outside click, or Escape.
+- Static GitHub Pages submission opens a prefilled email to info@latitudestonerealestate.com. Connect to a CRM/form endpoint later for automatic database capture.
