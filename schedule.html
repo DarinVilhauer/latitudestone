@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Schedule a commercial real estate consultation with Latitude Stone Real Estate Group."/>
+<meta name="theme-color" content="#040b12"/>
+<title>Schedule a Consultation | Latitude Stone</title>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body class="schedule-page">
+<header class="site-header">
+<a aria-label="Latitude Stone home" class="wordmark" href="index.html#home"><strong>LATITUDE STONE</strong><span>REAL ESTATE GROUP</span></a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle"><span></span><span></span></button>
+<nav aria-label="Primary navigation">
+<a href="index.html#home">Home</a><a href="index.html#what-we-do">What we do</a><a href="index.html#market">Our market</a><a href="index.html#darin">Meet Darin</a><a href="index.html#why">Why Latitude Stone</a><a href="index.html#insights">Market intelligence</a>
+</nav>
+<a class="outline-button header-cta" href="#booking">Schedule a consultation</a>
+</header>
+<main>
+<section class="schedule-hero">
+<div class="schedule-hero-copy">
+<h1>Let’s talk about<br/>your goals.</h1>
+<a class="schedule-hero-link" href="#booking">Schedule a consultation <span>→</span></a>
+</div>
+</section>
+<section class="schedule-booking" id="booking">
+<div class="schedule-booking-grid">
+<div class="schedule-card">
+<h2>Your information</h2>
+<form class="consultation-form" id="consultation-form">
+<div class="form-two"><label>First name *<input required name="first_name" autocomplete="given-name" placeholder="Enter your first name"></label><label>Last name *<input required name="last_name" autocomplete="family-name" placeholder="Enter your last name"></label></div>
+<label>Email *<input required type="email" name="email" autocomplete="email" placeholder="Enter your email"></label>
+<label>Phone <span class="optional">(Optional)</span><input type="tel" name="phone" autocomplete="tel" placeholder="Enter your phone number"></label>
+<label>Company <span class="optional">(Optional)</span><input name="company" autocomplete="organization" placeholder="Enter your company"></label>
+<label>I am a(n): *<select required name="role"><option value="">Select one...</option><option>Investor</option><option>Property Owner</option><option>Business Owner</option><option>Developer</option><option>Broker / Referral Partner</option><option>Other</option></select></label>
+<label>How can we help you? <span class="optional">(Optional)</span><textarea name="message" placeholder="Tell us about your goals, property, or opportunity."></textarea></label>
+<label class="consultation-optin"><input type="checkbox" name="market_updates" value="Yes"><span>I’d like to receive market insights, new listings, and investment opportunities.</span></label>
+<input type="hidden" name="consultation_date" id="consultation-date"><input type="hidden" name="consultation_time" id="consultation-time">
+<button class="schedule-submit" type="submit">Schedule My Consultation</button>
+<p class="schedule-privacy">We respect your privacy. Your information will never be shared.</p>
+</form>
+</div>
+<div class="schedule-card calendar-card">
+<h2>Select a date &amp; time</h2>
+<div class="calendar-header"><button type="button" id="prev-month" aria-label="Previous month">‹</button><span class="calendar-month" id="calendar-month"></span><button type="button" id="next-month" aria-label="Next month">›</button></div>
+<div class="calendar-weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+<div class="calendar-days" id="calendar-days"></div>
+<p class="selected-date-label" id="selected-date-label">Select a date to view times</p>
+<div class="time-grid" id="time-grid"><button type="button">9:00 AM</button><button type="button">10:30 AM</button><button type="button">11:00 AM</button><button type="button">1:30 PM</button><button type="button">2:00 PM</button><button type="button">3:30 PM</button></div>
+<p class="timezone">◉ All times are in Central Time (CT)</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="legal-footer"><p>© 2026 Latitude Stone Real Estate Group, LLC. All rights reserved.</p><p><a href="#">Information About Brokerage Services (IABS)</a> &nbsp; | &nbsp; <a href="#">Consumer Protection Notice</a></p></footer>
+<script src="script.js"></script>
+</body>
+</html>

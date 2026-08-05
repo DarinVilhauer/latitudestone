@@ -74,3 +74,32 @@ communityForm?.addEventListener('submit',event=>{
   const body=encodeURIComponent(lines.join('\n'));
   window.location.href=`mailto:info@latitudestonerealestate.com?subject=${subject}&body=${body}`;
 });
+
+
+// Schedule consultation page calendar and submission
+const scheduleForm=document.querySelector('#consultation-form');
+const calendarDays=document.querySelector('#calendar-days');
+const calendarMonth=document.querySelector('#calendar-month');
+const selectedDateLabel=document.querySelector('#selected-date-label');
+const consultationDate=document.querySelector('#consultation-date');
+const consultationTime=document.querySelector('#consultation-time');
+if(scheduleForm&&calendarDays){
+  let viewDate=new Date(2026,7,1); let selectedDate=null;
+  const renderCalendar=()=>{
+    calendarMonth.textContent=viewDate.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+    calendarDays.innerHTML='';
+    const y=viewDate.getFullYear(),m=viewDate.getMonth();
+    const first=new Date(y,m,1).getDay(), total=new Date(y,m+1,0).getDate();
+    for(let i=0;i<first;i++){const b=document.createElement('button');b.type='button';b.className='muted';b.disabled=true;b.textContent='';calendarDays.appendChild(b)}
+    for(let d=1;d<=total;d++){
+      const b=document.createElement('button');b.type='button';b.textContent=d;
+      b.addEventListener('click',()=>{selectedDate=new Date(y,m,d);document.querySelectorAll('#calendar-days button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');const label=selectedDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});selectedDateLabel.textContent=label;consultationDate.value=label;});
+      calendarDays.appendChild(b)
+    }
+  };
+  document.querySelector('#prev-month')?.addEventListener('click',()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()-1,1);renderCalendar()});
+  document.querySelector('#next-month')?.addEventListener('click',()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,1);renderCalendar()});
+  document.querySelectorAll('#time-grid button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#time-grid button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');consultationTime.value=b.textContent.trim()}));
+  scheduleForm.addEventListener('submit',event=>{event.preventDefault();if(!scheduleForm.reportValidity())return;if(!consultationDate.value||!consultationTime.value){alert('Please select a date and time.');return;}const data=new FormData(scheduleForm);const lines=[];for(const [k,v] of data.entries())if(String(v).trim())lines.push(`${k.replaceAll('_',' ')}: ${v}`);window.location.href=`mailto:info@latitudestonerealestate.com?subject=${encodeURIComponent('Consultation Request')}&body=${encodeURIComponent(lines.join('\n'))}`});
+  renderCalendar();
+}

@@ -1,0 +1,9 @@
+Latitude Stone v2.7
+
+- Market Intelligence community sentence shortened to two lines on desktop.
+- CRE Community modal compacted to fit within one desktop viewport.
+- Modal retains conditional fields and uses one fixed evening Dallas skyline image.
+- Added schedule.html consultation page with transparent header, user-supplied morning Dallas image, intake form, date/time selector, and minimal legal footer.
+- Homepage consultation CTAs now link to schedule.html.
+
+Note: The calendar interface is front-end only until connected to Darin's live calendar/Calendly account.
