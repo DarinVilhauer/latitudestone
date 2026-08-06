@@ -1,9 +1,16 @@
-Upload these items to the ROOT of the GitHub repository:
+LATITUDE STONE CLEAN 3.0 — UPLOAD INSTRUCTIONS
 
-1. styles.css — replace the existing root styles.css
-2. assets/community-dallas-daytime.jpg — replace the existing file at the same path
-3. .nojekyll — add this file to the repository root
+1. Extract this ZIP on your computer.
+2. In the GitHub repository, choose Add file > Upload files.
+3. Upload ALL extracted files and the assets folder to the repository root.
+4. Allow GitHub to replace matching files.
+5. Commit the upload with: Clean 3.0 website package
+6. Do not upload the ZIP file itself.
 
-Do not delete or replace index.html, schedule.html, script.js, or any other assets.
+Optional repository cleanup:
+- Old UPDATE_NOTES_*.txt and RELEASE_NOTES_*.txt files may be deleted later.
+- They do not affect the website or deployment.
 
-The .nojekyll file tells GitHub Pages to publish this static site directly without running Jekyll processing.
+Important:
+- Do not make another commit while the Pages job is queued.
+- A queued job reflects GitHub Actions capacity; it is not caused by old failed run history.
