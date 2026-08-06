@@ -1,16 +1,7 @@
-# Latitude Stone Website — Clean 3.0
+# Latitude Stone Homepage v1.6
 
-Static GitHub Pages website for Latitude Stone Real Estate Group.
+This update changes only:
+- Hero slide 2 to the approved distant Dallas skyline composition.
+- Homepage icons to a custom Latitude Stone SVG family across What We Do, Our Market, and Why Latitude Stone.
 
-## Primary pages
-- `index.html` — homepage
-- `schedule.html` — schedule a consultation
-- `about.html` — placeholder/interior page
-- `insights.html` — placeholder/interior page
-
-## Publishing
-GitHub Pages source should remain:
-- Branch: `main`
-- Folder: `/(root)`
-
-The `.nojekyll` file is included so GitHub Pages serves the site as a static website.
+Upload all files and folders in this package to the repository root.

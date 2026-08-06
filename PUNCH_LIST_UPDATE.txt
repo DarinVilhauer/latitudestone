@@ -1,0 +1,15 @@
+Latitude Stone — Punch List Update
+
+Built from the last known working v2.7 package.
+
+Included changes:
+1. Homepage final CTA now reads “Start the conversation.”
+2. Final CTA hover uses muted brass fill with black text and arrow.
+3. “Meet Darin” section label is muted brass.
+4. Community pop-up spacing is rebalanced (more breathing room at top, less empty space at bottom).
+5. Community pop-up uses the approved daytime Dallas image.
+6. Schedule page header matches the homepage brass treatment.
+7. What We Do cards are slightly shorter.
+8. Market Intelligence copy now reads: “Join the Latitude Stone Community for market insights, new listings, investment opportunities, and North Texas commercial real estate updates.”
+
+Upload the extracted contents to the repository root, replacing matching files.

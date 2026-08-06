@@ -1139,131 +1139,34 @@ body.modal-open{overflow:hidden}
 @media(max-width:640px){.schedule-hero h1{font-size:46px}.form-two{grid-template-columns:1fr}.schedule-card{padding:24px 18px}.legal-footer{flex-direction:column}.schedule-page .site-header nav{background:rgba(3,9,15,.98)}}
 
 
-/* v2.8 — punch-list refinements */
-/* Homepage final CTA copy remains legible on brass hover */
-#contact .cta-button:hover,
-#contact .cta-button:hover span{
-  color:#080d12!important;
-}
+/* v2.7A — approved punch-list updates from the last known working package */
+:root{--latitude-brass:#b5a078}
 
-/* Lock Meet Darin section label to muted brass */
-#darin .eyebrow,
-#darin .darin-eyebrow{
-  color:var(--latitude-brass)!important;
-}
+/* Homepage: final CTA wording/hover contrast */
+.contact-cta .cta-button{border-color:var(--latitude-brass);color:var(--latitude-brass);background:transparent}
+.contact-cta .cta-button:hover{background:var(--latitude-brass);color:#05090d;filter:none}
+.contact-cta .cta-button:hover span{color:#05090d}
 
-/* Shorter What We Do cards while preserving centered content */
-#what-we-do .service-card{
-  min-height:305px!important;
-  padding-top:24px!important;
-  padding-bottom:24px!important;
-}
+/* Homepage: Meet Darin label locked to muted brass */
+#darin .darin-eyebrow{color:var(--latitude-brass)!important}
 
-/* Compact and rebalance the CRE Community modal */
-.community-dialog{
-  height:min(700px,94vh)!important;
-  max-height:94vh!important;
-}
-.community-form-panel{
-  padding:34px 32px 14px!important;
-  display:flex!important;
-  flex-direction:column!important;
-  justify-content:flex-start!important;
-}
-.community-form{gap:7px!important}
-.community-intro{margin-bottom:12px!important}
+/* Homepage: slightly shorter What We Do cards */
+#what-we-do .service-card{min-height:300px!important;padding-top:28px!important;padding-bottom:26px!important;justify-content:center}
+
+/* Community modal: rebalance vertical spacing and use approved daytime Dallas image */
+.community-dialog{height:min(740px,92vh)!important}
+.community-form-panel{padding:34px 36px 14px!important}
+.community-kicker{margin-top:0!important}
+.community-privacy{margin-bottom:0!important}
 .community-image-panel{
-  background:linear-gradient(180deg,rgba(5,16,27,.02),rgba(2,10,18,.30) 52%,rgba(2,8,15,.90)),url('assets/community-dallas-daytime.jpg') center/cover no-repeat!important;
+  background:linear-gradient(180deg,rgba(5,16,27,.04),rgba(2,10,18,.32) 58%,rgba(2,8,15,.90)),url('assets/community-dallas-daytime.jpg') center/cover no-repeat!important;
 }
 
-/* Consultation header must mirror the homepage brand treatment */
-.schedule-page .wordmark span{
-  color:var(--latitude-brass,#b5a078)!important;
-}
-.schedule-page .header-cta{
-  border-color:var(--latitude-brass,#b5a078)!important;
-  color:var(--latitude-brass,#b5a078)!important;
-}
-.schedule-page .header-cta:hover{
-  background:var(--latitude-brass,#b5a078)!important;
-  color:#080d12!important;
-}
+/* Schedule page: header matches homepage brass treatment */
+.schedule-page .wordmark span{color:var(--latitude-brass)!important}
+.schedule-page .header-cta{border-color:var(--latitude-brass)!important;color:var(--latitude-brass)!important}
+.schedule-page .header-cta:hover{background:var(--latitude-brass)!important;color:#05090d!important}
 
 @media(max-width:900px){
-  .community-dialog{height:auto!important;max-height:94vh!important;overflow:auto!important}
-}
-
-/* v2.9 — final punch-list corrections */
-
-/* Homepage: final CTA keeps readable black text on brass hover */
-#contact .cta-button:hover,
-#contact .cta-button:hover span {
-  background: var(--latitude-brass, #b5a078) !important;
-  border-color: var(--latitude-brass, #b5a078) !important;
-  color: #080d12 !important;
-}
-
-/* Homepage: Meet Darin label must always use the muted brass */
-#darin .eyebrow,
-#darin .darin-eyebrow {
-  color: var(--latitude-brass, #b5a078) !important;
-}
-
-/* Homepage: reduce the height of all five What We Do cards */
-#what-we-do .service-card {
-  min-height: 280px !important;
-  padding-top: 22px !important;
-  padding-bottom: 22px !important;
-  justify-content: center !important;
-}
-
-/* Community modal: rebalance spacing and use the new Dallas image */
-.community-dialog {
-  height: min(680px, 92vh) !important;
-  max-height: 92vh !important;
-  overflow: hidden !important;
-}
-.community-form-panel {
-  padding: 30px 32px 12px !important;
-  justify-content: flex-start !important;
-}
-.community-kicker {
-  margin-top: 4px !important;
-}
-.community-form-panel h2 {
-  margin-bottom: 8px !important;
-}
-.community-intro {
-  margin-bottom: 10px !important;
-}
-.community-form {
-  gap: 6px !important;
-}
-.community-image-panel {
-  background-image:
-    linear-gradient(180deg, rgba(5,16,27,.03), rgba(2,10,18,.28) 52%, rgba(2,8,15,.88)),
-    url('assets/community-dallas-daytime.jpg') !important;
-  background-position: center !important;
-  background-size: cover !important;
-}
-
-/* Consultation page: header must match the homepage branding */
-.schedule-page .wordmark span {
-  color: var(--latitude-brass, #b5a078) !important;
-}
-.schedule-page .header-cta {
-  border: 1px solid var(--latitude-brass, #b5a078) !important;
-  color: var(--latitude-brass, #b5a078) !important;
-}
-.schedule-page .header-cta:hover {
-  background: var(--latitude-brass, #b5a078) !important;
-  color: #080d12 !important;
-}
-
-@media (max-width: 900px) {
-  .community-dialog {
-    height: auto !important;
-    max-height: 94vh !important;
-    overflow: auto !important;
-  }
+  .community-dialog{height:auto!important;max-height:94vh!important}
 }
