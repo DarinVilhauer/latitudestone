@@ -1,59 +1,1181 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Schedule a commercial real estate consultation with Latitude Stone Real Estate Group."/>
-<meta name="theme-color" content="#040b12"/>
-<title>Schedule a Consultation | Latitude Stone</title>
-<link href="styles.css" rel="stylesheet"/>
-</head>
-<body class="schedule-page">
-<header class="site-header">
-<a aria-label="Latitude Stone home" class="wordmark" href="index.html#home"><strong>LATITUDE STONE</strong><span>REAL ESTATE GROUP</span></a>
-<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle"><span></span><span></span></button>
-<nav aria-label="Primary navigation">
-<a href="index.html#home">Home</a><a href="index.html#what-we-do">What we do</a><a href="index.html#market">Our market</a><a href="index.html#darin">Meet Darin</a><a href="index.html#why">Why Latitude Stone</a><a href="index.html#insights">Market intelligence</a>
-</nav>
-<a class="outline-button header-cta" href="#booking">Schedule a consultation</a>
-</header>
-<main>
-<section class="schedule-hero">
-<div class="schedule-hero-copy">
-<h1>Let’s talk about<br/>your goals.</h1>
-<a class="schedule-hero-link" href="#booking">Schedule a consultation <span>→</span></a>
-</div>
-</section>
-<section class="schedule-booking" id="booking">
-<div class="schedule-booking-grid">
-<div class="schedule-card">
-<h2>Your information</h2>
-<form class="consultation-form" id="consultation-form">
-<div class="form-two"><label>First name *<input required name="first_name" autocomplete="given-name" placeholder="Enter your first name"></label><label>Last name *<input required name="last_name" autocomplete="family-name" placeholder="Enter your last name"></label></div>
-<label>Email *<input required type="email" name="email" autocomplete="email" placeholder="Enter your email"></label>
-<label>Phone <span class="optional">(Optional)</span><input type="tel" name="phone" autocomplete="tel" placeholder="Enter your phone number"></label>
-<label>Company <span class="optional">(Optional)</span><input name="company" autocomplete="organization" placeholder="Enter your company"></label>
-<label>I am a(n): *<select required name="role"><option value="">Select one...</option><option>Investor</option><option>Property Owner</option><option>Business Owner</option><option>Developer</option><option>Broker / Referral Partner</option><option>Other</option></select></label>
-<label>How can we help you? <span class="optional">(Optional)</span><textarea name="message" placeholder="Tell us about your goals, property, or opportunity."></textarea></label>
-<label class="consultation-optin"><input type="checkbox" name="market_updates" value="Yes"><span>I’d like to receive market insights, new listings, and investment opportunities.</span></label>
-<input type="hidden" name="consultation_date" id="consultation-date"><input type="hidden" name="consultation_time" id="consultation-time">
-<button class="schedule-submit" type="submit">Schedule My Consultation</button>
-<p class="schedule-privacy">We respect your privacy. Your information will never be shared.</p>
-</form>
-</div>
-<div class="schedule-card calendar-card">
-<h2>Select a date &amp; time</h2>
-<div class="calendar-header"><button type="button" id="prev-month" aria-label="Previous month">‹</button><span class="calendar-month" id="calendar-month"></span><button type="button" id="next-month" aria-label="Next month">›</button></div>
-<div class="calendar-weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
-<div class="calendar-days" id="calendar-days"></div>
-<p class="selected-date-label" id="selected-date-label">Select a date to view times</p>
-<div class="time-grid" id="time-grid"><button type="button">9:00 AM</button><button type="button">10:30 AM</button><button type="button">11:00 AM</button><button type="button">1:30 PM</button><button type="button">2:00 PM</button><button type="button">3:30 PM</button></div>
-<p class="timezone">◉ All times are in Central Time (CT)</p>
-</div>
-</div>
-</section>
-</main>
-<footer class="legal-footer"><p>© 2026 Latitude Stone Real Estate Group, LLC. All rights reserved.</p><p><a href="#">Information About Brokerage Services (IABS)</a> &nbsp; | &nbsp; <a href="#">Consumer Protection Notice</a></p></footer>
-<script src="script.js"></script>
-</body>
-</html>
+:root{--ink:#040b12;--ink2:#07131d;--cream:#f4f0e7;--gold:#d8a23b;--gold2:#e0b958;--white:#f8f7f2;--muted:#c9d1d7;--line:rgba(255,255,255,.16);--serif:'Libre Caslon Display',serif;--sans:'DM Sans',sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--white);font-family:var(--sans);font-weight:400}a{color:inherit;text-decoration:none}img{display:block;width:100%}p{margin-top:0}.site-header{height:76px;position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:34px;padding:0 clamp(24px,3.3vw,58px);background:rgba(3,9,15,.97);border-bottom:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px)}.wordmark{display:flex;flex-direction:column;min-width:245px}.wordmark strong{font-size:18px;letter-spacing:.16em;font-weight:500}.wordmark span{font-size:9px;letter-spacing:.3em;color:var(--gold);margin-top:6px}.site-header nav{margin-left:auto;display:flex;align-items:center;gap:29px}.site-header nav a{font-size:10px;text-transform:uppercase;letter-spacing:.04em;font-weight:600;position:relative;padding:29px 0}.site-header nav a:after{content:'';position:absolute;left:50%;right:50%;bottom:19px;height:2px;background:var(--gold);transition:.25s}.site-header nav a:hover:after,.site-header nav a.active:after{left:0;right:0}.outline-button{border:1px solid var(--gold);color:var(--gold);padding:13px 20px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;white-space:nowrap}.menu-toggle{display:none;background:none;border:0;padding:8px}.menu-toggle span{display:block;width:25px;height:2px;background:#fff;margin:6px}.hero{min-height:650px;display:flex;align-items:center;position:relative;overflow:hidden}.hero-slides,.hero-slide,.hero-overlay{position:absolute;inset:0}.hero-slide{background-position:center;background-size:cover;opacity:0;transform:scale(1.025);transition:opacity 1.3s ease,transform 8s ease}.hero-slide.active{opacity:1;transform:scale(1.065)}.hero-slide:nth-child(1){background-position:64% 50%}.hero-slide:nth-child(2){background-position:center 56%}.hero-slide:nth-child(3){background-position:center 52%}.hero-overlay{background:linear-gradient(90deg,rgba(4,11,18,.98) 0%,rgba(4,11,18,.9) 28%,rgba(4,11,18,.3) 55%,rgba(4,11,18,.08) 100%)}.hero-copy{position:relative;z-index:2;width:min(730px,58vw);padding:100px 0 105px clamp(28px,4.2vw,72px)}.eyebrow{text-transform:uppercase;color:var(--gold);letter-spacing:.18em;font-size:13px;font-weight:600;margin-bottom:18px}.hero h1{font:400 clamp(58px,6vw,92px)/1.02 var(--serif);letter-spacing:-.03em;margin:0 0 28px;max-width:750px}.hero-lead{max-width:610px;font-size:17px;line-height:1.65;color:#eef2f4;margin-bottom:35px}.hero-dots{position:absolute;z-index:3;left:50%;bottom:24px;transform:translateX(-50%);display:flex;gap:9px}.hero-dots button{width:8px;height:8px;border-radius:50%;border:1px solid rgba(255,255,255,.8);background:#fff;padding:0;cursor:pointer}.hero-dots button.active{width:19px;border-radius:8px;background:var(--gold);border-color:var(--gold)}.gold-button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;background:#dfb455;color:#111;padding:17px 24px;text-transform:uppercase;font-size:11px;letter-spacing:.05em;font-weight:700;min-width:255px;transition:.25s}.gold-button:hover{transform:translateY(-2px);filter:brightness(1.05)}.gold-button.compact{min-width:230px}.section{padding:110px clamp(28px,4vw,68px)}.section-dark{background:var(--ink)}.section-light{background:var(--cream);color:#0b1822}.section-heading{text-align:center;margin-bottom:52px}.section h2,.contact-cta h2{font:400 clamp(38px,4vw,58px)/1.08 var(--serif);letter-spacing:-.02em;margin-bottom:24px}.section-heading h2{margin-bottom:0}.services{padding-top:88px;padding-bottom:125px}.service-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1560px;margin:auto}.service-card{border:1px solid rgba(255,255,255,.25);padding:36px 24px 30px;min-height:360px;display:flex;flex-direction:column;background:linear-gradient(180deg,rgba(10,25,37,.7),rgba(4,11,18,.72));transition:.3s}.service-card:hover{border-color:rgba(216,162,59,.8);transform:translateY(-5px)}.service-card svg{width:60px;height:60px;margin:0 auto 24px;fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.service-card h3{text-align:center;text-transform:uppercase;font-size:14px;line-height:1.25;letter-spacing:.04em;min-height:42px;margin-bottom:10px}.mini-rule{width:32px;height:1px;background:var(--gold);display:block;margin:0 auto 20px}.service-card p{color:#d5dde3;font-size:14px;line-height:1.65}.market{display:grid;grid-template-columns:46% 54%;padding:0;min-height:650px;background:var(--cream)}.market-copy{padding:105px clamp(34px,5vw,82px)}.market-copy h2{font-size:clamp(44px,5vw,70px)}.body-copy{max-width:620px;line-height:1.72}.market-points{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;margin:42px 0 0}.market-points article{display:flex;gap:14px}.market-points svg{width:44px;height:44px;flex:0 0 44px;border:1px solid var(--gold);border-radius:50%;padding:10px;fill:none;stroke:var(--gold);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.market-points h3{text-transform:uppercase;font-size:12px;letter-spacing:.04em;margin-bottom:6px}.market-points p{font-size:12px;line-height:1.5;margin:0}.market-map{background:var(--cream) url('assets/metroplex-map.jpg') center/cover no-repeat;min-height:650px;mix-blend-mode:multiply}.meet-darin{display:grid;grid-template-columns:minmax(360px,43%) minmax(0,57%);gap:70px;align-items:center;padding-top:115px;padding-bottom:115px}.portrait-wrap{max-width:620px}.portrait-wrap img{aspect-ratio:1/1;object-fit:cover;object-position:center top;border:1px solid rgba(255,255,255,.15)}.darin-copy{max-width:none;padding-right:clamp(10px,4vw,70px)}.darin-copy p{color:#d4dce2;max-width:900px;line-height:1.65}.darin-details{display:grid;grid-template-columns:repeat(3,1fr);margin:34px 0 32px;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18)}.darin-details span{padding:17px 14px;text-align:center;color:#efcf86;text-transform:uppercase;font-size:10px;letter-spacing:.08em}.darin-details span+span{border-left:1px solid rgba(255,255,255,.18)}.why{display:grid;grid-template-columns:minmax(310px,34%) 1fr;gap:55px;border-top:1px solid var(--line);padding-top:120px;padding-bottom:125px}.why-intro{padding-right:40px}.why-intro p{color:#d2dae0;line-height:1.7}.pillars{display:grid;grid-template-columns:repeat(4,1fr);align-items:stretch}.pillars article{padding:0 27px;text-align:center;border-left:1px solid rgba(255,255,255,.28);display:grid;grid-template-rows:70px 58px 16px auto;align-items:start}.pillars svg{width:50px;height:50px;margin:0 auto;fill:none;stroke:var(--gold);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.pillars h3{text-transform:uppercase;font-size:14px;line-height:1.25;letter-spacing:.04em;margin:0}.pillars p{font-size:13px;color:#d0d9df;line-height:1.6;margin:0}.insights{display:grid;grid-template-columns:270px 1fr;gap:56px;padding-top:115px;padding-bottom:125px}.insight-intro p{line-height:1.65}.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.insight-grid article{background:#fff;box-shadow:0 12px 28px rgba(21,31,41,.09);transition:.3s}.insight-grid article:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(21,31,41,.14)}.insight-grid img{height:180px;object-fit:cover;transition:.5s}.insight-grid article:hover img{transform:scale(1.02)}.insight-grid article>div{padding:24px;overflow:hidden}.insight-grid small{color:#b47c20;text-transform:uppercase;letter-spacing:.08em}.insight-grid h3{font:400 23px/1.2 var(--serif);margin:14px 0}.insight-grid article:hover h3{color:#a66f16}.insight-grid p{font-size:12px}.contact-cta{background:linear-gradient(90deg,rgba(4,11,18,.97),rgba(4,11,18,.74)),url('assets/hero-building.jpg') center 64%/cover no-repeat;padding:145px clamp(28px,5vw,82px) 155px;min-height:450px;display:flex;align-items:center;border-top:1px solid rgba(255,255,255,.12)}.cta-inner{width:100%;max-width:1500px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:90px;align-items:center}.contact-cta h2{font-size:clamp(48px,5vw,70px);margin-bottom:20px;max-width:850px}.contact-cta p:not(.eyebrow){max-width:700px;font-size:17px;line-height:1.75;color:#d5dce2}.cta-button{min-width:330px;padding:22px 28px;font-size:12px}footer{background:#02070c;padding:72px clamp(28px,5vw,82px) 34px;border-top:1px solid rgba(255,255,255,.1)}.footer-grid{display:grid;grid-template-columns:1.6fr .8fr 1.1fr .8fr;gap:48px}.footer-grid>div:not(.footer-brand){display:flex;flex-direction:column;gap:8px}.footer-grid b{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.footer-grid a,.footer-grid p{font-size:12px;color:#aeb9c2}.footer-grid a:hover,.compliance-links a:hover{color:var(--gold)}.footer-brand{display:flex;flex-direction:column}.footer-brand strong{font-size:20px;letter-spacing:.14em;font-weight:500}.footer-brand span{font-size:10px;color:var(--gold);letter-spacing:.25em;margin:8px 0 18px}.footer-brand p{max-width:300px}.footer-bottom{display:flex;justify-content:space-between;gap:20px;margin-top:58px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);color:#82909a;font-size:11px}.footer-bottom p{margin:0}.compliance-links{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-slide{transition:none;transform:none}.reveal{opacity:1;transform:none;transition:none}}
+@media(max-width:1180px){.site-header nav{gap:17px}.site-header nav a{font-size:9px}.service-grid{grid-template-columns:repeat(3,1fr)}.market{grid-template-columns:1fr}.market-map{min-height:500px}.meet-darin{grid-template-columns:40% 60%;gap:40px}.why{grid-template-columns:1fr}.why-intro{max-width:700px}.insights{grid-template-columns:1fr}.insight-intro{max-width:500px}}
+@media(max-width:860px){.site-header{height:70px}.site-header nav{position:absolute;left:0;right:0;top:70px;background:#040b12;display:none;flex-direction:column;align-items:flex-start;padding:25px}.site-header nav.open{display:flex}.header-cta{display:none}.menu-toggle{display:block;margin-left:auto}.hero{min-height:650px}.hero-copy{width:82%;padding-left:28px}.hero h1{font-size:60px}.section{padding:90px 28px}.service-grid{grid-template-columns:1fr 1fr}.market{padding:0}.market-copy{padding:90px 28px}.meet-darin{grid-template-columns:1fr}.portrait-wrap{max-width:520px}.darin-copy{padding-right:0}.pillars{grid-template-columns:1fr 1fr;gap:35px 0}.pillars article:nth-child(3){border-left:0}.insight-grid{grid-template-columns:1fr}.contact-cta{padding:120px 28px 135px}.cta-inner{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-bottom{flex-direction:column}.compliance-links{justify-content:flex-start}}
+@media(max-width:560px){.wordmark{min-width:0}.wordmark strong{font-size:15px}.hero{min-height:690px}.hero-copy{width:100%;padding:110px 22px 80px}.hero-overlay{background:linear-gradient(90deg,rgba(4,11,18,.97),rgba(4,11,18,.72),rgba(4,11,18,.35))}.hero h1{font-size:49px}.service-grid{grid-template-columns:1fr}.market-points{grid-template-columns:1fr}.market-map{min-height:380px}.darin-details{grid-template-columns:1fr}.darin-details span+span{border-left:0;border-top:1px solid rgba(255,255,255,.18)}.pillars{grid-template-columns:1fr}.pillars article{border-left:0;border-top:1px solid rgba(255,255,255,.22);padding:30px 10px;grid-template-rows:auto}.footer-grid{grid-template-columns:1fr}.cta-button{min-width:100%}.footer-bottom{margin-top:45px}}
+
+/* Homepage final-review refinements */
+main section[id]{scroll-margin-top:76px}
+.service-card{align-items:center;text-align:center;padding:42px 25px 34px;min-height:360px}
+.service-card svg{width:68px;height:68px;stroke-width:2.5;margin-bottom:26px}
+.service-card p{text-align:center;max-width:270px;margin:0 auto;color:#d5dde3}
+.market-map{background-image:url('assets/metroplex-map-light.jpg');background-color:var(--cream);background-position:center;background-size:cover;mix-blend-mode:normal}
+.market-points svg{stroke-width:2.2}
+.why .eyebrow{color:var(--gold)}
+.pillars{padding-top:32px}
+.pillars article{grid-template-rows:74px 58px 16px auto}
+.pillars svg{width:54px;height:54px;stroke-width:2.15}
+.insights{grid-template-columns:minmax(260px,320px) minmax(0,1100px);justify-content:space-between;gap:70px;max-width:1600px;margin:0 auto}
+.insight-grid{gap:18px}
+.insight-grid img{height:155px}
+.insight-grid article>div{padding:21px 22px 23px}
+.insight-grid h3{font-size:21px;min-height:52px}
+.contact-cta{background-image:linear-gradient(90deg,#040b12 0%,#040b12 34%,rgba(4,11,18,.94) 52%,rgba(4,11,18,.7) 100%),url('assets/hero-building.jpg');background-position:center,center 64%;}
+@media(max-width:1180px){main section[id]{scroll-margin-top:76px}.insights{max-width:none;grid-template-columns:1fr}.insight-grid{max-width:none}}
+
+
+/* Homepage lock-in pass: July 31, 2026 */
+/* Keep every navigation destination clear of the sticky header. */
+main section[id]{scroll-margin-top:76px}
+#why,#insights{min-height:calc(100vh - 76px)}
+#why{padding-bottom:max(150px,12vh)}
+#insights{width:100%;max-width:none;margin:0;background:var(--cream);padding-bottom:max(155px,12vh)}
+
+/* Approved high-clarity icon treatment. */
+.service-card svg{width:70px;height:70px;stroke-width:3;vector-effect:non-scaling-stroke;color:var(--gold)}
+.service-card .handshake-icon{width:76px;height:76px;stroke-width:3.25}
+.market-points svg{stroke-width:2.6}
+.darin-eyebrow{color:var(--gold)!important}
+
+/* Full-width Market Intelligence chapter and equal cards. */
+.insights{grid-template-columns:minmax(270px,330px) minmax(0,1050px);justify-content:center;gap:68px}
+.insight-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.insight-grid article{display:flex;flex-direction:column;min-width:0;height:100%}
+.insight-grid img{width:100%;height:155px;object-fit:cover;filter:contrast(1.03) saturate(1.02)}
+.insight-grid article>div{display:flex;flex-direction:column;flex:1}
+.insight-grid h3{min-height:54px}
+.insight-grid p{margin-top:auto}
+
+/* The final consultation link lands at the document bottom via script. */
+#contact{scroll-margin-top:0}
+
+@media(max-width:1180px){#why,#insights{min-height:auto}.insights{grid-template-columns:1fr}.insight-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:860px){.insight-grid{grid-template-columns:1fr}}
+
+
+/* RC1 precision fixes: preserve approved layout and change only requested items */
+.hero{min-height:calc(100vh - 72px);height:auto}
+.hero-slide{background-size:cover;background-position:center}
+.hero-slide:nth-child(2),.hero-slide:nth-child(3){filter:contrast(1.05) saturate(1.03)}
+
+/* Reliable solid SVG icon system */
+.service-card .fa-icon{display:block;width:66px;height:66px;margin:0 auto 27px;fill:var(--gold);stroke:none!important;color:var(--gold)}
+.service-card:nth-child(3) .fa-icon{width:74px;height:66px}
+.market-points .fa-market-icon{width:44px;height:44px;flex:0 0 44px;border:1px solid var(--gold);border-radius:50%;padding:10px;fill:var(--gold);stroke:none!important;box-sizing:border-box}
+
+/* Professional accurate freeway map, cream treatment, no territory boundary */
+.market-map{background-color:var(--cream);background-image:url('assets/metroplex-map-light.jpg');background-position:center;background-size:cover;background-repeat:no-repeat;mix-blend-mode:normal}
+
+/* Return Why Latitude to the preferred natural chapter height */
+#why{min-height:auto!important;padding-bottom:92px!important}
+
+/* Market Intelligence balance and image cleanup */
+#insights{min-height:auto!important;padding-top:105px!important;padding-bottom:82px!important;width:100%!important;max-width:none!important;margin:0!important;background:var(--cream)!important}
+.insights{grid-template-columns:minmax(300px,360px) minmax(0,1020px)!important;gap:46px!important;justify-content:center!important}
+.insight-intro{padding-left:22px}
+.insight-grid{align-items:stretch}
+.insight-grid article{overflow:hidden;border:0!important}
+.insight-grid img{display:block;width:100%;height:155px;object-fit:cover;border:0!important;margin:0!important;padding:0!important;filter:contrast(1.06) saturate(1.04)}
+.insight-grid article>div{border:0!important}
+
+@media(max-width:1180px){.insights{grid-template-columns:1fr!important}.insight-intro{padding-left:0}}
+@media(max-width:860px){.hero{min-height:calc(100vh - 70px)}}
+
+
+/* Homepage v1.0 final precision pass */
+.hero-slide:nth-child(2){background-position:center 46%;}
+.hero-slide:nth-child(3){background-position:center 42%;}
+.service-card .service-line-icon{display:block;width:68px;height:68px;margin:0 auto 27px;fill:none!important;stroke:var(--gold)!important;stroke-width:1.8!important;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.service-card .service-line-icon.handshake-icon{width:76px;height:68px}
+.market-map{background-image:url('assets/metroplex-map-light.svg')!important;background-size:cover!important;background-position:center!important;background-color:var(--cream)!important}
+#insights .insight-intro{transform:translateX(-72px);padding-left:0!important}
+#insights .insight-grid img{display:block!important;margin:0!important;border:0!important;outline:0!important;object-fit:cover!important;object-position:center!important}
+#insights .insight-grid article{border-top:0!important;overflow:hidden!important}
+#insights .insight-grid article::before{display:none!important}
+@media(max-width:1180px){#insights .insight-intro{transform:none}}
+
+
+/* Latitude Stone release polish */
+.hero-slide:nth-child(2){background-position:center 48%;}
+.hero-slide:nth-child(3){background-position:center 45%;}
+.service-card .service-line-icon{width:66px!important;height:66px!important;fill:none!important;stroke:var(--gold)!important;stroke-width:2.6!important;stroke-linecap:square!important;stroke-linejoin:miter!important;vector-effect:non-scaling-stroke!important}
+.service-card .service-line-icon.handshake-icon{width:72px!important;height:66px!important;stroke-width:2.7!important}
+.market-map{background-image:url('assets/metroplex-map-light.jpg')!important;background-size:cover!important;background-position:center!important}
+#insights .insight-intro{transform:translateX(-112px)!important;padding-left:0!important}
+#insights .insight-grid img{display:block!important;margin:0!important;padding:0!important;border:0!important;outline:0!important;height:155px!important;object-fit:cover!important;object-position:center!important}
+#insights .insight-grid article{overflow:hidden!important;border:0!important}
+#insights .insight-grid article::before{display:none!important}
+@media(max-width:1180px){#insights .insight-intro{transform:none!important}}
+
+/* v1.2 targeted correction pass */
+/* Consistent professional outlined icon system */
+.material-symbols-outlined{
+  font-family:'Material Symbols Outlined';
+  font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;
+  text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;
+  direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;
+  font-feature-settings:'liga';
+  font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 48;
+}
+.service-material-icon{
+  color:var(--gold);font-size:62px;margin:0 auto 27px;
+  width:72px;height:72px;display:flex;align-items:center;justify-content:center;
+}
+.market-material-icon{
+  color:var(--gold);font-size:25px;width:44px;height:44px;flex:0 0 44px;
+  border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-sizing:border-box;
+}
+/* Remove legacy inline icon rules from visual flow */
+.service-card svg,.market-points svg{display:none!important}
+
+/* Accurate DFW map based directly on the supplied Google Earth reference */
+.market-map{
+  background-image:url('assets/metroplex-map-accurate.jpg')!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-color:var(--cream)!important;
+}
+
+/* Market Intelligence: align intro with Why Latitude and move cards slightly right */
+#insights .insight-intro{
+  transform:none!important;
+  padding-left:0!important;
+  margin-left:0!important;
+  align-self:start;
+}
+#insights.insights{
+  grid-template-columns:minmax(330px,390px) minmax(0,1000px)!important;
+  gap:70px!important;
+  justify-content:center!important;
+  padding-left:60px!important;
+  padding-right:60px!important;
+}
+#insights .insight-grid{transform:translateX(28px)}
+@media(max-width:1180px){
+  #insights.insights{grid-template-columns:1fr!important;padding-left:28px!important;padding-right:28px!important}
+  #insights .insight-grid{transform:none}
+}
+
+/* v1.4 complete coordinated correction pass */
+/* Hero image 2: recognizable high-resolution Dallas skyline at dusk */
+.hero-slide:nth-child(2){background-position:center center!important;filter:contrast(1.04) saturate(1.06)!important}
+
+/* One professional, readable outline icon family */
+.service-material-icon,.market-material-icon{display:none!important}
+.service-card .service-icon{
+  display:block!important;
+  width:84px!important;
+  height:84px!important;
+  margin:0 auto 24px!important;
+  fill:none!important;
+  stroke:var(--gold)!important;
+  stroke-width:2.35!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+  vector-effect:non-scaling-stroke!important;
+}
+.service-card .service-icon.handshake-icon{width:92px!important;height:84px!important}
+.market-points .market-icon{
+  display:block!important;
+  width:46px!important;
+  height:46px!important;
+  flex:0 0 46px!important;
+  padding:10px!important;
+  border:1px solid var(--gold)!important;
+  border-radius:50%!important;
+  fill:none!important;
+  stroke:var(--gold)!important;
+  stroke-width:2!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+
+/* Geographic accuracy comes directly from the user's supplied Google Earth reference. */
+.market-map{
+  background-image:url('assets/metroplex-map-reference.jpg')!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-color:var(--cream)!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Market Intelligence uses the same left content grid as Why Latitude Stone. */
+#insights.insights{
+  grid-template-columns:minmax(360px,34%) minmax(0,1fr)!important;
+  gap:72px!important;
+  justify-content:stretch!important;
+  padding-left:clamp(28px,4vw,68px)!important;
+  padding-right:clamp(28px,4vw,68px)!important;
+}
+#insights .insight-intro{
+  transform:none!important;
+  padding-left:0!important;
+  margin-left:0!important;
+  align-self:start!important;
+}
+#insights .insight-grid{
+  transform:translateX(34px)!important;
+  width:calc(100% - 34px)!important;
+}
+.photo-credit{font-size:9px!important;color:#697782!important;margin-left:auto!important}
+.photo-credit a{color:#82909a!important}
+@media(max-width:1180px){
+  #insights.insights{grid-template-columns:1fr!important;gap:38px!important}
+  #insights .insight-grid{transform:none!important;width:100%!important}
+  .photo-credit{margin-left:0!important}
+}
+
+/* v1.5 final approved homepage polish */
+/* Hero */
+.hero h1{
+  max-width:980px;
+  font-size:clamp(54px,5.3vw,88px);
+}
+.hero-copy{width:min(980px,68vw)}
+.hero-slide:nth-child(2){
+  background-position:center 52%!important;
+  filter:contrast(1.07) saturate(1.08)!important;
+}
+
+/* One crisp, medium-weight outline system throughout */
+.service-card .service-icon{
+  display:block!important;
+  width:96px!important;
+  height:96px!important;
+  margin:0 auto 22px!important;
+  fill:none!important;
+  stroke:var(--gold)!important;
+  stroke-width:3.15!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+  vector-effect:non-scaling-stroke!important;
+}
+.service-card .service-icon.handshake-icon{
+  width:104px!important;
+  height:96px!important;
+  stroke-width:3.25!important;
+}
+.market-points .market-icon{
+  display:block!important;
+  width:54px!important;
+  height:54px!important;
+  flex:0 0 54px!important;
+  padding:11px!important;
+  border:1.5px solid var(--gold)!important;
+  border-radius:50%!important;
+  fill:none!important;
+  stroke:var(--gold)!important;
+  stroke-width:2.55!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+.pillars svg{
+  width:60px!important;
+  height:60px!important;
+  fill:none!important;
+  stroke:var(--gold)!important;
+  stroke-width:2.55!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+  vector-effect:non-scaling-stroke!important;
+}
+
+/* Keep the accurate map, but let natural color and contrast show through */
+.market-map{
+  background-image:url('assets/metroplex-map-reference.jpg')!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-color:var(--cream)!important;
+  filter:none!important;
+  opacity:1!important;
+}
+
+/* Why Latitude approved single-sentence intro */
+.why-intro>p:last-child{max-width:620px}
+
+/* Market Intelligence: match the left grid above, shift cards right, one-line title */
+#insights.insights{
+  grid-template-columns:minmax(520px,31vw) minmax(0,1fr)!important;
+  gap:70px!important;
+  justify-content:stretch!important;
+  padding-left:clamp(28px,4vw,68px)!important;
+  padding-right:clamp(28px,4vw,68px)!important;
+}
+#insights .insight-intro{
+  transform:none!important;
+  margin:0!important;
+  padding:0!important;
+  align-self:start!important;
+}
+#insights .insight-intro h2{
+  white-space:nowrap;
+  font-size:clamp(38px,3.25vw,54px);
+  letter-spacing:-.025em;
+}
+#insights .insight-grid{
+  transform:translateX(28px)!important;
+  width:calc(100% - 28px)!important;
+}
+
+@media(max-width:1450px){
+  #insights.insights{grid-template-columns:minmax(390px,31vw) minmax(0,1fr)!important;gap:48px!important}
+  #insights .insight-intro h2{font-size:clamp(34px,3.1vw,46px)}
+}
+@media(max-width:1180px){
+  .hero-copy{width:min(760px,78vw)}
+  #insights.insights{grid-template-columns:1fr!important;gap:38px!important}
+  #insights .insight-intro h2{white-space:normal}
+  #insights .insight-grid{transform:none!important;width:100%!important}
+}
+
+/* v1.6: custom Latitude Stone icon artwork and approved distant Dallas hero */
+.custom-icon{display:block;object-fit:contain;background:transparent}
+.service-card img.service-icon.custom-icon{
+  width:76px!important;height:76px!important;margin:0 auto 24px!important;
+}
+.market-points img.market-icon.custom-icon{
+  width:54px!important;height:54px!important;flex:0 0 54px!important;
+  padding:8px!important;border:1.5px solid var(--gold)!important;border-radius:50%!important;
+}
+.pillars img.pillar-icon.custom-icon{
+  width:58px!important;height:58px!important;margin:0 auto!important;
+}
+.hero-slide:nth-child(2){background-position:center 50%!important;filter:contrast(1.07) saturate(1.08)!important}
+
+
+/* v1.8 modern header, restrained gold, Avenir typography, no-icon system */
+:root{
+  --sans:'Avenir Next',Avenir,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --serif:var(--sans);
+}
+body{font-family:var(--sans);font-weight:400}
+.home-page .site-header{
+  position:fixed;top:0;left:0;right:0;
+  background:linear-gradient(180deg,rgba(2,7,12,.62),rgba(2,7,12,.12));
+  border-bottom:1px solid rgba(255,255,255,.14);
+  backdrop-filter:none;
+  transition:background .28s ease,backdrop-filter .28s ease,border-color .28s ease;
+}
+.home-page .site-header.scrolled{
+  background:rgba(3,9,15,.96);
+  backdrop-filter:blur(14px);
+  border-color:rgba(255,255,255,.1);
+}
+.wordmark{min-width:265px}
+.wordmark strong{font-size:20px;letter-spacing:.17em;font-weight:500}
+.wordmark span{font-size:9px;letter-spacing:.31em}
+.site-header nav a{
+  text-transform:none;font-size:12px;letter-spacing:0;font-weight:500;
+}
+.outline-button,.gold-button{
+  background:transparent!important;color:var(--gold)!important;border:1px solid var(--gold)!important;
+  text-transform:none!important;font-size:12px!important;letter-spacing:.01em!important;font-weight:500!important;
+  transition:background .25s ease,color .25s ease,transform .25s ease!important;
+}
+.outline-button:hover,.gold-button:hover{background:var(--gold)!important;color:var(--ink)!important;filter:none!important;transform:translateY(-2px)}
+.hero{min-height:100vh!important}
+.hero-copy{padding-top:150px!important}
+.hero h1{
+  font-family:var(--sans)!important;font-weight:700!important;letter-spacing:-.045em!important;
+  line-height:.98!important;font-size:clamp(58px,6vw,94px)!important;
+}
+.hero-slide:nth-child(2){background-position:center 48%!important;filter:contrast(1.04) saturate(1.04)!important}
+.section h2,.contact-cta h2,.insight-grid h3{
+  font-family:var(--sans)!important;font-weight:300!important;letter-spacing:-.04em!important;
+}
+.eyebrow,.service-card h3,.market-points h3,.pillars h3,.insight-grid small,
+.darin-details span,.footer-grid b{
+  text-transform:none!important;letter-spacing:.04em!important;font-weight:500!important;
+}
+.eyebrow{font-size:14px}
+.service-card h3,.pillars h3{font-size:15px}
+.title-divider{
+  display:block;width:44px;height:1px;background:var(--gold);margin:16px auto 24px;
+}
+.service-card .title-divider{margin-top:18px}
+.service-card{justify-content:flex-start;padding-top:48px}
+.service-card img.service-icon,.service-card svg,.service-card .service-material-icon,.service-card .fa-icon,
+.market-points img.market-icon,.market-points svg,.market-points .market-material-icon,.market-points .fa-market-icon,
+.pillars img.pillar-icon,.pillars svg{display:none!important}
+.market-points article{display:block!important}
+.market-points .market-divider{margin:0 0 14px}
+.pillars article{
+  grid-template-rows:44px 58px auto!important;padding-top:8px!important;
+}
+.pillars .pillar-divider{margin:0 auto 20px}
+.pillars h3{align-self:start}
+.insight-grid h3{font-size:22px}
+#insights .insight-intro h2{font-weight:300!important}
+@media(max-width:860px){
+  .home-page .site-header{background:rgba(3,9,15,.9)}
+  .hero-copy{padding-top:125px!important}
+  .wordmark strong{font-size:18px}
+}
+
+/* v1.9 monochrome design study: black, white and architectural grays */
+:root{
+  --ink:#050a0f;
+  --ink2:#0b1117;
+  --cream:#ffffff;
+  --gold:#a9afb5;
+  --gold2:#d6dade;
+  --white:#f7f8f9;
+  --muted:#c3c8cd;
+  --line:rgba(255,255,255,.17);
+}
+
+/* Header: transparent over the hero, neutral monochrome accents */
+.home-page .site-header{
+  background:linear-gradient(180deg,rgba(2,7,12,.58),rgba(2,7,12,.08));
+  border-bottom-color:rgba(255,255,255,.18);
+}
+.home-page .site-header.scrolled{
+  background:rgba(3,8,13,.96);
+  border-color:rgba(255,255,255,.12);
+}
+.wordmark span{color:#aeb4b9!important}
+.site-header nav a:after{background:#f2f4f5!important}
+.outline-button,.gold-button{
+  color:#f4f5f6!important;
+  border-color:rgba(255,255,255,.78)!important;
+}
+.outline-button:hover,.gold-button:hover{
+  background:#f4f5f6!important;
+  color:#080d12!important;
+}
+
+/* Typography: presence through scale, not heavy weight */
+.hero h1{
+  font-weight:400!important;
+  letter-spacing:-.047em!important;
+  line-height:1.01!important;
+}
+.section h2,.contact-cta h2,.insight-grid h3{
+  font-weight:400!important;
+}
+.service-card h3{
+  font-weight:500!important;
+  color:#f5f6f7!important;
+}
+.service-card p{
+  font-weight:300!important;
+  color:#c8cdd2!important;
+}
+
+/* Neutral labels and dividers */
+.eyebrow{color:#92999f!important}
+.title-divider{background:#868d93!important}
+.darin-details span{color:#d6dade!important}
+.footer-grid b,.footer-brand span{color:#aeb4b9!important}
+.footer-grid a:hover,.compliance-links a:hover{color:#ffffff!important}
+.insight-grid small{color:#697078!important}
+.insight-grid article:hover h3{color:#11171c!important}
+.hero-dots button.active{background:#f3f4f5!important;border-color:#f3f4f5!important}
+
+/* What we do: charcoal-gray cards rather than dark blue */
+.services{background:#050a0f!important}
+.service-card{
+  background:#1a1f24!important;
+  border-color:#353c42!important;
+  box-shadow:none!important;
+}
+.service-card:hover{
+  border-color:#707880!important;
+  background:#20262b!important;
+}
+
+/* Light sections: clean white rather than cream */
+.section-light,.market,#insights.insights{
+  background:#ffffff!important;
+  color:#0a1015!important;
+}
+.market-copy{background:#ffffff!important}
+.market-copy .eyebrow,#insights .eyebrow{color:#767d83!important}
+.market-points h3{font-weight:500!important;color:#10161b!important}
+.market-points p,.insight-intro p{color:#353c42!important}
+.market-points .market-divider{background:#8d949a!important}
+
+/* Our market: soft white/gray satellite treatment */
+.market-map{
+  background-color:#ffffff!important;
+  filter:grayscale(1) brightness(1.34) contrast(.72)!important;
+  opacity:.92!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Market intelligence cards remain white, with neutral details */
+.insight-grid article{
+  border:1px solid #e1e4e6!important;
+  box-shadow:0 14px 32px rgba(8,15,22,.08)!important;
+}
+.insight-grid article:hover{
+  border-color:#bec4c8!important;
+  box-shadow:0 18px 38px rgba(8,15,22,.12)!important;
+}
+
+/* Dark sections retain clean black/gray contrast */
+.meet-darin,.why,.contact-cta,footer{background-color:#050a0f!important}
+.why-intro p,.pillars p,.darin-copy p,.contact-cta p:not(.eyebrow){color:#c6ccd1!important}
+.pillars .pillar-divider{background:#8b9298!important}
+
+@media(max-width:860px){
+  .home-page .site-header{background:rgba(3,8,13,.9)}
+}
+
+/* v2.0 — alternating monochrome section backgrounds + full-color market map */
+
+/* What we do: white section with soft gray cards */
+#what-we-do.services{
+  background:#ffffff!important;
+  color:#0a1015!important;
+}
+#what-we-do .eyebrow{color:#767d83!important}
+#what-we-do .service-card{
+  background:#f2f3f4!important;
+  border-color:#d9dde0!important;
+  box-shadow:none!important;
+}
+#what-we-do .service-card:hover{
+  background:#eceeef!important;
+  border-color:#b9c0c5!important;
+}
+#what-we-do .service-card h3{
+  color:#11171c!important;
+  font-weight:500!important;
+}
+#what-we-do .service-card p{
+  color:#42494f!important;
+  font-weight:300!important;
+}
+#what-we-do .title-divider{background:#9aa0a5!important}
+
+/* Our market: black copy panel with original full-color map */
+#market.market{
+  background:#050a0f!important;
+  color:#f6f7f8!important;
+}
+#market .market-copy{
+  background:#050a0f!important;
+  color:#f6f7f8!important;
+}
+#market .market-copy .eyebrow{color:#9ca3a9!important}
+#market .market-copy h2{color:#f6f7f8!important}
+#market .body-copy{color:#c8cdd2!important}
+#market .market-points h3{color:#f2f4f5!important}
+#market .market-points p{color:#c2c8cd!important}
+#market .market-points .market-divider{background:#858c92!important}
+#market .market-map{
+  background-color:#050a0f!important;
+  background-image:url('assets/metroplex-map-reference.jpg')!important;
+  background-position:center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  filter:none!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Meet Darin: white section */
+#darin.meet-darin{
+  background:#ffffff!important;
+  color:#0a1015!important;
+}
+#darin .darin-eyebrow{color:#767d83!important}
+#darin h2{color:#0a1015!important}
+#darin .darin-copy p{color:#3f474d!important}
+#darin .portrait-wrap img{border-color:#d9dde0!important}
+#darin .darin-details{
+  border-top-color:#d7dce0!important;
+  border-bottom-color:#d7dce0!important;
+}
+#darin .darin-details span{
+  color:#30373d!important;
+}
+#darin .darin-details span+span{border-left-color:#d7dce0!important}
+#darin .gold-button{
+  color:#11171c!important;
+  border-color:#444b51!important;
+}
+#darin .gold-button:hover{
+  background:#11171c!important;
+  color:#ffffff!important;
+}
+
+/* Why Latitude Stone remains black */
+#why.why{
+  background:#050a0f!important;
+  color:#f6f7f8!important;
+}
+
+/* Market intelligence remains white */
+#insights.insights{
+  background:#ffffff!important;
+  color:#0a1015!important;
+}
+
+/* Ready to get started remains black */
+#contact.contact-cta{
+  background-color:#050a0f!important;
+}
+
+/* Footer: white */
+footer{
+  background:#ffffff!important;
+  color:#0a1015!important;
+  border-top:1px solid #dfe3e6!important;
+}
+footer .footer-brand strong{color:#0a1015!important}
+footer .footer-brand span{color:#6f767c!important}
+footer .footer-grid b{color:#454c52!important}
+footer .footer-grid a,
+footer .footer-grid p{color:#5c646a!important}
+footer .footer-grid a:hover,
+footer .compliance-links a:hover{color:#0a1015!important}
+footer .footer-bottom{
+  border-top-color:#dfe3e6!important;
+  color:#7a8288!important;
+}
+
+@media(max-width:560px){
+  #darin .darin-details span+span{
+    border-left:0!important;
+    border-top:1px solid #d7dce0!important;
+  }
+}
+
+/* v2.1 — softer charcoal chapters + restrained brass accents */
+:root{
+  --latitude-charcoal:#303338;
+  --latitude-brass:#b5a078;
+}
+
+/* Replace the two near-black content chapters with a softer charcoal gray. */
+#market.market,
+#market .market-copy,
+#why.why{
+  background-color:var(--latitude-charcoal)!important;
+}
+
+/* Muted brass is limited to small category labels and the header descriptor. */
+.home-page .site-header .wordmark span,
+.home-page .eyebrow{
+  color:var(--latitude-brass)!important;
+}
+
+
+/* v2.2 — light gray chapters, muted brass labels, final hierarchy polish */
+:root{
+  --latitude-light-gray:#f2f3f4;
+  --latitude-brass:#b5a078;
+  --latitude-text:#0a1015;
+  --latitude-body:#3f474d;
+  --latitude-rule:#aeb4b9;
+}
+
+/* Hero headline: two-line, lighter architectural treatment */
+.hero-copy{width:min(1120px,72vw)!important}
+.hero h1{
+  max-width:1120px!important;
+  font-size:clamp(48px,4.7vw,78px)!important;
+  font-weight:400!important;
+  line-height:1.03!important;
+  letter-spacing:-.045em!important;
+}
+
+/* Light gray chapter backgrounds with dark typography */
+#market.market,
+#market .market-copy,
+#why.why{
+  background:var(--latitude-light-gray)!important;
+  color:var(--latitude-text)!important;
+}
+#market .market-copy h2,
+#market .market-points h3,
+#why h2,
+#why .pillars h3{
+  color:var(--latitude-text)!important;
+}
+#market .body-copy,
+#market .market-points p,
+#why .why-intro>p:last-child,
+#why .pillars p{
+  color:var(--latitude-body)!important;
+}
+
+/* Keep the approved full-color map */
+#market .market-map{
+  background-image:url('assets/metroplex-map-reference.jpg')!important;
+  background-color:var(--latitude-light-gray)!important;
+  filter:none!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+}
+
+/* One muted brass accent across labels and rules */
+.home-page .eyebrow,
+.home-page .site-header .wordmark span,
+.footer-brand span,
+.footer-grid b{
+  color:var(--latitude-brass)!important;
+}
+.title-divider,
+#what-we-do .title-divider,
+#market .market-points .market-divider,
+#why .pillar-divider{
+  background:var(--latitude-brass)!important;
+}
+
+/* What we do: make titles clearly stronger than body copy */
+#what-we-do .service-card h3{
+  font-weight:600!important;
+}
+#what-we-do .service-card p{
+  font-weight:400!important;
+}
+
+/* Meet Darin credibility metrics */
+#darin .darin-details span{
+  font-weight:500!important;
+}
+#darin .darin-details{
+  border-top-color:#bcc2c7!important;
+  border-bottom-color:#bcc2c7!important;
+}
+#darin .darin-details span+span{
+  border-left-color:#bcc2c7!important;
+}
+
+/* Why Latitude Stone pillar hierarchy */
+#why .pillars h3{
+  font-weight:600!important;
+}
+#why .pillars p{
+  font-weight:400!important;
+}
+
+/* Footer light theme with brass hierarchy */
+footer .footer-brand span,
+footer .footer-grid b{
+  color:var(--latitude-brass)!important;
+}
+
+@media(max-width:1180px){
+  .hero-copy{width:min(900px,82vw)!important}
+  .hero h1{font-size:clamp(46px,6vw,68px)!important}
+}
+@media(max-width:760px){
+  .hero-copy{width:calc(100% - 40px)!important}
+  .hero h1{font-size:clamp(40px,10vw,58px)!important}
+  .hero h1 br{display:none}
+}
+
+/* v2.3 — final brass hierarchy and market clarity corrections */
+:root{
+  --latitude-brass:#b5a078;
+}
+
+/* Section labels: use one consistent muted brass */
+#what-we-do .eyebrow,
+#market .market-copy .eyebrow,
+#darin .darin-eyebrow,
+#why .eyebrow,
+#insights .insight-intro .eyebrow{
+  color:var(--latitude-brass)!important;
+}
+
+/* What we do: brass rules inside all five cards */
+#what-we-do .service-card .title-divider,
+#what-we-do .service-card .service-divider,
+#what-we-do .service-card .mini-rule{
+  background-color:var(--latitude-brass)!important;
+}
+
+/* Our market: brass rules and clearer full-color map */
+#market .market-points .market-divider,
+#market .market-points .title-divider{
+  background-color:var(--latitude-brass)!important;
+}
+#market .market-map{
+  filter:contrast(1.10) saturate(1.08) brightness(1.01)!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Meet Darin: brass framework around stronger credibility metrics */
+#darin .darin-details{
+  border-top-color:var(--latitude-brass)!important;
+  border-bottom-color:var(--latitude-brass)!important;
+}
+#darin .darin-details span{
+  font-weight:600!important;
+}
+#darin .darin-details span+span{
+  border-left-color:var(--latitude-brass)!important;
+}
+
+/* Why Latitude Stone: brass rules and restored column dividers */
+#why .pillar-divider{
+  background-color:var(--latitude-brass)!important;
+}
+#why .pillars article{
+  border-left:0!important;
+}
+#why .pillars article+article{
+  border-left:1px solid var(--latitude-brass)!important;
+}
+
+/* v2.4 — homepage final hierarchy and brass system */
+:root{--latitude-brass:#b5a078}
+
+/* One consistent section-label system */
+#what-we-do .eyebrow,
+#market .eyebrow,
+#darin .eyebrow,
+#why .eyebrow,
+#insights .eyebrow,
+#contact .eyebrow{
+  color:var(--latitude-brass)!important;
+  font-size:16px!important;
+  line-height:1.2!important;
+  font-weight:500!important;
+  letter-spacing:.045em!important;
+  text-transform:none!important;
+}
+
+/* Header, hero and CTA controls */
+.home-page .site-header nav a:after{
+  background:var(--latitude-brass)!important;
+}
+.home-page .outline-button,
+.home-page .gold-button{
+  background:transparent!important;
+  color:var(--latitude-brass)!important;
+  border-color:var(--latitude-brass)!important;
+}
+.home-page .outline-button:hover,
+.home-page .gold-button:hover{
+  background:var(--latitude-brass)!important;
+  color:#080d12!important;
+}
+
+/* What we do: title, rule, copy */
+#what-we-do .service-card{
+  justify-content:flex-start!important;
+}
+#what-we-do .service-card h3{
+  order:1;
+  min-height:auto!important;
+  margin:0 0 18px!important;
+  font-weight:600!important;
+}
+#what-we-do .service-card .title-divider{
+  order:2;
+  width:44px!important;
+  height:1px!important;
+  margin:0 auto 24px!important;
+  background:var(--latitude-brass)!important;
+}
+#what-we-do .service-card p{
+  order:3;
+  margin:0!important;
+}
+
+/* Our market: stronger titles, reordered rules, more breathing room */
+#market .market-points{
+  margin-top:62px!important;
+}
+#market .market-points h3{
+  margin:0 0 12px!important;
+  font-weight:600!important;
+  color:var(--latitude-text)!important;
+}
+#market .market-points .title-divider{
+  display:block!important;
+  width:44px!important;
+  height:1px!important;
+  margin:0 0 14px!important;
+  background:var(--latitude-brass)!important;
+}
+#market .market-points p{margin:0!important}
+#market .market-map{
+  filter:contrast(1.16) saturate(1.12) brightness(1.02)!important;
+}
+
+/* Meet Darin */
+#darin .darin-details{
+  border-top-color:var(--latitude-brass)!important;
+  border-bottom-color:var(--latitude-brass)!important;
+}
+#darin .darin-details span{
+  font-weight:600!important;
+}
+#darin .darin-details span+span{
+  border-left-color:var(--latitude-brass)!important;
+}
+#darin .gold-button{
+  border-color:var(--latitude-brass)!important;
+  color:var(--latitude-brass)!important;
+}
+
+/* Why Latitude Stone: title, rule, copy; restored dividers */
+#why .pillars article{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  padding-top:8px!important;
+}
+#why .pillars article+article{
+  border-left:1px solid var(--latitude-brass)!important;
+}
+#why .pillars h3{
+  order:1;
+  margin:0 0 18px!important;
+  font-weight:600!important;
+}
+#why .pillars .title-divider{
+  order:2;
+  width:44px!important;
+  height:1px!important;
+  margin:0 auto 24px!important;
+  background:var(--latitude-brass)!important;
+}
+#why .pillars p{
+  order:3;
+  margin:0!important;
+}
+
+/* Final CTA */
+#contact .cta-button{
+  border-color:var(--latitude-brass)!important;
+  color:var(--latitude-brass)!important;
+}
+
+@media(max-width:760px){
+  #what-we-do .eyebrow,#market .eyebrow,#darin .eyebrow,#why .eyebrow,#insights .eyebrow,#contact .eyebrow{font-size:15px!important}
+}
+
+/* v2.5 — final section alignment and Hero #1 update */
+
+/* What we do: center each title / divider / description block vertically */
+#what-we-do .service-card{
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+#what-we-do .service-card h3,
+#what-we-do .service-card p{
+  width:100%;
+  text-align:center!important;
+}
+
+/* Meet Darin: lock the section label to the sitewide muted brass */
+#darin .eyebrow,
+#darin .darin-eyebrow{
+  color:var(--latitude-brass)!important;
+}
+
+/* Why Latitude Stone: center each pillar block both vertically and horizontally */
+#why .pillars article{
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+#why .pillars h3,
+#why .pillars p{
+  width:100%;
+  text-align:center!important;
+}
+
+/* v2.6 — Market Intelligence community CTA and modal */
+#insights .insight-intro h2{max-width:520px}
+#insights .insight-intro>p:not(.eyebrow){max-width:520px;margin-bottom:28px}
+.community-trigger{
+  display:inline-flex;align-items:center;justify-content:space-between;gap:28px;
+  min-width:320px;padding:16px 20px;background:transparent;color:var(--latitude-brass);
+  border:1px solid var(--latitude-brass);font:500 12px/1.25 var(--sans);letter-spacing:.015em;
+  cursor:pointer;transition:.25s;text-align:left
+}
+.community-trigger:hover{background:var(--latitude-brass);color:#080d12;transform:translateY(-2px)}
+.community-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+.community-modal.open{display:flex}
+.community-backdrop{position:absolute;inset:0;background:rgba(2,7,12,.76);backdrop-filter:blur(3px)}
+.community-dialog{position:relative;z-index:1;width:min(1040px,96vw);max-height:min(880px,94vh);display:grid;grid-template-columns:minmax(0,59%) minmax(330px,41%);background:#fff;color:#111;border-radius:10px;overflow:auto;box-shadow:0 32px 90px rgba(0,0,0,.45)}
+.community-close{position:absolute;right:18px;top:12px;z-index:4;border:0;background:transparent;color:#fff;font:300 38px/1 var(--sans);cursor:pointer;padding:6px}
+.community-form-panel{padding:42px 44px 34px}
+.community-kicker{text-align:center;text-transform:uppercase;letter-spacing:.18em;color:var(--latitude-brass);font-weight:600;margin:0 0 10px}
+.community-kicker:after{content:'';display:block;width:36px;height:1px;background:var(--latitude-brass);margin:10px auto 0}
+.community-form-panel h2{text-align:center;font:500 clamp(29px,3vw,42px)/1.1 var(--sans);letter-spacing:-.025em;margin:0 0 18px}
+.community-intro{text-align:center;max-width:600px;margin:0 auto 26px;line-height:1.55;color:#31363b}
+.community-form{display:grid;gap:13px}
+.community-form label,.community-role-group legend{font-size:13px;font-weight:600;color:#111}
+.community-form input,.community-form select,.community-form textarea{width:100%;margin-top:7px;border:1px solid #d6d9dc;background:#fff;padding:12px 13px;font:400 14px/1.35 var(--sans);color:#111;border-radius:4px;outline:none}
+.community-form input:focus,.community-form select:focus,.community-form textarea:focus{border-color:var(--latitude-brass);box-shadow:0 0 0 2px rgba(181,160,120,.16)}
+.optional{font-weight:400;color:#6d7378}
+.community-two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.community-role-group{border:0;padding:0;margin:2px 0 0}
+.community-role-group legend{margin-bottom:10px}
+.community-role-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
+.community-role-grid label{display:flex;align-items:center;gap:10px;border:1px solid #ddd5c5;padding:11px 13px;border-radius:4px;cursor:pointer;font-weight:500}
+.community-role-grid input{width:18px;height:18px;margin:0;accent-color:var(--latitude-brass)}
+.community-conditional[hidden]{display:none!important}
+.community-tailor{margin:3px 0 0;padding:13px 15px;border:1px solid #e0d3b8;background:#fbf8f2;font-size:12px;line-height:1.45;color:#46413a}
+.community-checkbox{display:flex;align-items:flex-start;gap:10px;font-weight:400!important;line-height:1.35}
+.community-checkbox input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--latitude-brass);flex:0 0 18px}
+.community-submit{border:1px solid var(--latitude-brass);background:var(--latitude-brass);color:#fff;padding:15px 20px;font:500 16px/1.2 var(--sans);cursor:pointer;transition:.2s}
+.community-submit:hover{background:#9f895f;border-color:#9f895f}
+.community-privacy{text-align:center;margin:0;color:#72777b;font-size:11px}
+.community-image-panel{position:relative;min-height:720px;background:linear-gradient(180deg,rgba(5,16,27,.05),rgba(2,10,18,.65) 58%,rgba(2,8,15,.96)),url('assets/community-dallas.jpg') center/cover no-repeat;color:#fff;display:flex;align-items:flex-end;justify-content:center;padding:44px 30px}
+.community-image-copy{text-align:center;display:flex;flex-direction:column;align-items:center}
+.community-image-copy h3{font:400 clamp(28px,3vw,38px)/1.2 var(--serif);margin:0 0 18px}
+.community-image-copy h3 span{display:block;white-space:nowrap}
+.community-image-rule{width:46px;height:1px;background:var(--latitude-brass);margin-bottom:22px}
+.community-image-copy strong{font:500 22px/1.1 var(--sans);letter-spacing:.18em;color:var(--latitude-brass)}
+.community-image-copy small{font:500 10px/1.2 var(--sans);letter-spacing:.3em;color:var(--latitude-brass);margin-top:8px}
+.community-image-copy em{font:400 14px/1.3 var(--serif);margin-top:20px;color:#fff}
+body.modal-open{overflow:hidden}
+@media(max-width:900px){
+  .community-dialog{grid-template-columns:1fr;max-width:680px}
+  .community-image-panel{display:none}
+  .community-close{color:#111}
+}
+@media(max-width:600px){
+  .community-modal{padding:10px}
+  .community-form-panel{padding:36px 20px 26px}
+  .community-two-col,.community-role-grid{grid-template-columns:1fr}
+  .community-trigger{min-width:0;width:100%}
+}
+
+
+/* v2.7 — compact community modal and consultation page */
+#insights .insight-intro>p:not(.eyebrow){max-width:590px}
+.community-dialog{
+  width:min(1040px,96vw)!important;
+  height:min(780px,92vh)!important;
+  max-height:92vh!important;
+  overflow:hidden!important;
+  grid-template-columns:minmax(0,58%) minmax(340px,42%)!important;
+}
+.community-form-panel{padding:26px 36px 22px!important;overflow:hidden}
+.community-kicker{margin-bottom:6px!important;font-size:12px}
+.community-kicker:after{margin-top:7px!important}
+.community-form-panel h2{font-size:clamp(27px,2.6vw,38px)!important;margin-bottom:10px!important}
+.community-intro{margin-bottom:14px!important;line-height:1.4!important;font-size:14px}
+.community-form{gap:8px!important}
+.community-form label,.community-role-group legend{font-size:12px!important}
+.community-form input,.community-form select,.community-form textarea{margin-top:4px!important;padding:9px 11px!important;font-size:13px!important}
+.community-two-col{gap:10px!important}
+.community-role-group legend{margin-bottom:6px!important}
+.community-role-grid{gap:6px 10px!important}
+.community-role-grid label{padding:8px 11px!important;font-size:12px!important}
+.community-role-grid input{width:16px!important;height:16px!important}
+.community-tailor{padding:8px 11px!important;font-size:11px!important;line-height:1.35!important}
+.community-checkbox{font-size:11px!important}
+.community-checkbox input{width:16px!important;height:16px!important;flex-basis:16px!important}
+.community-submit{padding:11px 18px!important;font-size:14px!important}
+.community-privacy{font-size:10px!important}
+.community-image-panel{
+  min-height:0!important;height:100%!important;
+  background:linear-gradient(180deg,rgba(5,16,27,.03),rgba(2,10,18,.45) 58%,rgba(2,8,15,.94)),url('assets/community-dallas-evening.jpg') center/cover no-repeat!important;
+  padding:30px 24px!important;
+}
+.community-image-copy h3{font-size:clamp(25px,2.7vw,35px)!important;margin-bottom:12px!important}
+.community-image-rule{margin-bottom:15px!important}
+.community-image-copy strong{font-size:20px!important}
+.community-image-copy em{font-size:12px!important;margin-top:14px!important}
+@media(max-width:900px){
+  .community-dialog{height:auto!important;max-height:94vh!important;overflow:auto!important}
+  .community-form-panel{overflow:visible!important}
+}
+
+/* Schedule a consultation page */
+.schedule-page{background:#fff;color:#0b1117}
+.schedule-page .site-header{
+  position:absolute;top:0;left:0;right:0;background:transparent;border-bottom:1px solid rgba(255,255,255,.2);
+  color:#fff;backdrop-filter:none
+}
+.schedule-page .site-header nav a:after{background:var(--latitude-brass,#b5a078)!important}
+.schedule-page .header-cta{border-color:var(--latitude-brass,#b5a078);color:var(--latitude-brass,#b5a078)}
+.schedule-hero{min-height:520px;position:relative;display:flex;align-items:center;background:url('assets/consultation-dallas-morning.jpg') center 48%/cover no-repeat;color:#fff}
+.schedule-hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,10,17,.78),rgba(3,10,17,.38) 44%,rgba(3,10,17,.06) 74%)}
+.schedule-hero-copy{position:relative;z-index:1;padding:135px clamp(32px,5vw,86px) 85px;max-width:720px}
+.schedule-hero h1{font:400 clamp(52px,5.3vw,78px)/1.03 var(--sans);letter-spacing:-.04em;margin:0 0 34px}
+.schedule-hero-link{display:inline-flex;gap:18px;align-items:center;color:var(--latitude-brass,#b5a078);font-weight:500;font-size:16px}
+.schedule-booking{padding:72px clamp(28px,5vw,82px) 82px;background:#fff}
+.schedule-booking-grid{max-width:1320px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.88fr);gap:38px;align-items:start}
+.schedule-card{border:1px solid #e0e3e6;background:#fff;padding:34px 34px 28px;box-shadow:0 12px 34px rgba(15,25,35,.05)}
+.schedule-card h2{text-transform:uppercase;font:600 14px/1.2 var(--sans);letter-spacing:.08em;margin:0 0 30px}
+.schedule-card h2:after{content:'';display:block;width:34px;height:1px;background:var(--latitude-brass,#b5a078);margin-top:15px}
+.consultation-form{display:grid;gap:17px}
+.form-two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.consultation-form label{font-size:12px;font-weight:600;color:#111}
+.consultation-form input,.consultation-form select,.consultation-form textarea{width:100%;margin-top:7px;border:1px solid #d7dadd;padding:13px 14px;font:400 14px/1.4 var(--sans);background:#fff;color:#111;outline:none}
+.consultation-form input:focus,.consultation-form select,.consultation-form textarea:focus{border-color:var(--latitude-brass,#b5a078);box-shadow:0 0 0 2px rgba(181,160,120,.14)}
+.consultation-form textarea{min-height:105px;resize:vertical}
+.consultation-optin{display:flex;align-items:flex-start;gap:10px;font-weight:400!important;line-height:1.35}
+.consultation-optin input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--latitude-brass,#b5a078);flex:0 0 18px}
+.schedule-submit{border:1px solid var(--latitude-brass,#b5a078);background:var(--latitude-brass,#b5a078);color:#fff;padding:15px 18px;font:600 15px/1.2 var(--sans);cursor:pointer}
+.schedule-privacy{text-align:center;color:#747b81;font-size:11px;margin:0}
+.calendar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.calendar-header button{border:0;background:transparent;font-size:25px;cursor:pointer;color:#111}
+.calendar-month{font-weight:600}
+.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.calendar-weekdays{font-size:10px;color:#6f767d;margin-bottom:8px}
+.calendar-days button{aspect-ratio:1;border:0;background:transparent;cursor:pointer;border-radius:50%;font:500 12px var(--sans)}
+.calendar-days button:hover,.calendar-days button.selected{background:var(--latitude-brass,#b5a078);color:#fff}
+.calendar-days button.muted{color:#b0b5ba;cursor:default}
+.selected-date-label{font-weight:600;margin:24px 0 13px;font-size:13px}
+.time-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.time-grid button{border:1px solid #d6dade;background:#fff;padding:12px 8px;cursor:pointer;font:500 12px var(--sans)}
+.time-grid button:hover,.time-grid button.selected{border-color:var(--latitude-brass,#b5a078);background:#f7f3eb}
+.timezone{margin:18px 0 0;color:#5f666d;font-size:11px}
+.legal-footer{background:#fff;color:#596169;border-top:1px solid #e4e6e8;padding:22px clamp(28px,5vw,82px);display:flex;justify-content:space-between;gap:20px;font-size:11px}
+.legal-footer p{margin:0}.legal-footer a:hover{color:var(--latitude-brass,#b5a078)}
+@media(max-width:980px){.schedule-booking-grid{grid-template-columns:1fr}.schedule-page .site-header{position:absolute}.schedule-hero{min-height:470px}.schedule-card{padding:28px 24px}}
+@media(max-width:640px){.schedule-hero h1{font-size:46px}.form-two{grid-template-columns:1fr}.schedule-card{padding:24px 18px}.legal-footer{flex-direction:column}.schedule-page .site-header nav{background:rgba(3,9,15,.98)}}
+
+
+/* v3.1 — complete punch-list overrides built from the last working v2.7 base */
+:root{--latitude-brass:#b5a078}
+
+/* Homepage final CTA */
+#contact .cta-button{background:transparent!important;border:1px solid var(--latitude-brass)!important;color:var(--latitude-brass)!important}
+#contact .cta-button:hover{background:var(--latitude-brass)!important;border-color:var(--latitude-brass)!important;color:#05090d!important}
+#contact .cta-button:hover span{color:#05090d!important}
+
+/* Meet Darin eyebrow */
+#darin .eyebrow,#darin .darin-eyebrow{color:var(--latitude-brass)!important}
+
+/* Shorter What We Do cards while retaining centered content */
+#what-we-do .service-card{min-height:300px!important;padding:28px 22px!important;justify-content:center!important;align-items:center!important;text-align:center!important}
+#what-we-do .service-card h3,#what-we-do .service-card p{width:100%;text-align:center!important}
+
+/* Community modal: balanced vertical spacing, single desktop viewport, approved daytime Dallas image */
+.community-dialog{height:min(740px,92vh)!important;max-height:92vh!important;overflow:hidden!important;grid-template-columns:minmax(0,58%) minmax(340px,42%)!important}
+.community-form-panel{display:flex!important;flex-direction:column!important;justify-content:center!important;padding:30px 36px 18px!important;overflow:hidden!important}
+.community-kicker{margin-bottom:6px!important}
+.community-form-panel h2{margin-bottom:9px!important}
+.community-intro{margin-bottom:12px!important;line-height:1.38!important}
+.community-form{gap:7px!important}
+.community-form input,.community-form select,.community-form textarea{padding:8px 10px!important}
+.community-role-grid{gap:6px 10px!important}
+.community-role-grid label{padding:8px 10px!important}
+.community-tailor{padding:7px 10px!important;margin-top:2px!important}
+.community-submit{padding:10px 16px!important}
+.community-privacy{margin-top:0!important}
+.community-image-panel{min-height:0!important;height:100%!important;background:linear-gradient(180deg,rgba(5,16,27,.02),rgba(2,10,18,.28) 55%,rgba(2,8,15,.90)),url('assets/community-dallas-daytime.jpg') center/cover no-repeat!important;padding:28px 24px!important}
+
+/* Schedule page header matches the homepage brass treatment */
+.schedule-page .wordmark span{color:var(--latitude-brass)!important}
+.schedule-page .header-cta{border-color:var(--latitude-brass)!important;color:var(--latitude-brass)!important;background:transparent!important}
+.schedule-page .header-cta:hover{background:var(--latitude-brass)!important;color:#05090d!important}
+.schedule-page .site-header nav a:after{background:var(--latitude-brass)!important}
+
+@media(max-width:900px){
+  .community-dialog{height:auto!important;max-height:94vh!important;overflow:auto!important}
+  .community-form-panel{justify-content:flex-start!important;overflow:visible!important;padding:34px 22px 24px!important}
+}
