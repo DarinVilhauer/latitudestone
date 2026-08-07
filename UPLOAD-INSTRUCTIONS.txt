@@ -1,10 +1,17 @@
-LATITUDE STONE — COMPLETE GITHUB PACKAGE
+LATITUDE STONE WEBSITE v3.2 — COMPLETE GITHUB PACKAGE
 
 1. Extract this ZIP on your computer.
-2. In the GitHub repository root, choose Add file > Upload files.
-3. Upload ALL extracted files and folders, including the contents of the assets folder.
-4. Allow matching files to be replaced.
-5. Commit directly to the main branch.
-6. Do not upload the ZIP itself.
+2. In GitHub, open the latitudestone repository and choose Add file > Upload files.
+3. Upload ALL extracted files and the assets folder into the repository root.
+4. Replace matching files when prompted. Do not upload the ZIP itself.
+5. Commit the upload once and wait for the Pages workflow to finish.
 
-This package is built from the last confirmed working v2.7 website and includes the approved punch-list updates.
+Included updates:
+- Meet Darin section label forced to muted brass.
+- Mobile hero preserves a proper break between “on” and “Commercial.”
+- Community popup desktop spacing is more balanced.
+- Community popup is rebuilt for phones as a readable single-column form.
+- Popup title is shortened to Latitude Stone Community.
+- Footer Contact opens Info@LatitudeStoneRealEstate.com.
+- Footer Resources order is Our market, Market intelligence, Join our community.
+- Footer Join our community opens the existing popup.

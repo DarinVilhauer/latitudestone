@@ -30,7 +30,7 @@ window.addEventListener('scroll',updateHeaderState,{passive:true});
 
 // Latitude Stone CRE Community modal
 const communityModal=document.querySelector('#community-modal');
-const communityTrigger=document.querySelector('.community-trigger');
+const communityTriggers=[...document.querySelectorAll('.community-trigger')];
 const communityForm=document.querySelector('#community-form');
 const communityCloseButtons=[...document.querySelectorAll('[data-community-close]')];
 const roleInputs=[...document.querySelectorAll('input[name="role"]')];
@@ -52,7 +52,7 @@ function closeCommunityModal(){
   document.body.classList.remove('modal-open');
   communityLastFocus?.focus?.();
 }
-communityTrigger?.addEventListener('click',openCommunityModal);
+communityTriggers.forEach(trigger=>trigger.addEventListener('click',event=>{event.preventDefault();openCommunityModal();}));
 communityCloseButtons.forEach(button=>button.addEventListener('click',closeCommunityModal));
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&communityModal?.classList.contains('open'))closeCommunityModal();});
 roleInputs.forEach(input=>input.addEventListener('change',()=>{
