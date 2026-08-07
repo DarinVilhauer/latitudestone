@@ -1,8 +1,14 @@
-Latitude Stone Homepage v2.6
-- Market Intelligence left copy changed to “Stay ahead of the market.”
-- Added “Join the Latitude Stone CRE Community” CTA.
-- Added responsive split-panel signup modal with Dallas skyline image.
-- Removed Tenant and Service Provider role choices.
-- Added minimal conditional fields based on selected role.
-- Modal can be closed by X, outside click, or Escape.
-- Static GitHub Pages submission opens a prefilled email to info@latitudestonerealestate.com. Connect to a CRM/form endpoint later for automatic database capture.
+Latitude Stone Homepage v2.3
+
+Applied requested corrections:
+- What we do label changed to muted brass.
+- Service-card divider dashes changed to muted brass.
+- Our market label and four divider dashes changed to muted brass.
+- Market map contrast and saturation increased slightly for clearer highway signs and labels.
+- Meet Darin label changed to muted brass.
+- Meet Darin metrics made slightly bolder.
+- Metric outline and internal dividers changed to muted brass.
+- Why Latitude Stone label and pillar dashes changed to muted brass.
+- Vertical dividers restored between the four Why Latitude Stone pillars in muted brass.
+- Market intelligence label changed to muted brass.
+- No other layout, copy, image, or section changes.

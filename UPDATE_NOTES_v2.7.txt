@@ -1,9 +1,9 @@
-Latitude Stone v2.7
+Latitude Stone Homepage v2.5
 
-- Market Intelligence community sentence shortened to two lines on desktop.
-- CRE Community modal compacted to fit within one desktop viewport.
-- Modal retains conditional fields and uses one fixed evening Dallas skyline image.
-- Added schedule.html consultation page with transparent header, user-supplied morning Dallas image, intake form, date/time selector, and minimal legal footer.
-- Homepage consultation CTAs now link to schedule.html.
-
-Note: The calendar interface is front-end only until connected to Darin's live calendar/Calendly account.
+Changes from v2.4:
+- Replaced Hero image #1 with the new high-resolution Dallas tower photograph.
+- Kept Hero images #2 and #3 unchanged.
+- Vertically centered the title, muted brass divider, and description in all five What We Do cards.
+- Explicitly corrected the Meet Darin section label to muted brass.
+- Vertically and horizontally centered all four Why Latitude Stone pillar blocks while preserving the muted brass dividers.
+- No other homepage layout, copy, or image changes.

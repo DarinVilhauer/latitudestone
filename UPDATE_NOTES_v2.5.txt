@@ -1,9 +1,13 @@
-Latitude Stone Homepage v2.5
+Latitude Stone Homepage v2.2
 
-Changes from v2.4:
-- Replaced Hero image #1 with the new high-resolution Dallas tower photograph.
-- Kept Hero images #2 and #3 unchanged.
-- Vertically centered the title, muted brass divider, and description in all five What We Do cards.
-- Explicitly corrected the Meet Darin section label to muted brass.
-- Vertically and horizontally centered all four Why Latitude Stone pillar blocks while preserving the muted brass dividers.
-- No other homepage layout, copy, or image changes.
+Applied updates:
+- Our Market and Why Latitude Stone use the same light gray as What We Do cards.
+- Typography in those sections changed to black/dark gray.
+- Full-color market map retained.
+- All section eyebrow labels use muted brass.
+- Header and footer REAL ESTATE GROUP use muted brass.
+- Footer headings Company, What we do, and Resources use muted brass.
+- Hero headline reduced and forced to two lines on desktop.
+- What We Do service titles made slightly bolder.
+- Meet Darin metrics made slightly bolder with darker separators.
+- Why Latitude Stone pillar titles made slightly bolder.

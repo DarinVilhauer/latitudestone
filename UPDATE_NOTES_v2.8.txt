@@ -1,9 +1,8 @@
-Latitude Stone Website v2.8 — Punch List Update
-
-- Homepage final CTA renamed to “Start the conversation.”
-- CTA hover text and arrow change to black on muted brass fill.
-- Meet Darin section label locked to muted brass.
-- Community pop-up spacing rebalanced and right-side image replaced with the uploaded daytime Dallas image.
-- Schedule page header branding matched to the homepage, including muted brass subtitle and CTA border.
-- What We Do cards shortened while keeping content centered.
-- Market Intelligence sentence updated to remove the repeated CRE reference.
+Latitude Stone Homepage v2.6
+- Market Intelligence left copy changed to “Stay ahead of the market.”
+- Added “Join the Latitude Stone CRE Community” CTA.
+- Added responsive split-panel signup modal with Dallas skyline image.
+- Removed Tenant and Service Provider role choices.
+- Added minimal conditional fields based on selected role.
+- Modal can be closed by X, outside click, or Escape.
+- Static GitHub Pages submission opens a prefilled email to info@latitudestonerealestate.com. Connect to a CRM/form endpoint later for automatic database capture.
