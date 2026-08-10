@@ -1,20 +1,16 @@
-Latitude Stone Website v3.3 — Punch List + Consultation Flow
+Latitude Stone Website v3.4 — Homepage & Mobile Polish
 
-Upload the CONTENTS of this folder to the ROOT of your GitHub repository.
-Replace matching files when prompted.
+Upload the CONTENTS of this folder to the ROOT of the GitHub repository, replacing matching files.
+Do not upload the ZIP itself.
 
-This package includes:
-- Homepage Why Latitude Stone headline: "Built on relationships. Driven by long-term value."
-- Meet Darin label forced to muted brass
-- What We Do card title/dash alignment normalized
-- Why Latitude Stone pillar title/dash alignment normalized
-- All pillar divider dashes standardized to 1px
-- Footer Join our community changed to a simple left-aligned text link
-- Photographer credit removed
-- Schedule My Consultation moved below both the information and calendar panels
-- Schedule CTA disabled until required information, date, and time are selected
-- Schedule CTA helper text updates as the user completes the flow
+Included updates:
+- What We Do section heading moved upward.
+- Why Latitude Stone pillar content moved upward on desktop.
+- “Driven by long-term value.” kept on one line on desktop.
+- Footer “Join our community” matches the other Resources links.
+- Schedule Consultation information/calendar cards match heights on desktop.
+- Community pop-up role choices are left-aligned on mobile.
+- First Why Latitude Stone mobile pillar gets the muted-brass left accent bar.
+- Mobile “Stay ahead of the market.” headline is bold.
 
-After GitHub Pages deploys, hard refresh the live site:
-Windows: Ctrl + Shift + R
-Mac: Command + Shift + R
+All prior v3.3 updates are retained.
