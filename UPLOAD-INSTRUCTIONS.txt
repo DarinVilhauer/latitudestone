@@ -1,17 +1,20 @@
-LATITUDE STONE WEBSITE v3.2 — COMPLETE GITHUB PACKAGE
+Latitude Stone Website v3.3 — Punch List + Consultation Flow
 
-1. Extract this ZIP on your computer.
-2. In GitHub, open the latitudestone repository and choose Add file > Upload files.
-3. Upload ALL extracted files and the assets folder into the repository root.
-4. Replace matching files when prompted. Do not upload the ZIP itself.
-5. Commit the upload once and wait for the Pages workflow to finish.
+Upload the CONTENTS of this folder to the ROOT of your GitHub repository.
+Replace matching files when prompted.
 
-Included updates:
-- Meet Darin section label forced to muted brass.
-- Mobile hero preserves a proper break between “on” and “Commercial.”
-- Community popup desktop spacing is more balanced.
-- Community popup is rebuilt for phones as a readable single-column form.
-- Popup title is shortened to Latitude Stone Community.
-- Footer Contact opens Info@LatitudeStoneRealEstate.com.
-- Footer Resources order is Our market, Market intelligence, Join our community.
-- Footer Join our community opens the existing popup.
+This package includes:
+- Homepage Why Latitude Stone headline: "Built on relationships. Driven by long-term value."
+- Meet Darin label forced to muted brass
+- What We Do card title/dash alignment normalized
+- Why Latitude Stone pillar title/dash alignment normalized
+- All pillar divider dashes standardized to 1px
+- Footer Join our community changed to a simple left-aligned text link
+- Photographer credit removed
+- Schedule My Consultation moved below both the information and calendar panels
+- Schedule CTA disabled until required information, date, and time are selected
+- Schedule CTA helper text updates as the user completes the flow
+
+After GitHub Pages deploys, hard refresh the live site:
+Windows: Ctrl + Shift + R
+Mac: Command + Shift + R

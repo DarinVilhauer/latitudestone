@@ -77,23 +77,98 @@ const calendarMonth=document.querySelector('#calendar-month');
 const selectedDateLabel=document.querySelector('#selected-date-label');
 const consultationDate=document.querySelector('#consultation-date');
 const consultationTime=document.querySelector('#consultation-time');
+const scheduleSubmit=document.querySelector('#schedule-submit');
+
 if(scheduleForm&&calendarDays){
-  let viewDate=new Date(2026,7,1); let selectedDate=null;
+  let viewDate=new Date(2026,7,1);
+  let selectedDate=null;
+
+  const requiredFormComplete=()=>{
+    const required=[...scheduleForm.querySelectorAll('[required]')];
+    return required.every(field=>{
+      if(field.type==='radio') return !!scheduleForm.querySelector(`[name="${field.name}"]:checked`);
+      return String(field.value||'').trim()!=='';
+    });
+  };
+
+  const updateScheduleCTA=()=>{
+    if(!scheduleSubmit)return;
+    const formComplete=requiredFormComplete();
+    const hasDate=!!consultationDate?.value;
+    const hasTime=!!consultationTime?.value;
+
+    if(!formComplete){
+      scheduleSubmit.textContent='Complete the form to continue';
+      scheduleSubmit.disabled=true;
+    }else if(!hasDate||!hasTime){
+      scheduleSubmit.textContent='Select a date & time';
+      scheduleSubmit.disabled=true;
+    }else{
+      scheduleSubmit.textContent='Schedule My Consultation';
+      scheduleSubmit.disabled=false;
+    }
+  };
+
   const renderCalendar=()=>{
     calendarMonth.textContent=viewDate.toLocaleDateString('en-US',{month:'long',year:'numeric'});
     calendarDays.innerHTML='';
     const y=viewDate.getFullYear(),m=viewDate.getMonth();
     const first=new Date(y,m,1).getDay(), total=new Date(y,m+1,0).getDate();
-    for(let i=0;i<first;i++){const b=document.createElement('button');b.type='button';b.className='muted';b.disabled=true;b.textContent='';calendarDays.appendChild(b)}
+    for(let i=0;i<first;i++){
+      const b=document.createElement('button');
+      b.type='button';b.className='muted';b.disabled=true;b.textContent='';
+      calendarDays.appendChild(b);
+    }
     for(let d=1;d<=total;d++){
-      const b=document.createElement('button');b.type='button';b.textContent=d;
-      b.addEventListener('click',()=>{selectedDate=new Date(y,m,d);document.querySelectorAll('#calendar-days button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');const label=selectedDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});selectedDateLabel.textContent=label;consultationDate.value=label;});
-      calendarDays.appendChild(b)
+      const b=document.createElement('button');
+      b.type='button';b.textContent=d;
+      b.addEventListener('click',()=>{
+        selectedDate=new Date(y,m,d);
+        document.querySelectorAll('#calendar-days button').forEach(x=>x.classList.remove('selected'));
+        b.classList.add('selected');
+        const label=selectedDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+        selectedDateLabel.textContent=label;
+        consultationDate.value=label;
+        updateScheduleCTA();
+      });
+      calendarDays.appendChild(b);
     }
   };
-  document.querySelector('#prev-month')?.addEventListener('click',()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()-1,1);renderCalendar()});
-  document.querySelector('#next-month')?.addEventListener('click',()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,1);renderCalendar()});
-  document.querySelectorAll('#time-grid button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#time-grid button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');consultationTime.value=b.textContent.trim()}));
-  scheduleForm.addEventListener('submit',event=>{event.preventDefault();if(!scheduleForm.reportValidity())return;if(!consultationDate.value||!consultationTime.value){alert('Please select a date and time.');return;}const data=new FormData(scheduleForm);const lines=[];for(const [k,v] of data.entries())if(String(v).trim())lines.push(`${k.replaceAll('_',' ')}: ${v}`);window.location.href=`mailto:info@latitudestonerealestate.com?subject=${encodeURIComponent('Consultation Request')}&body=${encodeURIComponent(lines.join('\n'))}`});
+
+  document.querySelector('#prev-month')?.addEventListener('click',()=>{
+    viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()-1,1);
+    renderCalendar();
+  });
+  document.querySelector('#next-month')?.addEventListener('click',()=>{
+    viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,1);
+    renderCalendar();
+  });
+
+  document.querySelectorAll('#time-grid button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#time-grid button').forEach(x=>x.classList.remove('selected'));
+    b.classList.add('selected');
+    consultationTime.value=b.textContent.trim();
+    updateScheduleCTA();
+  }));
+
+  scheduleForm.addEventListener('input',updateScheduleCTA);
+  scheduleForm.addEventListener('change',updateScheduleCTA);
+
+  scheduleForm.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(!scheduleForm.reportValidity())return;
+    if(!consultationDate.value||!consultationTime.value){
+      alert('Please select a date and time.');
+      return;
+    }
+    const data=new FormData(scheduleForm);
+    const lines=[];
+    for(const [k,v] of data.entries()){
+      if(String(v).trim())lines.push(`${k.replaceAll('_',' ')}: ${v}`);
+    }
+    window.location.href=`mailto:info@latitudestonerealestate.com?subject=${encodeURIComponent('Consultation Request')}&body=${encodeURIComponent(lines.join('\n'))}`;
+  });
+
   renderCalendar();
+  updateScheduleCTA();
 }
