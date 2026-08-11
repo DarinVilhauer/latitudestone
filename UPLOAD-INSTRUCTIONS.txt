@@ -1,16 +1,16 @@
-Latitude Stone Website v3.4 — Homepage & Mobile Polish
+LATITUDE STONE WEBSITE — v3.5 FINAL POLISH
 
-Upload the CONTENTS of this folder to the ROOT of the GitHub repository, replacing matching files.
-Do not upload the ZIP itself.
+1. Extract this ZIP on your computer.
+2. In GitHub, open the latitudestone repository on the main branch.
+3. Upload ALL files/folders inside this extracted folder to the repository root.
+4. Replace matching files when prompted. Do NOT upload the ZIP itself.
+5. Commit the upload, then allow GitHub Pages a few minutes to deploy.
+6. Hard refresh the live site after deployment (Windows: Ctrl+Shift+R; iPhone: close/reopen Safari or use a Private tab if cache persists).
 
-Included updates:
-- What We Do section heading moved upward.
-- Why Latitude Stone pillar content moved upward on desktop.
-- “Driven by long-term value.” kept on one line on desktop.
-- Footer “Join our community” matches the other Resources links.
-- Schedule Consultation information/calendar cards match heights on desktop.
-- Community pop-up role choices are left-aligned on mobile.
-- First Why Latitude Stone mobile pillar gets the muted-brass left accent bar.
-- Mobile “Stay ahead of the market.” headline is bold.
-
-All prior v3.3 updates are retained.
+V3.5 updates:
+- What We Do: only the five card titles move upward; brass dashes and body copy remain fixed and centered.
+- Why Latitude Stone: only the four pillar titles move upward; brass dashes and body copy remain fixed and centered.
+- Mobile Why Latitude Stone: all four left muted-brass accent rules are exactly 1px and identical.
+- Footer Resources: Join our community now uses the exact same font, size, color, weight and line treatment as Our market and Market intelligence.
+- Schedule Consultation: both panels remain equal height, while the Your Information form is spaced more evenly and the message box is taller to use the available space naturally.
+- All prior v3.4 desktop/mobile refinements remain intact.

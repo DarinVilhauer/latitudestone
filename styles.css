@@ -1553,3 +1553,67 @@ body.modal-open{overflow:hidden}
     font-weight:600!important;
   }
 }
+
+/* v3.5 — final alignment and booking-form balance polish */
+
+/* What We Do: move ONLY the service titles upward. Keep the brass rules and copy fixed. */
+#what-we-do .service-card h3{
+  transform:translateY(-22px)!important;
+}
+
+/* Why Latitude Stone: move ONLY each pillar title upward. Keep brass rule + body copy fixed. */
+#why .pillars article{
+  transform:none!important;
+}
+#why .pillars h3{
+  transform:translateY(-22px)!important;
+}
+
+/* Footer Resources: community link must be visually identical to the other resource links. */
+footer .footer-grid a.footer-community-trigger,
+footer .footer-grid a.footer-community-trigger:link,
+footer .footer-grid a.footer-community-trigger:visited{
+  display:block!important;
+  min-width:0!important;
+  width:auto!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:#5c646a!important;
+  font-family:var(--sans)!important;
+  font-size:12px!important;
+  font-weight:400!important;
+  line-height:normal!important;
+  letter-spacing:normal!important;
+  text-transform:none!important;
+  text-align:left!important;
+  transform:none!important;
+}
+footer .footer-grid a.footer-community-trigger:hover{
+  color:#0a1015!important;
+  background:transparent!important;
+  transform:none!important;
+}
+
+/* Schedule Consultation: retain equal-height cards, but use the left card's space more intentionally. */
+@media(min-width:981px){
+  .schedule-booking-grid>.schedule-card:first-child .consultation-form{
+    gap:22px!important;
+  }
+  .schedule-booking-grid>.schedule-card:first-child .consultation-form textarea{
+    min-height:138px!important;
+  }
+  .schedule-booking-grid>.schedule-card:first-child .consultation-optin{
+    margin-top:3px!important;
+  }
+}
+
+/* Mobile Why Latitude Stone: every left brass accent must be exactly the same 1px rule. */
+@media(max-width:560px){
+  #why .pillars article,
+  #why .pillars article:first-child,
+  #why .pillars article+article{
+    border-left:1px solid var(--latitude-brass,#b5a078)!important;
+  }
+}
