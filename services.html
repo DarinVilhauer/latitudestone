@@ -1,1 +1,132 @@
-const header=document.getElementById("siteHeader");addEventListener("scroll",()=>header&&header.classList.toggle("scrolled",scrollY>40));const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");o.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll(".reveal").forEach(el=>o.observe(el));const t=document.querySelector(".menu-toggle"),n=document.querySelector(".nav");if(t&&n)t.addEventListener("click",()=>{const x=n.classList.toggle("open");t.setAttribute("aria-expanded",x)});addEventListener("scroll",()=>{const p=document.querySelector(".hero-photo");if(p&&scrollY<innerHeight)p.style.transform=`scale(1.03) translateY(${scrollY*.08}px)`});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Latitude Stone Real Estate Group provides commercial real estate advisory, investment sales, property disposition, tenant representation, and property and asset management services across North Texas." name="description"/>
+<meta content="#040b12" name="theme-color"/>
+<title>What We Do | Latitude Stone Real Estate Group</title>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body class="services-page">
+<header class="site-header">
+<a aria-label="Latitude Stone home" class="wordmark" href="index.html#home"><strong>LATITUDE STONE</strong><span>REAL ESTATE GROUP</span></a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle"><span></span><span></span></button>
+<nav aria-label="Primary navigation">
+<a href="index.html#home">Home</a>
+<a class="active" href="services.html">What we do</a>
+<a href="index.html#market">Our market</a>
+<a href="index.html#darin">Meet Darin</a>
+<a href="index.html#why">Why Latitude Stone</a>
+<a href="index.html#insights">Market intelligence</a>
+</nav>
+<a class="outline-button header-cta" href="schedule.html">Schedule a consultation</a>
+</header>
+
+<main>
+<section class="services-hero">
+<div class="services-hero-overlay"></div>
+<div class="services-hero-copy reveal">
+<span class="services-hero-rule" aria-hidden="true"></span>
+<h1>What we do</h1>
+<p>Strategic commercial real estate services built around your goals.<br/>Insight, relationships, and execution from start to finish.</p>
+</div>
+</section>
+
+<section class="service-detail service-detail-odd" id="advisory">
+<div class="service-detail-copy reveal">
+<p class="service-number">01</p>
+<h2>Advisory services</h2>
+<p class="service-intro">Clear insight. Smarter decisions. We help you evaluate opportunities, shape strategy, and move forward with confidence.</p>
+<div class="service-capabilities three">
+<div><span></span><h3>Market analysis</h3><p>Understand market trends, pricing, and opportunity.</p></div>
+<div><span></span><h3>Strategy &amp; planning</h3><p>Real estate decisions aligned with your business goals.</p></div>
+<div><span></span><h3>Site selection</h3><p>Evaluate locations that support operational and financial objectives.</p></div>
+</div>
+</div>
+<div class="service-detail-image reveal"><img src="assets/services-advisory.jpg" alt="Executive boardroom representing Latitude Stone advisory services"/></div>
+</section>
+
+<section class="service-detail service-detail-even" id="investment-sales">
+<div class="service-detail-image reveal"><img src="assets/services-investment.jpg" alt="Modern commercial property representing investment sales"/></div>
+<div class="service-detail-copy reveal">
+<p class="service-number">02</p>
+<h2>Investment sales</h2>
+<p class="service-intro">Helping investors buy and sell commercial real estate with confidence. Every transaction is guided by market insight and disciplined execution.</p>
+<div class="service-capabilities four">
+<div><span></span><h3>Buyer representation</h3><p>Identify and evaluate opportunities that match your goals.</p></div>
+<div><span></span><h3>Seller representation</h3><p>Position your property to attract qualified buyers and maximize value.</p></div>
+<div><span></span><h3>1031 exchange support</h3><p>Coordinate replacement opportunities with your exchange and tax advisors.</p></div>
+<div><span></span><h3>Marketing &amp; positioning</h3><p>Targeted marketing designed to reach the right buyers.</p></div>
+</div>
+</div>
+</section>
+
+<section class="service-detail service-detail-odd" id="property-disposition">
+<div class="service-detail-copy reveal">
+<p class="service-number">03</p>
+<h2>Property disposition</h2>
+<p class="service-intro">Position your property for the market, reach qualified buyers, and move from strategy to closing with confidence.</p>
+<div class="service-capabilities three">
+<div><span></span><h3>Property positioning</h3><p>Build a plan around your timing, objectives, and pricing strategy.</p></div>
+<div><span></span><h3>Buyer outreach</h3><p>Reach qualified, motivated buyers through targeted outreach.</p></div>
+<div><span></span><h3>Negotiation &amp; closing</h3><p>Manage negotiations and due diligence through a smooth close.</p></div>
+</div>
+</div>
+<div class="service-detail-image reveal"><img src="assets/services-disposition.jpg" alt="Downtown Dallas commercial real estate representing property disposition"/></div>
+</section>
+
+<section class="service-detail service-detail-even" id="tenant-representation">
+<div class="service-detail-image reveal"><img src="assets/services-tenant.jpg" alt="Modern office interior representing tenant representation"/></div>
+<div class="service-detail-copy reveal">
+<p class="service-number">04</p>
+<h2>Tenant representation</h2>
+<p class="service-intro">Helping businesses find the right space to grow. From requirements to lease negotiation, we advocate for your goals at every step.</p>
+<div class="service-capabilities four service-process">
+<div><span></span><h3>Requirements analysis</h3><p>Clarify your needs, timing, and space requirements.</p></div>
+<div><span></span><h3>Market search</h3><p>Identify and evaluate properties that fit your criteria.</p></div>
+<div><span></span><h3>Lease negotiation</h3><p>Secure favorable terms and lease conditions.</p></div>
+<div><span></span><h3>Occupancy</h3><p>Support a smooth transition into your new space.</p></div>
+</div>
+</div>
+</section>
+
+<section class="service-detail service-detail-odd" id="property-management">
+<div class="service-detail-copy reveal">
+<p class="service-number">05</p>
+<h2>Property &amp; asset management</h2>
+<p class="service-intro">Protect long-term asset value through proactive operations, clear reporting, and responsive tenant and vendor oversight.</p>
+<div class="service-capabilities three">
+<div><span></span><h3>Day-to-day management</h3><p>Hands-on oversight of operations and tenant relationships.</p></div>
+<div><span></span><h3>Financial reporting &amp; budgeting</h3><p>Clear reporting and budgets that support smart decisions.</p></div>
+<div><span></span><h3>Vendor &amp; capital oversight</h3><p>Manage vendors and capital projects to protect performance.</p></div>
+</div>
+</div>
+<div class="service-detail-image reveal"><img src="assets/services-management.jpg" alt="Modern industrial property representing property and asset management"/></div>
+</section>
+
+<section class="services-page-cta">
+<div class="services-page-cta-inner reveal">
+<div>
+<span class="services-cta-rule"></span>
+<h2>Ready to achieve more<br/>with your real estate?</h2>
+</div>
+<p>Let’s talk about your goals and how<br/>Latitude Stone can help you get there.</p>
+<a class="gold-button" href="schedule.html">Schedule a consultation <span>→</span></a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-grid">
+<div class="footer-brand"><strong>LATITUDE STONE</strong><span>REAL ESTATE GROUP</span><p>Boutique commercial real estate advisory and brokerage services throughout North Texas.</p></div>
+<div><b>Company</b><a href="index.html#darin">About Us</a><a href="index.html#why">Our Approach</a><a href="index.html#contact">Careers</a><a href="mailto:Info@LatitudeStoneRealEstate.com">Contact</a></div>
+<div><b>What we do</b><a href="#advisory">Advisory services</a><a href="#investment-sales">Investment sales</a><a href="#property-disposition">Property disposition</a><a href="#tenant-representation">Tenant representation</a><a href="#property-management">Property &amp; asset management</a></div>
+<div><b>Resources</b><a href="index.html#market">Our market</a><a href="index.html#insights">Market intelligence</a><a href="index.html#insights">Join our community</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Latitude Stone Real Estate Group, LLC. All rights reserved.</p><div class="compliance-links"><a href="#">Information About Brokerage Services (IABS)</a><span>|</span><a href="#">Consumer Protection Notice</a></div></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

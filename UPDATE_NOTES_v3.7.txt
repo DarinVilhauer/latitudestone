@@ -1,0 +1,14 @@
+Latitude Stone Website v3.7 — What We Do Page
+
+Added:
+- New services.html detail page
+- Approved Dallas HERO image
+- Approved Advisory, Investment Sales, and Property Disposition images
+- Approved Tenant Representation and Property & Asset Management imagery from the design rendering
+- Alternating edge-to-edge 50/50 service sections with generous white space between sections
+- Concise, plain-language service copy and capability callouts
+- 1031 exchange support under Investment Sales
+- Homepage 'Learn more about our services' link beneath the What We Do cards
+- Homepage footer service links now connect directly to the matching What We Do page sections
+
+Homepage header behavior is unchanged: clicking What we do still scrolls to the homepage What We Do section.
