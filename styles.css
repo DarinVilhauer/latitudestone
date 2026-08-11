@@ -1922,3 +1922,179 @@ footer .footer-grid a.footer-community-trigger:hover{
   .service-detail-image img{min-height:250px;max-height:300px}
   .services-page-cta{padding:40px 24px}
 }
+
+
+/* v3.8 — What We Do page punch-list refinements */
+.services-page .site-header{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  background:transparent!important;
+  border-bottom:1px solid rgba(255,255,255,.16);
+  backdrop-filter:none;
+}
+.services-page .site-header.scrolled{
+  position:fixed;
+  background:rgba(3,9,15,.94)!important;
+  backdrop-filter:blur(14px);
+}
+.services-page .wordmark span{
+  color:#b5a078!important;
+}
+.services-page .site-header nav a.active{
+  color:#b5a078!important;
+}
+.services-page .site-header nav a:after{
+  background:#b5a078!important;
+}
+.services-page .site-header nav a.active:after{
+  left:0!important;
+  right:0!important;
+}
+.services-page .header-cta{
+  color:#b5a078!important;
+  border-color:#b5a078!important;
+  background:transparent!important;
+}
+.services-page .header-cta:hover,
+.services-page .services-hero-cta:hover{
+  background:#b5a078!important;
+  color:#05090d!important;
+}
+.services-page .services-hero{
+  padding-top:76px;
+}
+.services-page .services-hero-overlay{
+  background:linear-gradient(90deg,rgba(4,11,18,.98) 0%,rgba(4,11,18,.90) 28%,rgba(4,11,18,.42) 60%,rgba(4,11,18,.14) 100%);
+}
+.services-page .services-hero-copy{
+  padding-left:clamp(26px,2.8vw,48px);
+}
+.services-page .services-hero-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  margin-top:28px;
+  color:#b5a078;
+  border-color:#b5a078;
+}
+.services-page .services-hero-rule{display:none!important}
+
+/* More breathing room after HERO and between service chapters */
+.services-page .service-detail:first-of-type{
+  margin-top:100px;
+}
+.services-page .service-detail{
+  margin-bottom:130px;
+}
+.services-page .service-detail:last-of-type{
+  margin-bottom:105px;
+}
+
+/* More space between service number and main section title */
+.services-page .service-number{
+  margin-bottom:28px;
+}
+
+/* Capability hierarchy: title -> brass dash -> description */
+.services-page .service-capabilities h3{
+  margin:0 0 12px;
+}
+.services-page .service-capabilities span{
+  display:block;
+  width:26px;
+  height:1px;
+  background:#b5a078;
+  margin:0 0 12px;
+}
+
+/* Tenant representation process: no column dividers, keep arrows on desktop */
+.services-page .service-process>div,
+.services-page .service-process>div+div{
+  border-left:0!important;
+}
+.services-page .service-process>div+div{
+  padding-left:20px;
+}
+.services-page .service-process>div:not(:last-child)::after{
+  display:block;
+  content:'→';
+  position:absolute;
+  right:-7px;
+  top:26px;
+  color:#b5a078;
+  font-size:15px;
+}
+
+/* Selected image crops */
+.services-page #tenant-representation .service-detail-image img{
+  object-position:center 54%;
+}
+.services-page #property-management .service-detail-image img{
+  object-position:center 52%;
+}
+
+/* Bottom CTA */
+.services-page .services-cta-rule{display:none!important}
+.services-page .services-page-cta-inner{
+  max-width:none;
+  margin:0;
+  grid-template-columns:minmax(440px,1.25fr) minmax(260px,.7fr) auto;
+}
+.services-page .services-page-cta h2{
+  margin-left:0;
+}
+.services-page .services-page-cta p{
+  max-width:390px;
+}
+.services-page .services-bottom-cta{
+  background:#b5a078!important;
+  border-color:#b5a078!important;
+  color:#05090d!important;
+}
+.services-page .services-bottom-cta:hover{
+  background:#a58d61!important;
+  border-color:#a58d61!important;
+  color:#05090d!important;
+}
+
+/* Desktop copy breathing room */
+@media(min-width:861px){
+  .services-page .service-detail-odd .service-detail-copy{
+    padding-left:clamp(26px,2.7vw,48px);
+    padding-right:clamp(52px,5.5vw,108px);
+  }
+  .services-page .service-detail-even .service-detail-copy{
+    padding-left:clamp(52px,5.5vw,108px);
+    padding-right:clamp(26px,2.7vw,48px);
+  }
+}
+
+@media(max-width:860px){
+  .services-page .site-header{
+    position:absolute;
+    background:transparent!important;
+  }
+  .services-page .site-header nav{
+    background:rgba(3,9,15,.98);
+  }
+  .services-page .services-hero{
+    padding-top:70px;
+  }
+  .services-page .service-detail:first-of-type{
+    margin-top:70px;
+  }
+  .services-page .service-detail{
+    margin-bottom:82px;
+  }
+  .services-page .service-number{
+    margin-bottom:18px;
+  }
+  .services-page .service-process>div:not(:last-child)::after{
+    display:none!important;
+  }
+  .services-page .services-page-cta-inner{
+    grid-template-columns:1fr;
+  }
+}

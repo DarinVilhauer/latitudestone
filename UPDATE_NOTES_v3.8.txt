@@ -1,0 +1,19 @@
+Latitude Stone Website v3.8 — What We Do punch-list update
+
+What We Do page:
+- Header is transparent over the HERO and darkens on scroll.
+- REAL ESTATE GROUP is muted brass.
+- Active What we do nav label + underline are muted brass.
+- Schedule a consultation header CTA uses muted brass styling.
+- HERO dash removed.
+- Added Start the Conversation CTA.
+- HERO text shifted slightly left and left overlay darkened.
+- Added white space between HERO and Section 1 and more spacing between all service sections.
+- Increased spacing between section numbers and service titles.
+- Capability blocks now use Title -> muted brass dash -> short description.
+- No dash under the main service headings.
+- Tenant Representation uses the selected retail image.
+- Tenant process vertical dividers removed; arrows retained on desktop and hidden on mobile.
+- Property & Asset Management uses the selected Class A industrial image.
+- Bottom CTA dash removed, copy changed to “Let’s discuss your commercial real estate goals.”
+- Bottom CTA uses muted brass fill.
