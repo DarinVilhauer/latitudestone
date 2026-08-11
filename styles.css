@@ -1617,3 +1617,56 @@ footer .footer-grid a.footer-community-trigger:hover{
     border-left:1px solid var(--latitude-brass,#b5a078)!important;
   }
 }
+
+/* v3.6 — final spacing polish: service-card rules, community form rhythm, footer balance */
+
+/* What We Do: keep title + copy fixed; raise only the muted brass divider so it is optically centered. */
+#what-we-do .service-card .title-divider,
+#what-we-do .service-card .service-divider,
+#what-we-do .service-card .mini-rule{
+  transform:translateY(-7px)!important;
+}
+
+/* Community modal desktop: use the available height with more comfortable vertical rhythm. */
+@media(min-width:981px){
+  .community-form-panel{
+    justify-content:center!important;
+    padding-top:34px!important;
+    padding-bottom:26px!important;
+  }
+  .community-form{
+    gap:14px!important;
+  }
+  .community-form input,
+  .community-form select,
+  .community-form textarea{
+    margin-top:6px!important;
+  }
+  .community-role-group legend{
+    margin-bottom:10px!important;
+  }
+  .community-role-grid{
+    gap:9px 10px!important;
+  }
+  .community-tailor{
+    margin-top:5px!important;
+    padding:10px 11px!important;
+  }
+  .community-checkbox{
+    margin-top:4px!important;
+  }
+  .community-submit{
+    margin-top:10px!important;
+    padding:15px 18px!important;
+  }
+  .community-privacy{
+    margin-top:5px!important;
+  }
+}
+
+/* Footer: visually center the What We Do column between Company and Resources on desktop. */
+@media(min-width:981px){
+  .footer-grid > div:nth-child(3){
+    transform:translateX(30px);
+  }
+}

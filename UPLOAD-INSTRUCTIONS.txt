@@ -1,16 +1,14 @@
-LATITUDE STONE WEBSITE — v3.5 FINAL POLISH
+LATITUDE STONE WEBSITE — v3.6 FINAL SPACING POLISH
 
 1. Extract this ZIP on your computer.
-2. In GitHub, open the latitudestone repository on the main branch.
-3. Upload ALL files/folders inside this extracted folder to the repository root.
-4. Replace matching files when prompted. Do NOT upload the ZIP itself.
-5. Commit the upload, then allow GitHub Pages a few minutes to deploy.
-6. Hard refresh the live site after deployment (Windows: Ctrl+Shift+R; iPhone: close/reopen Safari or use a Private tab if cache persists).
+2. Upload ALL extracted website files/folders into the ROOT of your GitHub repository.
+3. Replace matching files when prompted.
+4. Do NOT upload the ZIP itself.
+5. After GitHub Pages finishes deploying, hard-refresh the live site (Ctrl+Shift+R on Windows).
 
-V3.5 updates:
-- What We Do: only the five card titles move upward; brass dashes and body copy remain fixed and centered.
-- Why Latitude Stone: only the four pillar titles move upward; brass dashes and body copy remain fixed and centered.
-- Mobile Why Latitude Stone: all four left muted-brass accent rules are exactly 1px and identical.
-- Footer Resources: Join our community now uses the exact same font, size, color, weight and line treatment as Our market and Market intelligence.
-- Schedule Consultation: both panels remain equal height, while the Your Information form is spaced more evenly and the message box is taller to use the available space naturally.
-- All prior v3.4 desktop/mobile refinements remain intact.
+v3.6 changes:
+- What We Do: muted brass divider raised slightly so it sits optically centered between each title and description.
+- Community pop-up: desktop form spacing opened up to use the available height more naturally.
+- Footer: What We Do column shifted slightly right so it sits visually centered between Company and Resources.
+
+All prior v3.5 homepage, mobile, community, and consultation-page refinements are retained.
