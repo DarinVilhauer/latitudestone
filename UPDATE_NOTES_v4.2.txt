@@ -1,0 +1,39 @@
+Latitude Stone Website v4.2 — About Story + CTA Polish
+
+ABOUT PAGE
+- Homepage Meet Darin and Why Latitude Stone links now open the top of about.html.
+- About page header navigation text is white over the HERO.
+- HERO headline is now:
+  About
+  Latitude Stone
+- All About section numbers are muted brass.
+- Section 01 headline changed to “A higher perspective.”
+- Section 01 right side changed from a North Texas sidebar to a client-first philosophy:
+  Built around the client.
+  Listen first.
+  Think long term.
+  Execute with purpose.
+- Removed the Section 01 vertical divider.
+- Section 02 completely rewritten to avoid repeating the homepage:
+  “Commercial real estate, without the complexity.”
+  Speaks to both experienced CRE clients and people just getting started.
+- Section 03 Meet Darin copy tightened so it does not repeat Section 02.
+- Section 04 replaced the repeated process language with:
+  “Built for the long term.”
+  North Texas
+  Long-term relationships
+  Growing capabilities
+  A lasting business
+- No em dashes used in About page copy.
+
+CTA STANDARD
+- About and What We Do now share the same interior-page CTA layout.
+- Supporting sentence sits directly below and slightly indented from the headline.
+- Brass Schedule a consultation button sits closer to the copy.
+- Headline/supporting copy can vary by page.
+
+WHAT WE DO
+- HERO headline changed to two lines:
+  What
+  we do
+- Existing muted-brass supporting line remains.

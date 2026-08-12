@@ -2555,3 +2555,217 @@ footer .footer-grid b .footer-heading-link:hover{color:#b5a078!important}
 .about-page #darin,
 .about-page #approach{scroll-margin-top:84px}
 
+
+
+/* v4.2 — About story refinement + standardized interior CTA */
+
+/* About header: white nav over HERO */
+.about-page .site-header nav a{
+  color:#fff!important;
+}
+.about-page .site-header nav a:hover{
+  color:var(--latitude-brass)!important;
+}
+.about-page .wordmark strong{color:#fff!important}
+
+/* About HERO line break */
+.about-page .about-hero h1 span{
+  display:inline-block;
+}
+.about-page .about-hero h1{
+  max-width:680px;
+}
+
+/* All major About section numbers are muted brass */
+.about-page .about-number{
+  color:var(--latitude-brass)!important;
+}
+
+/* 01: higher perspective */
+.about-page .about-story{
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);
+  gap:clamp(76px,9vw,165px);
+}
+.about-page .about-story-side{
+  border-left:0!important;
+  padding:72px 0 26px 0!important;
+  align-self:center;
+}
+.about-page .about-story-side .about-side-kicker{
+  font-size:28px;
+  font-weight:500;
+}
+.about-principles{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:28px;
+}
+.about-principles strong{
+  color:var(--latitude-brass);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.01em;
+}
+
+/* 02: client-focused experience rather than homepage repetition */
+.about-page .about-why{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(320px,.7fr);
+  gap:clamp(70px,9vw,160px);
+  align-items:center;
+  background:var(--latitude-light-gray);
+}
+.about-client-copy{
+  max-width:850px;
+}
+.about-client-copy p{
+  max-width:760px;
+}
+.about-client-statement{
+  padding:42px 0 42px clamp(20px,3vw,55px);
+  border-left:1px solid #cfd3d6;
+}
+.about-client-statement p{
+  margin:0;
+  color:var(--latitude-brass)!important;
+  font-size:clamp(24px,2.1vw,34px)!important;
+  line-height:1.35!important;
+  max-width:520px;
+  font-weight:400;
+}
+
+/* 03: keep the personal image, slightly cleaner copy width */
+.about-page .about-darin-copy{
+  max-width:720px;
+}
+.about-page .about-darin-copy p{
+  max-width:680px;
+}
+
+/* 04: same simple visual treatment, new forward-looking content */
+.about-page .about-approach{
+  background:var(--latitude-light-gray);
+}
+.about-page .about-steps strong{
+  display:none;
+}
+.about-page .about-steps article{
+  padding-top:38px;
+}
+.about-page .about-steps h3{
+  min-height:24px;
+}
+
+/* Standard interior-page CTA system */
+.interior-cta-inner{
+  max-width:1500px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(50px,7vw,120px);
+  align-items:center;
+}
+.interior-cta-copy{
+  max-width:860px;
+}
+.interior-cta-copy h2{
+  margin:0;
+}
+.interior-cta-copy p{
+  margin:16px 0 0 clamp(10px,1.2vw,18px)!important;
+  max-width:620px;
+}
+.interior-cta-button{
+  justify-self:start;
+  min-width:255px;
+}
+
+/* About CTA */
+.about-page .about-cta{
+  padding:58px clamp(34px,5vw,84px);
+}
+.about-page .about-cta-inner{
+  max-width:1500px!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:clamp(50px,7vw,120px)!important;
+}
+.about-page .about-cta p{
+  color:#d9dfe3;
+}
+
+/* What We Do HERO: stronger two-line headline */
+.services-page .services-hero h1{
+  line-height:.92!important;
+}
+.services-page .services-hero h1 span{
+  display:inline-block;
+}
+.services-page .services-hero p{
+  margin-top:28px!important;
+}
+
+/* What We Do CTA mirrors About CTA */
+.services-page .services-page-cta{
+  padding:58px clamp(34px,5vw,84px)!important;
+}
+.services-page .services-page-cta-inner{
+  max-width:1500px!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:clamp(50px,7vw,120px)!important;
+  align-items:center!important;
+}
+.services-page .services-page-cta-inner>p{
+  display:none!important;
+}
+.services-page .services-page-cta .interior-cta-copy p{
+  display:block!important;
+  color:#d9dfe3;
+  font-size:15px!important;
+  line-height:1.55;
+}
+.services-page .services-page-cta .interior-cta-copy h2{
+  margin:0;
+}
+.services-page .services-page-cta .interior-cta-button{
+  justify-self:start;
+}
+
+@media(max-width:1000px){
+  .about-page .about-why{
+    grid-template-columns:1fr;
+  }
+  .about-client-statement{
+    border-left:0;
+    border-top:1px solid #cfd3d6;
+    padding:34px 0 0;
+  }
+}
+
+@media(max-width:860px){
+  .interior-cta-inner,
+  .about-page .about-cta-inner,
+  .services-page .services-page-cta-inner{
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+  }
+  .interior-cta-copy p{
+    margin-left:8px!important;
+  }
+  .interior-cta-button{
+    justify-self:start!important;
+    width:max-content;
+  }
+  .about-page .about-story-side{
+    padding-top:34px!important;
+  }
+}
+
+@media(max-width:620px){
+  .about-page .about-hero h1{
+    line-height:.96;
+  }
+  .interior-cta-button{
+    width:100%!important;
+  }
+}
