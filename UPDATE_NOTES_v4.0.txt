@@ -1,0 +1,13 @@
+Latitude Stone Website v4.0 — Punch List Round
+
+1. Fixed What We Do deep-link/footer navigation horizontal shift.
+   - Prevents side-entry animations from creating horizontal page overflow.
+   - Direct service anchors open in their final position and align below the header.
+2. Schedule a Consultation header: What we do now links to services.html.
+3. Increased What We Do + Schedule a Consultation interior HERO height together.
+   - Desktop: 630px; tablet: 540px; mobile: 500px.
+   - Homepage HERO remains intentionally taller/distinct.
+4. Removed Start the Conversation button from the What We Do HERO.
+5. Footer What we do heading now links to services.html while individual services retain deep links.
+6. Replaced Section 04 Tenant Representation image with the new clearer storefront image.
+7. Advisory Services no longer reveals on initial page load; it enters after the visitor begins scrolling.

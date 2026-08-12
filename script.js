@@ -172,3 +172,29 @@ if(scheduleForm&&calendarDays){
   renderCalendar();
   updateScheduleCTA();
 }
+
+// v4.0: service-page deep links + intentional first-section reveal
+if(document.body.classList.contains('services-page')){
+  const serviceIds=['advisory','investment-sales','property-disposition','tenant-representation','property-management'];
+  const hashId=location.hash.replace('#','');
+  const target=serviceIds.includes(hashId)?document.getElementById(hashId):null;
+
+  // A direct footer/deep link should never display a chapter in its off-canvas animation state.
+  if(target){
+    target.classList.add('visible');
+    requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));
+  }
+
+  // On a normal What We Do visit, Advisory should enter only after the visitor actually scrolls.
+  const advisory=document.getElementById('advisory');
+  if(advisory && !target){
+    advisory.classList.remove('visible');
+    const revealAdvisory=()=>{
+      if(window.scrollY>60){
+        advisory.classList.add('visible');
+        window.removeEventListener('scroll',revealAdvisory);
+      }
+    };
+    window.addEventListener('scroll',revealAdvisory,{passive:true});
+  }
+}

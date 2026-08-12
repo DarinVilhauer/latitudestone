@@ -2207,3 +2207,29 @@ footer .footer-grid a.footer-community-trigger:hover{
     transition:none!important;
   }
 }
+
+/* v4.0 — Interior navigation + HERO + deep-link polish */
+:root{--interior-hero-height:630px}
+.services-page,.services-page main{overflow-x:clip}
+@supports not (overflow:clip){.services-page,.services-page main{overflow-x:hidden}}
+
+/* Footer column headings may be links without changing the established visual treatment */
+footer .footer-grid b .footer-heading-link,
+footer .footer-grid b .footer-heading-link:link,
+footer .footer-grid b .footer-heading-link:visited{
+  color:inherit!important;font:inherit!important;letter-spacing:inherit!important;text-decoration:none!important;
+}
+footer .footer-grid b .footer-heading-link:hover{color:#b5a078!important}
+
+/* Direct service links land cleanly below the fixed header */
+.services-page .service-detail{scroll-margin-top:96px}
+
+/* Advisory waits for an intentional scroll on a normal page visit */
+.services-page #advisory.reveal:not(.visible){opacity:0;transform:translateX(56px)}
+
+@media(max-width:860px){
+  :root{--interior-hero-height:540px}
+  .services-page .service-detail{scroll-margin-top:84px}
+  .services-page #advisory.reveal:not(.visible){transform:translateX(28px)}
+}
+@media(max-width:560px){:root{--interior-hero-height:500px}}
