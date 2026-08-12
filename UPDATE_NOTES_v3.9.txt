@@ -1,0 +1,17 @@
+Latitude Stone Website v3.9 — What We Do final polish
+
+Latest changes:
+- What We Do HERO Start the Conversation CTA has muted brass border/text.
+- Established a consistent interior-page HERO height; What We Do and Schedule a Consultation now match.
+- Homepage HERO remains intentionally taller.
+- Added a true white-space break between the What We Do HERO and Advisory services.
+- Changed all What We Do content below the HERO from cream/off-white to the same white used on the homepage.
+- Added alternating section entrance animations:
+  01/03/05 enter subtly from the right.
+  02/04 enter subtly from the left.
+  Animation is reduced on mobile and disabled for prefers-reduced-motion.
+- Tenant Representation updated with the latest selected retail-center image.
+- Tenant Rep arrows shifted slightly left so they are centered between the four steps.
+- Bottom CTA supporting sentence is centered within the full CTA and slightly larger.
+- Homepage header What we do now links directly to services.html.
+- Homepage Learn more about our services link remains in place.

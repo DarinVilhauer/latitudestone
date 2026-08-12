@@ -2098,3 +2098,112 @@ footer .footer-grid a.footer-community-trigger:hover{
     grid-template-columns:1fr;
   }
 }
+
+
+/* v3.9 — What We Do final polish and interior HERO standard */
+:root{
+  --interior-hero-height:570px;
+}
+
+/* Interior HERO standard: homepage remains intentionally taller */
+.services-page .services-hero,
+.schedule-page .schedule-hero{
+  min-height:var(--interior-hero-height)!important;
+}
+
+/* What We Do HERO */
+.services-page .services-hero-cta{
+  color:#b5a078!important;
+  border:1px solid #b5a078!important;
+  background:transparent!important;
+}
+.services-page .services-hero-cta span{color:#b5a078!important}
+.services-page .services-hero-cta:hover,
+.services-page .services-hero-cta:hover span{
+  color:#05090d!important;
+}
+
+/* Clean white field below the HERO */
+.services-page,
+.services-page main,
+.services-page .service-detail{
+  background:#fff!important;
+}
+
+/* A true breathing-space break between HERO and Advisory */
+.services-page .services-hero + #advisory{
+  margin-top:110px!important;
+}
+
+/* Alternating side-entry animation: each full service chapter moves together */
+.services-page .service-detail.reveal{
+  opacity:0;
+  transition:opacity .72s ease, transform .72s cubic-bezier(.22,.61,.36,1);
+  will-change:opacity,transform;
+}
+.services-page .service-slide-right.reveal{transform:translateX(56px)}
+.services-page .service-slide-left.reveal{transform:translateX(-56px)}
+.services-page .service-detail.reveal.visible{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* Tenant Rep arrows: visually center them between columns */
+.services-page .service-process>div:not(:last-child)::after{
+  right:4px!important;
+}
+
+/* Bottom CTA: true three-part balance */
+.services-page .services-page-cta-inner{
+  grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1.1fr)!important;
+  gap:42px!important;
+  align-items:center;
+}
+.services-page .services-page-cta-inner>div:first-child{
+  justify-self:start;
+}
+.services-page .services-page-cta-inner>p{
+  justify-self:center;
+  text-align:center;
+  max-width:440px;
+  font-size:15px!important;
+  line-height:1.55;
+}
+.services-page .services-page-cta-inner>.services-bottom-cta{
+  justify-self:end;
+}
+
+/* Match the Schedule Consultation HERO to the same interior-page height */
+.schedule-page .schedule-hero{
+  min-height:var(--interior-hero-height)!important;
+}
+
+@media(max-width:860px){
+  :root{--interior-hero-height:500px}
+  .services-page .services-hero + #advisory{
+    margin-top:72px!important;
+  }
+  .services-page .service-slide-right.reveal{transform:translateX(28px)}
+  .services-page .service-slide-left.reveal{transform:translateX(-28px)}
+  .services-page .service-detail.reveal.visible{transform:translateX(0)}
+  .services-page .services-page-cta-inner{
+    grid-template-columns:1fr!important;
+  }
+  .services-page .services-page-cta-inner>p{
+    justify-self:start;
+    text-align:left;
+  }
+  .services-page .services-page-cta-inner>.services-bottom-cta{
+    justify-self:start;
+  }
+}
+@media(max-width:560px){
+  :root{--interior-hero-height:460px}
+}
+@media(prefers-reduced-motion:reduce){
+  .services-page .service-detail.reveal{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+}
