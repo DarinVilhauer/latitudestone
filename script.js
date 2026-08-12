@@ -4,7 +4,11 @@ toggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');to
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const servicePageNormalVisit=document.body.classList.contains('services-page')&&!location.hash;
+document.querySelectorAll('.reveal').forEach(el=>{
+  if(servicePageNormalVisit&&el.id==='advisory')return;
+  observer.observe(el);
+});
 
 const sections=[...document.querySelectorAll('main section[id]')];
 const links=[...document.querySelectorAll('nav a')];
@@ -190,7 +194,10 @@ if(document.body.classList.contains('services-page')){
   if(advisory && !target){
     advisory.classList.remove('visible');
     const revealAdvisory=()=>{
-      if(window.scrollY>60){
+      const rect=advisory.getBoundingClientRect();
+      const hasActuallyScrolled=window.scrollY>80;
+      const sectionEntering=rect.top < window.innerHeight*.82;
+      if(hasActuallyScrolled&&sectionEntering){
         advisory.classList.add('visible');
         window.removeEventListener('scroll',revealAdvisory);
       }

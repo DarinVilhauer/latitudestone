@@ -1,0 +1,29 @@
+Latitude Stone Website v4.1 — About Page + Latest Punch List
+
+LATEST PUNCH LIST
+- What We Do HERO supporting copy changed to:
+  “Commercial real estate services built around your goals.”
+- Removed the second What We Do HERO supporting line.
+- What We Do HERO supporting copy is muted brass.
+- Advisory Services is excluded from the generic on-load reveal observer.
+  It now reveals only after the visitor has actually scrolled and the section begins entering the viewport.
+- Homepage mobile header now starts transparent over the HERO and switches to the dark scrolled state afterward.
+- Interior HERO standard increased again:
+  Desktop 680px / tablet 590px / mobile 530px.
+  What We Do, Schedule a Consultation, and About use the same interior HERO standard.
+- Schedule a Consultation header What we do link continues to services.html.
+- Homepage Meet Darin and Why Latitude Stone header links now go to the relevant About page sections.
+
+NEW ABOUT PAGE
+- New about.html page.
+- Uses the supplied Reunion Tower/Dallas photo for the HERO.
+- Uses the supplied casual Darin + Michelle photo in the Meet Darin section.
+- Header and full footer match the homepage system.
+- White and light-gray backgrounds only through the content sections.
+- No icons.
+- Includes:
+  01 A different perspective
+  02 Built on relationships. Driven by long-term value.
+  03 Meet Darin
+  04 The Latitude Stone approach
+- Includes bottom consultation CTA.
