@@ -4,11 +4,7 @@ toggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');to
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
-const servicePageNormalVisit=document.body.classList.contains('services-page')&&!location.hash;
-document.querySelectorAll('.reveal').forEach(el=>{
-  if(servicePageNormalVisit&&el.id==='advisory')return;
-  observer.observe(el);
-});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 const sections=[...document.querySelectorAll('main section[id]')];
 const links=[...document.querySelectorAll('nav a')];
@@ -203,19 +199,4 @@ if(document.body.classList.contains('services-page')){
     requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));
   }
 
-  // On a normal What We Do visit, Advisory should enter only after the visitor actually scrolls.
-  const advisory=document.getElementById('advisory');
-  if(advisory && !target){
-    advisory.classList.remove('visible');
-    const revealAdvisory=()=>{
-      const rect=advisory.getBoundingClientRect();
-      const hasActuallyScrolled=window.scrollY>80;
-      const sectionEntering=rect.top < window.innerHeight*.82;
-      if(hasActuallyScrolled&&sectionEntering){
-        advisory.classList.add('visible');
-        window.removeEventListener('scroll',revealAdvisory);
-      }
-    };
-    window.addEventListener('scroll',revealAdvisory,{passive:true});
-  }
 }

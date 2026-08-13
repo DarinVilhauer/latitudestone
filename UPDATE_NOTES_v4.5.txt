@@ -1,0 +1,15 @@
+Latitude Stone Website v4.5 — Mobile + About Corrections
+
+This update is based on the uploaded v4.4 package.
+
+CORRECTIONS
+- Active header underline is muted brass, including About.
+- About / Our Focus is fully centered: heading, intro, body copy, and all three lower columns.
+- About / A Higher Perspective has a corrected mobile single-column layout.
+- Careers opening copy is merged and repeated build/built language reduced.
+- Careers brass statement now reads:
+  “We are a culture focused on potential, opportunity, and a long-term commitment to our people.”
+- Start a career conversation now comes after the brass culture statement, including on mobile.
+- Our Leadership uses the newly supplied more-professional Darin & Michelle photo.
+- What We Do bottom CTA spacing is adjusted to better match the About CTA.
+- What We Do Section 1 is no longer artificially delayed; it is visible on page load while lower sections retain their scroll reveal behavior.
