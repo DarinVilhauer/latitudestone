@@ -190,7 +190,7 @@ if(scheduleForm&&calendarDays){
   updateScheduleCTA();
 }
 
-// v4.6: service-page deep links + automatic first-section reveal
+// v4.7: service-page deep links + automatic first-section reveal
 if(document.body.classList.contains('services-page')){
   const serviceIds=['advisory','investment-sales','property-disposition','tenant-representation','property-management'];
   const hashId=location.hash.replace('#','');
@@ -202,8 +202,8 @@ if(document.body.classList.contains('services-page')){
     requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));
   }else if(advisory){
     advisory.classList.remove('visible');
-    window.addEventListener('load',()=>{
-      setTimeout(()=>advisory.classList.add('visible'),550);
-    },{once:true});
+    const revealAdvisory=()=>setTimeout(()=>advisory.classList.add('visible'),550);
+    if(document.readyState==='complete') revealAdvisory();
+    else window.addEventListener('load',revealAdvisory,{once:true});
   }
 }

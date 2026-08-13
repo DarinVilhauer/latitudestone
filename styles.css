@@ -3127,3 +3127,101 @@ footer .footer-grid b .footer-heading-link:visited{
   .services-page #advisory.reveal{transform:translateX(28px)}
   .services-page .services-page-cta .interior-cta-copy h2{white-space:normal!important}
 }
+
+
+/* v4.7 — final mobile typography + CTA alignment corrections */
+
+/* About Section 1 divider: centered in the true gutter, not inside either column. */
+@media(min-width:861px){
+  .about-page .about-story{
+    position:relative;
+  }
+  .about-page .about-story::after{
+    content:"";
+    position:absolute;
+    top:30%;
+    bottom:24%;
+    left:50%;
+    transform:translateX(-.5px);
+    width:1px;
+    background:rgba(181,160,120,.58);
+    pointer-events:none;
+  }
+}
+
+/* Careers CTA: left on desktop, after the brass statement on mobile. */
+.careers-link-desktop{display:inline-flex!important}
+.careers-link-mobile{display:none!important}
+@media(max-width:860px){
+  .careers-link-desktop{display:none!important}
+  .careers-link-mobile{
+    display:inline-flex!important;
+    margin-top:28px!important;
+  }
+}
+
+/* What We Do CTA: use About CTA as the desktop layout template. */
+@media(min-width:861px){
+  .services-page .services-page-cta-inner,
+  .about-page .about-cta-inner{
+    max-width:1500px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding-left:clamp(34px,5vw,84px)!important;
+    padding-right:clamp(34px,5vw,84px)!important;
+    grid-template-columns:minmax(0,1fr) auto!important;
+    gap:clamp(70px,8vw,150px)!important;
+    align-items:center!important;
+  }
+  .services-page .services-page-cta .interior-cta-copy{
+    max-width:none!important;
+  }
+  .services-page .services-page-cta .interior-cta-copy h2{
+    white-space:nowrap!important;
+  }
+  .services-page .services-page-cta .interior-cta-button,
+  .about-page .about-cta .interior-cta-button{
+    justify-self:end!important;
+  }
+}
+
+/* Both CTA supporting lines use muted brass. */
+.services-page .services-page-cta .interior-cta-copy p,
+.about-page .about-cta .interior-cta-copy p{
+  color:var(--latitude-brass,#b5a078)!important;
+}
+
+/* Section 1 on What We Do slides in from the LEFT shortly after page load. */
+.services-page #advisory.reveal{
+  opacity:0;
+  transform:translateX(-56px)!important;
+  transition:opacity .75s ease, transform .75s ease!important;
+}
+.services-page #advisory.reveal.visible{
+  opacity:1!important;
+  transform:none!important;
+}
+
+/* Mobile: bold interior HERO headlines and About section/CTA headlines. */
+@media(max-width:860px){
+  .about-page .about-hero h1,
+  .services-page .services-hero h1{
+    font-weight:700!important;
+  }
+
+  .about-page .about-story h2,
+  .about-page .about-focus h2,
+  .about-page .about-darin h2,
+  .about-page .about-careers h2,
+  .about-page .about-cta h2{
+    font-weight:700!important;
+  }
+
+  .services-page .services-page-cta .interior-cta-copy h2{
+    white-space:normal!important;
+  }
+
+  .services-page #advisory.reveal{
+    transform:translateX(-28px)!important;
+  }
+}

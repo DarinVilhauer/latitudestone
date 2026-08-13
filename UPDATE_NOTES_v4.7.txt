@@ -1,0 +1,24 @@
+Latitude Stone Website v4.7 — Mobile Typography + CTA Polish
+
+Based on the uploaded v4.6 package.
+
+ABOUT
+- Careers: desktop shows Start a career conversation only in the left column.
+- Mobile shows Start a career conversation after the brass culture statement.
+- Section 1 muted-brass divider moved to the true center gutter.
+- Mobile HERO headline is bold.
+- Mobile section headlines are bold:
+  A higher perspective.
+  Our focus
+  Our leadership
+  Careers at Latitude Stone
+  Ready to start a conversation?
+
+WHAT WE DO
+- Bottom CTA headline stays on one line on desktop.
+- Bottom CTA button alignment now mirrors the About CTA.
+- CTA supporting line remains muted brass.
+- Advisory Services animates in from the left shortly after page load.
+- Mobile HERO headline is bold.
+
+No homepage headshot changes.
