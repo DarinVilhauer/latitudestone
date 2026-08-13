@@ -1,0 +1,23 @@
+Latitude Stone Website v4.6 — Final QA Polish
+
+Based on the uploaded v4.5 package.
+
+WHAT WE DO
+- Advisory Services keeps the right-to-left entrance animation.
+- Animation now begins automatically about 0.55 seconds after page load.
+- Lower sections retain scroll-triggered reveals.
+- Added subtle slow HERO image drift/zoom.
+- CTA headline is one line on desktop.
+- CTA button moved farther right to match the About CTA balance.
+- CTA supporting copy is muted brass.
+
+ABOUT
+- HERO headline now ends with a period.
+- Added subtle muted-brass vertical divider between Section 1 columns on desktop only.
+- Our Leadership title changed from Founder to CEO.
+- Careers CTA is in the left column on desktop.
+- Careers CTA appears after the brass culture statement on mobile.
+- About CTA supporting copy is muted brass.
+
+HOME
+- Existing homepage headshot is unchanged.

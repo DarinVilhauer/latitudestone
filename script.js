@@ -4,7 +4,10 @@ toggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');to
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el=>{
+  if(document.body.classList.contains('services-page') && el.id==='advisory') return;
+  observer.observe(el);
+});
 
 const sections=[...document.querySelectorAll('main section[id]')];
 const links=[...document.querySelectorAll('nav a')];
@@ -187,16 +190,20 @@ if(scheduleForm&&calendarDays){
   updateScheduleCTA();
 }
 
-// v4.0: service-page deep links + intentional first-section reveal
+// v4.6: service-page deep links + automatic first-section reveal
 if(document.body.classList.contains('services-page')){
   const serviceIds=['advisory','investment-sales','property-disposition','tenant-representation','property-management'];
   const hashId=location.hash.replace('#','');
   const target=serviceIds.includes(hashId)?document.getElementById(hashId):null;
+  const advisory=document.getElementById('advisory');
 
-  // A direct footer/deep link should never display a chapter in its off-canvas animation state.
   if(target){
     target.classList.add('visible');
     requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));
+  }else if(advisory){
+    advisory.classList.remove('visible');
+    window.addEventListener('load',()=>{
+      setTimeout(()=>advisory.classList.add('visible'),550);
+    },{once:true});
   }
-
 }
