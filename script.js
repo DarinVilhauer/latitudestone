@@ -12,7 +12,16 @@ document.querySelectorAll('.reveal').forEach(el=>{
 
 const sections=[...document.querySelectorAll('main section[id]')];
 const links=[...document.querySelectorAll('nav a')];
-window.addEventListener('scroll',()=>{let current='home';sections.forEach(s=>{if(scrollY>=s.offsetTop-140)current=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));},{passive:true});
+if(document.body.classList.contains('home-page')){
+  window.addEventListener('scroll',()=>{
+    let current='home';
+    sections.forEach(s=>{if(scrollY>=s.offsetTop-140)current=s.id});
+    links.forEach(a=>{
+      const href=a.getAttribute('href')||'';
+      if(href.startsWith('#'))a.classList.toggle('active',href==='#'+current);
+    });
+  },{passive:true});
+}
 
 const slides=[...document.querySelectorAll('.hero-slide')];
 const dots=[...document.querySelectorAll('.hero-dots button')];

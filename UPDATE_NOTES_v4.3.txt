@@ -1,0 +1,48 @@
+Latitude Stone Website v4.3 — Sitewide About + What We Do Update
+
+GLOBAL HEADER
+- Replaced Meet Darin and Why Latitude Stone with a single About link.
+- Header standard is now:
+  Home | What we do | Our market | About | Market intelligence | Schedule a consultation
+- Applies to Home, What We Do, About, and Schedule a Consultation on desktop and mobile.
+- About always opens the top of about.html.
+- Homepage Meet Darin and Why Latitude Stone sections remain in the body of the homepage.
+
+HOME HERO
+- Supporting sentence changed to muted brass.
+
+ABOUT HERO
+- Forced supporting-copy break so “and long-term value.” stays together on line two.
+- Added an extremely subtle slow drift/zoom to the Reunion Tower HERO image.
+- The motion uses CSS only, so the source image quality is unchanged.
+- Reduced-motion users see a static HERO.
+
+ABOUT PAGE REBUILD
+01 A higher perspective.
+- Now explains Latitude Stone as a different kind of brokerage.
+
+02 Our focus
+- Explains the client-first business model.
+- Includes experienced commercial real estate clients and people just getting started.
+
+03 Our leadership
+- Features Darin Vilhauer, Founder.
+- Keeps the approved casual Darin and Michelle photo.
+
+04 Careers at Latitude Stone
+- Introduces the kind of firm Latitude Stone is building.
+- Includes a Start a career conversation email link.
+- No icons.
+
+WHAT WE DO HERO
+- Added the subtle dark transparent header veil for better nav/CTA contrast.
+- Replaced the old HERO headline with:
+  Commercial real estate
+  expertise at every stage.
+- Muted brass supporting copy:
+  From strategy through execution, we help clients buy, sell, lease, and manage commercial real estate across North Texas.
+- Header navigation label remains What we do.
+
+INTERIOR CTA STANDARD
+- What We Do and About use the same layout and spacing.
+- Page-specific headline and supporting copy remain unique.

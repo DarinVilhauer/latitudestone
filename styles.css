@@ -2557,195 +2557,300 @@ footer .footer-grid b .footer-heading-link:hover{color:#b5a078!important}
 
 
 
-/* v4.2 — About story refinement + standardized interior CTA */
+/* v4.3 — Sitewide navigation + About rebuild + What We Do HERO */
 
-/* About header: white nav over HERO */
-.about-page .site-header nav a{
-  color:#fff!important;
-}
-.about-page .site-header nav a:hover{
-  color:var(--latitude-brass)!important;
-}
-.about-page .wordmark strong{color:#fff!important}
-
-/* About HERO line break */
-.about-page .about-hero h1 span{
-  display:inline-block;
-}
-.about-page .about-hero h1{
-  max-width:680px;
+/* Global homepage HERO supporting copy */
+.home-page .hero-lead{
+  color:var(--latitude-brass,#b5a078)!important;
 }
 
-/* All major About section numbers are muted brass */
-.about-page .about-number{
-  color:var(--latitude-brass)!important;
+/* Sitewide header navigation stays concise */
+.site-header nav{
+  white-space:nowrap;
 }
 
-/* 01: higher perspective */
-.about-page .about-story{
-  grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);
-  gap:clamp(76px,9vw,165px);
+/* What We Do: transparent header with the same subtle dark veil used on About */
+.services-page{
+  overflow-x:hidden;
 }
-.about-page .about-story-side{
-  border-left:0!important;
-  padding:72px 0 26px 0!important;
-  align-self:center;
+.services-page .site-header{
+  background:linear-gradient(180deg,rgba(2,7,12,.66),rgba(2,7,12,.08))!important;
+  border-bottom:1px solid rgba(255,255,255,.15)!important;
 }
-.about-page .about-story-side .about-side-kicker{
-  font-size:28px;
-  font-weight:500;
+.services-page .site-header.scrolled{
+  background:rgba(3,9,15,.96)!important;
+  backdrop-filter:blur(14px)!important;
 }
-.about-principles{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-top:28px;
+.services-page .site-header nav a{
+  color:#fff;
 }
-.about-principles strong{
-  color:var(--latitude-brass);
-  font-size:14px;
-  font-weight:600;
-  letter-spacing:.01em;
+.services-page .site-header nav a.active{
+  color:var(--latitude-brass,#b5a078)!important;
+}
+.services-page .header-cta{
+  color:var(--latitude-brass,#b5a078)!important;
+  border-color:var(--latitude-brass,#b5a078)!important;
 }
 
-/* 02: client-focused experience rather than homepage repetition */
-.about-page .about-why{
-  display:grid;
-  grid-template-columns:minmax(0,1.1fr) minmax(320px,.7fr);
-  gap:clamp(70px,9vw,160px);
-  align-items:center;
-  background:var(--latitude-light-gray);
+/* What We Do HERO: capabilities-led page opening */
+.services-page .services-hero-copy{
+  width:min(900px,70vw)!important;
 }
-.about-client-copy{
-  max-width:850px;
-}
-.about-client-copy p{
-  max-width:760px;
-}
-.about-client-statement{
-  padding:42px 0 42px clamp(20px,3vw,55px);
-  border-left:1px solid #cfd3d6;
-}
-.about-client-statement p{
-  margin:0;
-  color:var(--latitude-brass)!important;
-  font-size:clamp(24px,2.1vw,34px)!important;
-  line-height:1.35!important;
-  max-width:520px;
-  font-weight:400;
-}
-
-/* 03: keep the personal image, slightly cleaner copy width */
-.about-page .about-darin-copy{
-  max-width:720px;
-}
-.about-page .about-darin-copy p{
-  max-width:680px;
-}
-
-/* 04: same simple visual treatment, new forward-looking content */
-.about-page .about-approach{
-  background:var(--latitude-light-gray);
-}
-.about-page .about-steps strong{
-  display:none;
-}
-.about-page .about-steps article{
-  padding-top:38px;
-}
-.about-page .about-steps h3{
-  min-height:24px;
-}
-
-/* Standard interior-page CTA system */
-.interior-cta-inner{
-  max-width:1500px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:clamp(50px,7vw,120px);
-  align-items:center;
-}
-.interior-cta-copy{
-  max-width:860px;
-}
-.interior-cta-copy h2{
-  margin:0;
-}
-.interior-cta-copy p{
-  margin:16px 0 0 clamp(10px,1.2vw,18px)!important;
-  max-width:620px;
-}
-.interior-cta-button{
-  justify-self:start;
-  min-width:255px;
-}
-
-/* About CTA */
-.about-page .about-cta{
-  padding:58px clamp(34px,5vw,84px);
-}
-.about-page .about-cta-inner{
-  max-width:1500px!important;
-  grid-template-columns:minmax(0,1fr) auto!important;
-  gap:clamp(50px,7vw,120px)!important;
-}
-.about-page .about-cta p{
-  color:#d9dfe3;
-}
-
-/* What We Do HERO: stronger two-line headline */
 .services-page .services-hero h1{
-  line-height:.92!important;
+  max-width:880px;
+  font:300 clamp(55px,5.3vw,82px)/.98 var(--sans)!important;
+  letter-spacing:-.045em!important;
 }
 .services-page .services-hero h1 span{
   display:inline-block;
 }
 .services-page .services-hero p{
+  max-width:790px!important;
+  color:var(--latitude-brass,#b5a078)!important;
   margin-top:28px!important;
+  font-size:16px!important;
+  line-height:1.62!important;
 }
 
-/* What We Do CTA mirrors About CTA */
+/* Standard interior CTA system */
+.interior-cta-inner{
+  max-width:1500px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(52px,7vw,110px);
+  align-items:center;
+}
+.interior-cta-copy{
+  max-width:900px;
+}
+.interior-cta-copy h2{
+  margin:0;
+}
+.interior-cta-copy p{
+  margin:15px 0 0 clamp(10px,1.2vw,18px)!important;
+  max-width:680px;
+}
+.interior-cta-button{
+  min-width:255px;
+  justify-self:start;
+}
 .services-page .services-page-cta{
   padding:58px clamp(34px,5vw,84px)!important;
 }
 .services-page .services-page-cta-inner{
-  max-width:1500px!important;
   grid-template-columns:minmax(0,1fr) auto!important;
-  gap:clamp(50px,7vw,120px)!important;
-  align-items:center!important;
-}
-.services-page .services-page-cta-inner>p{
-  display:none!important;
+  gap:clamp(52px,7vw,110px)!important;
 }
 .services-page .services-page-cta .interior-cta-copy p{
   display:block!important;
-  color:#d9dfe3;
+  color:#d9dfe3!important;
   font-size:15px!important;
-  line-height:1.55;
-}
-.services-page .services-page-cta .interior-cta-copy h2{
-  margin:0;
-}
-.services-page .services-page-cta .interior-cta-button{
-  justify-self:start;
+  line-height:1.55!important;
 }
 
+/* ABOUT: HERO */
+.about-page .site-header nav a{
+  color:#fff!important;
+}
+.about-page .site-header nav a.active{
+  color:var(--latitude-brass,#b5a078)!important;
+}
+.about-page .wordmark strong{color:#fff!important}
+
+.about-page .about-hero{
+  background:none!important;
+  isolation:isolate;
+}
+.about-page .about-hero-image{
+  position:absolute;
+  inset:-2%;
+  z-index:0;
+  background:url('assets/about-hero-dallas.jpg') center 52%/cover no-repeat;
+  transform:scale(1.025);
+  animation:aboutHeroDrift 22s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes aboutHeroDrift{
+  from{transform:scale(1.025) translate3d(0,0,0)}
+  to{transform:scale(1.055) translate3d(-.55%,.1%,0)}
+}
+.about-page .about-hero-overlay{z-index:1}
+.about-page .about-hero-copy{z-index:2}
+.about-page .about-hero h1{
+  max-width:720px;
+}
+.about-page .about-hero h1 span{display:inline-block}
+.about-page .about-hero p{
+  max-width:760px;
+}
+
+/* About section numbers */
+.about-page .about-number{
+  color:var(--latitude-brass,#b5a078)!important;
+}
+
+/* 01: A higher perspective */
+.about-page .about-story{
+  grid-template-columns:minmax(0,1.05fr) minmax(330px,.72fr);
+  gap:clamp(75px,9vw,160px);
+  background:#fff;
+}
+.about-page .about-story-side{
+  border-left:0!important;
+  padding:62px 0 28px!important;
+  align-self:center;
+}
+.about-page .about-story-side .about-side-kicker{
+  font-size:29px;
+  line-height:1.25;
+  font-weight:500;
+}
+.about-page .about-story-side p:last-child{
+  max-width:570px;
+}
+
+/* 02: Our focus */
+.about-page .about-focus{
+  background:var(--latitude-light-gray,#f2f3f4);
+}
+.about-focus-copy{
+  max-width:900px;
+  margin-bottom:58px;
+}
+.about-focus-copy>p:not(.about-number){
+  max-width:790px;
+}
+.about-focus-lead{
+  color:#0b1117!important;
+  font-size:22px!important;
+  font-weight:500;
+  margin-bottom:20px!important;
+}
+.about-focus-principles{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid #d4d7da;
+}
+.about-focus-principles article{
+  padding:36px 36px 12px;
+}
+.about-focus-principles article+article{
+  border-left:1px solid #d4d7da;
+}
+.about-focus-principles h3{
+  margin:0;
+  font-size:17px;
+  font-weight:600;
+}
+.about-focus-principles span{
+  display:block;
+  width:38px;
+  height:1px;
+  background:var(--latitude-brass,#b5a078);
+  margin:18px 0 22px;
+}
+.about-focus-principles p{
+  margin:0;
+  font-size:14px;
+}
+
+/* 03: Our leadership */
+.about-page .about-darin{
+  background:#fff;
+}
+.about-leader-name{
+  color:#0b1117!important;
+  font-size:18px!important;
+  font-weight:600;
+  margin:0 0 24px!important;
+}
+.about-leader-name span{
+  color:var(--latitude-brass,#b5a078);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.04em;
+  margin-left:9px;
+}
+
+/* 04: Careers */
+.about-page .about-careers{
+  background:var(--latitude-light-gray,#f2f3f4);
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(330px,.7fr);
+  gap:clamp(70px,9vw,155px);
+  align-items:center;
+}
+.about-careers-copy{
+  max-width:830px;
+}
+.about-careers-copy>p{
+  max-width:760px;
+}
+.about-careers-lead{
+  color:#0b1117!important;
+  font-size:23px!important;
+  font-weight:500;
+  margin-bottom:18px!important;
+}
+.about-careers-link{
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  margin-top:24px;
+  color:var(--latitude-brass,#b5a078);
+  font-size:14px;
+  font-weight:600;
+}
+.about-careers-statement{
+  padding:38px 0 38px clamp(24px,3vw,58px);
+  border-left:1px solid #ccd1d4;
+}
+.about-careers-statement p{
+  margin:0;
+  color:var(--latitude-brass,#b5a078)!important;
+  font-size:clamp(24px,2.1vw,34px)!important;
+  line-height:1.38!important;
+  max-width:530px;
+}
+
+/* About CTA uses same structure as other interior pages */
+.about-page .about-cta{
+  padding:58px clamp(34px,5vw,84px)!important;
+}
+.about-page .about-cta-inner{
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:clamp(52px,7vw,110px)!important;
+}
+
+/* Footer updates should remain visually identical even when headings/links change */
+footer .footer-grid b .footer-heading-link,
+footer .footer-grid b .footer-heading-link:link,
+footer .footer-grid b .footer-heading-link:visited{
+  color:inherit!important;
+}
+
+/* Mobile */
 @media(max-width:1000px){
-  .about-page .about-why{
+  .about-page .about-careers{
     grid-template-columns:1fr;
   }
-  .about-client-statement{
+  .about-careers-statement{
     border-left:0;
-    border-top:1px solid #cfd3d6;
+    border-top:1px solid #ccd1d4;
     padding:34px 0 0;
   }
 }
-
 @media(max-width:860px){
+  .services-page .services-hero-copy{
+    width:92vw!important;
+  }
+  .services-page .services-hero h1{
+    font-size:52px!important;
+  }
   .interior-cta-inner,
-  .about-page .about-cta-inner,
-  .services-page .services-page-cta-inner{
+  .services-page .services-page-cta-inner,
+  .about-page .about-cta-inner{
     grid-template-columns:1fr!important;
     gap:28px!important;
   }
@@ -2753,19 +2858,38 @@ footer .footer-grid b .footer-heading-link:hover{color:#b5a078!important}
     margin-left:8px!important;
   }
   .interior-cta-button{
-    justify-self:start!important;
     width:max-content;
+  }
+  .about-focus-principles{
+    grid-template-columns:1fr;
+  }
+  .about-focus-principles article+article{
+    border-left:0;
+    border-top:1px solid #d4d7da;
   }
   .about-page .about-story-side{
     padding-top:34px!important;
   }
 }
-
 @media(max-width:620px){
-  .about-page .about-hero h1{
-    line-height:.96;
+  .services-page .services-hero h1{
+    font-size:43px!important;
+  }
+  .services-page .services-hero p{
+    font-size:14px!important;
   }
   .interior-cta-button{
     width:100%!important;
+  }
+  .about-careers-link{
+    margin-top:18px;
+  }
+}
+
+/* Respect reduced motion and avoid spending mobile performance on a barely visible effect */
+@media(prefers-reduced-motion:reduce){
+  .about-page .about-hero-image{
+    animation:none!important;
+    transform:scale(1.025)!important;
   }
 }
