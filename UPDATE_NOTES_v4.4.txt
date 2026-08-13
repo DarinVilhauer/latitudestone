@@ -1,0 +1,12 @@
+Latitude Stone Website v4.4 — Punch List Update
+
+- Restored muted-brass active navigation underline behavior on the homepage, including What We Do and About while scrolling their related homepage sections.
+- About page active navigation uses muted brass.
+- What We Do bottom CTA aligned to the About page CTA standard: text shifted inward and consultation button moved left.
+- About Section 1 copy revised to remove comparison to larger firms.
+- About Section 2 lead changed to “The business model is simple: client first.”
+- About Section 2 content and three principle columns centered to eliminate upper-right dead space.
+- Removed section numbers from the About page.
+- Careers statement revised to focus on potential, opportunity, and long-term commitment to people.
+- Careers copy expanded to include hands-on training, ongoing coaching, career development, and an enjoyable team culture.
+- Join Our Community footer link now opens the same signup modal on About, What We Do, and Schedule pages.

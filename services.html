@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -21,7 +22,6 @@
 </nav>
 <a class="outline-button header-cta" href="schedule.html">Schedule a consultation</a>
 </header>
-
 <main>
 <section class="services-hero">
 <div class="services-hero-overlay"></div>
@@ -30,7 +30,6 @@
 <p>From strategy through execution, we help clients buy, sell, lease, and manage commercial real estate across North Texas.</p>
 </div>
 </section>
-
 <section class="service-detail service-detail-odd reveal service-slide-right" id="advisory">
 <div class="service-detail-copy">
 <p class="service-number">01</p>
@@ -42,11 +41,10 @@
 <div><h3>Site selection</h3><span></span><p>Evaluate locations that support operational and financial objectives.</p></div>
 </div>
 </div>
-<div class="service-detail-image"><img src="assets/services-advisory.jpg" alt="Executive boardroom representing Latitude Stone advisory services"/></div>
+<div class="service-detail-image"><img alt="Executive boardroom representing Latitude Stone advisory services" src="assets/services-advisory.jpg"/></div>
 </section>
-
 <section class="service-detail service-detail-even reveal service-slide-left" id="investment-sales">
-<div class="service-detail-image"><img src="assets/services-investment.jpg" alt="Modern commercial property representing investment sales"/></div>
+<div class="service-detail-image"><img alt="Modern commercial property representing investment sales" src="assets/services-investment.jpg"/></div>
 <div class="service-detail-copy">
 <p class="service-number">02</p>
 <h2>Investment sales</h2>
@@ -59,7 +57,6 @@
 </div>
 </div>
 </section>
-
 <section class="service-detail service-detail-odd reveal service-slide-right" id="property-disposition">
 <div class="service-detail-copy">
 <p class="service-number">03</p>
@@ -71,11 +68,10 @@
 <div><h3>Negotiation &amp; closing</h3><span></span><p>Manage negotiations and due diligence through a smooth close.</p></div>
 </div>
 </div>
-<div class="service-detail-image"><img src="assets/services-disposition.jpg" alt="Downtown Dallas commercial real estate representing property disposition"/></div>
+<div class="service-detail-image"><img alt="Downtown Dallas commercial real estate representing property disposition" src="assets/services-disposition.jpg"/></div>
 </section>
-
 <section class="service-detail service-detail-even reveal service-slide-left" id="tenant-representation">
-<div class="service-detail-image"><img src="assets/services-tenant.jpg" alt="Retail center representing tenant representation"/></div>
+<div class="service-detail-image"><img alt="Retail center representing tenant representation" src="assets/services-tenant.jpg"/></div>
 <div class="service-detail-copy">
 <p class="service-number">04</p>
 <h2>Tenant representation</h2>
@@ -88,7 +84,6 @@
 </div>
 </div>
 </section>
-
 <section class="service-detail service-detail-odd reveal service-slide-right" id="property-management">
 <div class="service-detail-copy">
 <p class="service-number">05</p>
@@ -100,9 +95,8 @@
 <div><h3>Vendor &amp; capital oversight</h3><span></span><p>Manage vendors and capital projects to protect performance.</p></div>
 </div>
 </div>
-<div class="service-detail-image"><img src="assets/services-management.jpg" alt="Class A industrial property representing property and asset management"/></div>
+<div class="service-detail-image"><img alt="Class A industrial property representing property and asset management" src="assets/services-management.jpg"/></div>
 </section>
-
 <section class="services-page-cta">
 <div class="interior-cta-inner services-page-cta-inner reveal">
 <div class="interior-cta-copy">
@@ -113,17 +107,88 @@
 </div>
 </section>
 </main>
-
 <footer>
 <div class="footer-grid">
 <div class="footer-brand"><strong>LATITUDE STONE</strong><span>REAL ESTATE GROUP</span><p>Boutique commercial real estate advisory and brokerage services throughout North Texas.</p></div>
 <div><b>Company</b><a href="about.html">About</a><a href="about.html#leadership">Our leadership</a><a href="about.html#careers">Careers</a><a href="mailto:Info@LatitudeStoneRealEstate.com">Contact</a></div>
 <div><b><a class="footer-heading-link" href="services.html">What we do</a></b><a href="#advisory">Advisory services</a><a href="#investment-sales">Investment sales</a><a href="#property-disposition">Property disposition</a><a href="#tenant-representation">Tenant representation</a><a href="#property-management">Property &amp; asset management</a></div>
-<div><b>Resources</b><a href="index.html#market">Our market</a><a href="index.html#insights">Market intelligence</a><a href="index.html#insights">Join our community</a></div>
+<div><b>Resources</b><a href="index.html#market">Our market</a><a href="index.html#insights">Market intelligence</a><a aria-controls="community-modal" aria-haspopup="dialog" class="community-trigger footer-community-trigger" href="#community-modal">Join our community</a></div>
 </div>
 <div class="footer-bottom"><p>© 2026 Latitude Stone Real Estate Group, LLC. All rights reserved.</p><div class="compliance-links"><a href="#">Information About Brokerage Services (IABS)</a><span>|</span><a href="#">Consumer Protection Notice</a></div></div>
 </footer>
-
-<script src="script.js"></script>
+<div aria-hidden="true" class="community-modal" id="community-modal">
+<div class="community-backdrop" data-community-close=""></div>
+<section aria-labelledby="community-title" aria-modal="true" class="community-dialog" role="dialog">
+<button aria-label="Close community form" class="community-close" data-community-close="" type="button">×</button>
+<div class="community-form-panel">
+<p class="community-kicker">Join the</p>
+<h2 id="community-title">Latitude Stone Community</h2>
+<p class="community-intro">Receive market intelligence, new listings, development updates, and investment opportunities across North Texas commercial real estate.</p>
+<form class="community-form" id="community-form">
+<div class="community-two-col">
+<label>Name <span aria-hidden="true">*</span><input autocomplete="name" name="name" placeholder="Enter your name" required="" type="text"/></label>
+<label>Email <span aria-hidden="true">*</span><input autocomplete="email" name="email" placeholder="Enter your email" required="" type="email"/></label>
+</div>
+<label>Phone <span class="optional">(Optional)</span><input autocomplete="tel" name="phone" placeholder="Enter your phone number" type="tel"/></label>
+<fieldset class="community-role-group">
+<legend>I am a(n): <span aria-hidden="true">*</span></legend>
+<div class="community-role-grid">
+<label><input name="role" required="" type="radio" value="Investor"/><span>Investor</span></label>
+<label><input name="role" type="radio" value="Developer"/><span>Developer</span></label>
+<label><input name="role" type="radio" value="Property Owner"/><span>Property Owner</span></label>
+<label><input name="role" type="radio" value="Broker / Referral Partner"/><span>Broker / Referral Partner</span></label>
+<label><input name="role" type="radio" value="Business Owner"/><span>Business Owner</span></label>
+<label><input name="role" type="radio" value="Other"/><span>Other</span></label>
+</div>
+</fieldset>
+<div class="community-conditional" data-role-panel="Investor" hidden="">
+<label>Investment focus <span class="optional">(Optional)</span>
+<select name="investor_focus">
+<option value="">Select an area</option><option>Retail</option><option>Industrial / Flex</option><option>Office</option><option>Land</option><option>Mixed-use</option><option>Multifamily</option><option>Self storage</option><option>Not sure yet</option>
+</select>
+</label>
+</div>
+<div class="community-conditional" data-role-panel="Property Owner" hidden="">
+<label>What are you interested in? <span class="optional">(Optional)</span>
+<select name="owner_interest">
+<option value="">Select an option</option><option>Selling</option><option>Leasing</option><option>Property management</option><option>Valuation</option><option>Market updates</option>
+</select>
+</label>
+</div>
+<div class="community-conditional" data-role-panel="Business Owner" hidden="">
+<label>What are you looking to do? <span class="optional">(Optional)</span>
+<select name="business_interest">
+<option value="">Select an option</option><option>Buy</option><option>Lease</option><option>Build</option><option>Just researching</option>
+</select>
+</label>
+</div>
+<div class="community-conditional community-two-col" data-role-panel="Developer" hidden="">
+<label>Primary project type <span class="optional">(Optional)</span><input name="developer_type" placeholder="e.g., retail, industrial" type="text"/></label>
+<label>Geographic focus <span class="optional">(Optional)</span><input name="developer_market" placeholder="e.g., Collin County" type="text"/></label>
+</div>
+<div class="community-conditional community-two-col" data-role-panel="Broker / Referral Partner" hidden="">
+<label>Company <span class="optional">(Optional)</span><input autocomplete="organization" name="broker_company" placeholder="Company name" type="text"/></label>
+<label>Market served <span class="optional">(Optional)</span><input name="broker_market" placeholder="Primary market" type="text"/></label>
+</div>
+<div class="community-conditional" data-role-panel="Other" hidden="">
+<label>Tell us a little about yourself <span class="optional">(Optional)</span><textarea name="other_details" placeholder="How can Latitude Stone help?" rows="2"></textarea></label>
+</div>
+<p class="community-tailor">We’d like to tailor the information you receive. Additional fields appear only when relevant.</p>
+<label class="community-checkbox"><input name="opportunities" type="checkbox" value="Yes"/><span>I’d also like to receive new listings and investment opportunities.</span></label>
+<button class="community-submit" type="submit">Join the Community</button>
+<p class="community-privacy">We respect your privacy. Your information will never be shared.</p>
+</form>
+</div>
+<aside aria-label="Dallas skyline at night" class="community-image-panel">
+<div class="community-image-copy">
+<h3><span>North Texas</span><span>Commercial Real Estate</span></h3>
+<span class="community-image-rule"></span>
+<strong>LATITUDE STONE</strong>
+<small>REAL ESTATE GROUP</small>
+<em>A Higher Perspective on Commercial Real Estate</em>
+</div>
+</aside>
+</section>
+</div><script src="script.js"></script>
 </body>
 </html>

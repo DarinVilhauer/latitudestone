@@ -13,14 +13,19 @@ document.querySelectorAll('.reveal').forEach(el=>{
 const sections=[...document.querySelectorAll('main section[id]')];
 const links=[...document.querySelectorAll('nav a')];
 if(document.body.classList.contains('home-page')){
-  window.addEventListener('scroll',()=>{
+  const updateHomeNav=()=>{
     let current='home';
     sections.forEach(s=>{if(scrollY>=s.offsetTop-140)current=s.id});
-    links.forEach(a=>{
-      const href=a.getAttribute('href')||'';
-      if(href.startsWith('#'))a.classList.toggle('active',href==='#'+current);
-    });
-  },{passive:true});
+    const activeHref = current==='what-we-do' ? 'services.html'
+      : (current==='darin'||current==='why') ? 'about.html'
+      : current==='market' ? '#market'
+      : current==='insights' ? '#insights'
+      : current==='contact' ? ''
+      : '#home';
+    links.forEach(a=>a.classList.toggle('active',activeHref && (a.getAttribute('href')||'')===activeHref));
+  };
+  updateHomeNav();
+  window.addEventListener('scroll',updateHomeNav,{passive:true});
 }
 
 const slides=[...document.querySelectorAll('.hero-slide')];

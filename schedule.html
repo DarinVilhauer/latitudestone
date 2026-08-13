@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Schedule a commercial real estate consultation with Latitude Stone Real Estate Group."/>
-<meta name="theme-color" content="#040b12"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Schedule a commercial real estate consultation with Latitude Stone Real Estate Group." name="description"/>
+<meta content="#040b12" name="theme-color"/>
 <title>Schedule a Consultation | Latitude Stone</title>
 <link href="styles.css" rel="stylesheet"/>
 </head>
@@ -33,20 +34,19 @@
 <div class="schedule-card">
 <h2>Your information</h2>
 <form class="consultation-form" id="consultation-form">
-<div class="form-two"><label>First name *<input required name="first_name" autocomplete="given-name" placeholder="Enter your first name"></label><label>Last name *<input required name="last_name" autocomplete="family-name" placeholder="Enter your last name"></label></div>
-<label>Email *<input required type="email" name="email" autocomplete="email" placeholder="Enter your email"></label>
-<label>Phone <span class="optional">(Optional)</span><input type="tel" name="phone" autocomplete="tel" placeholder="Enter your phone number"></label>
-<label>Company <span class="optional">(Optional)</span><input name="company" autocomplete="organization" placeholder="Enter your company"></label>
-<label>I am a(n): *<select required name="role"><option value="">Select one...</option><option>Investor</option><option>Property Owner</option><option>Business Owner</option><option>Developer</option><option>Broker / Referral Partner</option><option>Other</option></select></label>
+<div class="form-two"><label>First name *<input autocomplete="given-name" name="first_name" placeholder="Enter your first name" required=""/></label><label>Last name *<input autocomplete="family-name" name="last_name" placeholder="Enter your last name" required=""/></label></div>
+<label>Email *<input autocomplete="email" name="email" placeholder="Enter your email" required="" type="email"/></label>
+<label>Phone <span class="optional">(Optional)</span><input autocomplete="tel" name="phone" placeholder="Enter your phone number" type="tel"/></label>
+<label>Company <span class="optional">(Optional)</span><input autocomplete="organization" name="company" placeholder="Enter your company"/></label>
+<label>I am a(n): *<select name="role" required=""><option value="">Select one...</option><option>Investor</option><option>Property Owner</option><option>Business Owner</option><option>Developer</option><option>Broker / Referral Partner</option><option>Other</option></select></label>
 <label>How can we help you? <span class="optional">(Optional)</span><textarea name="message" placeholder="Tell us about your goals, property, or opportunity."></textarea></label>
-<label class="consultation-optin"><input type="checkbox" name="market_updates" value="Yes"><span>I’d like to receive market insights, new listings, and investment opportunities.</span></label>
-<input type="hidden" name="consultation_date" id="consultation-date"><input type="hidden" name="consultation_time" id="consultation-time">
-
+<label class="consultation-optin"><input name="market_updates" type="checkbox" value="Yes"/><span>I’d like to receive market insights, new listings, and investment opportunities.</span></label>
+<input id="consultation-date" name="consultation_date" type="hidden"/><input id="consultation-time" name="consultation_time" type="hidden"/>
 </form>
 </div>
 <div class="schedule-card calendar-card">
 <h2>Select a date &amp; time</h2>
-<div class="calendar-header"><button type="button" id="prev-month" aria-label="Previous month">‹</button><span class="calendar-month" id="calendar-month"></span><button type="button" id="next-month" aria-label="Next month">›</button></div>
+<div class="calendar-header"><button aria-label="Previous month" id="prev-month" type="button">‹</button><span class="calendar-month" id="calendar-month"></span><button aria-label="Next month" id="next-month" type="button">›</button></div>
 <div class="calendar-weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
 <div class="calendar-days" id="calendar-days"></div>
 <p class="selected-date-label" id="selected-date-label">Select a date to view times</p>
@@ -55,12 +55,85 @@
 </div>
 </div>
 <div class="schedule-action">
-  <button class="schedule-submit" id="schedule-submit" type="submit" form="consultation-form" disabled>Complete the form to continue</button>
-  <p class="schedule-privacy">We respect your privacy. Your information will never be shared.</p>
+<button class="schedule-submit" disabled="" form="consultation-form" id="schedule-submit" type="submit">Complete the form to continue</button>
+<p class="schedule-privacy">We respect your privacy. Your information will never be shared.</p>
 </div>
 </section>
 </main>
-<footer class="legal-footer"><p>© 2026 Latitude Stone Real Estate Group, LLC. All rights reserved.</p><p><a href="#">Information About Brokerage Services (IABS)</a> &nbsp; | &nbsp; <a href="#">Consumer Protection Notice</a></p></footer>
-<script src="script.js"></script>
+<footer class="legal-footer"><p>© 2026 Latitude Stone Real Estate Group, LLC. All rights reserved.</p><p><a href="#">Information About Brokerage Services (IABS)</a>   |   <a href="#">Consumer Protection Notice</a></p></footer>
+<div aria-hidden="true" class="community-modal" id="community-modal">
+<div class="community-backdrop" data-community-close=""></div>
+<section aria-labelledby="community-title" aria-modal="true" class="community-dialog" role="dialog">
+<button aria-label="Close community form" class="community-close" data-community-close="" type="button">×</button>
+<div class="community-form-panel">
+<p class="community-kicker">Join the</p>
+<h2 id="community-title">Latitude Stone Community</h2>
+<p class="community-intro">Receive market intelligence, new listings, development updates, and investment opportunities across North Texas commercial real estate.</p>
+<form class="community-form" id="community-form">
+<div class="community-two-col">
+<label>Name <span aria-hidden="true">*</span><input autocomplete="name" name="name" placeholder="Enter your name" required="" type="text"/></label>
+<label>Email <span aria-hidden="true">*</span><input autocomplete="email" name="email" placeholder="Enter your email" required="" type="email"/></label>
+</div>
+<label>Phone <span class="optional">(Optional)</span><input autocomplete="tel" name="phone" placeholder="Enter your phone number" type="tel"/></label>
+<fieldset class="community-role-group">
+<legend>I am a(n): <span aria-hidden="true">*</span></legend>
+<div class="community-role-grid">
+<label><input name="role" required="" type="radio" value="Investor"/><span>Investor</span></label>
+<label><input name="role" type="radio" value="Developer"/><span>Developer</span></label>
+<label><input name="role" type="radio" value="Property Owner"/><span>Property Owner</span></label>
+<label><input name="role" type="radio" value="Broker / Referral Partner"/><span>Broker / Referral Partner</span></label>
+<label><input name="role" type="radio" value="Business Owner"/><span>Business Owner</span></label>
+<label><input name="role" type="radio" value="Other"/><span>Other</span></label>
+</div>
+</fieldset>
+<div class="community-conditional" data-role-panel="Investor" hidden="">
+<label>Investment focus <span class="optional">(Optional)</span>
+<select name="investor_focus">
+<option value="">Select an area</option><option>Retail</option><option>Industrial / Flex</option><option>Office</option><option>Land</option><option>Mixed-use</option><option>Multifamily</option><option>Self storage</option><option>Not sure yet</option>
+</select>
+</label>
+</div>
+<div class="community-conditional" data-role-panel="Property Owner" hidden="">
+<label>What are you interested in? <span class="optional">(Optional)</span>
+<select name="owner_interest">
+<option value="">Select an option</option><option>Selling</option><option>Leasing</option><option>Property management</option><option>Valuation</option><option>Market updates</option>
+</select>
+</label>
+</div>
+<div class="community-conditional" data-role-panel="Business Owner" hidden="">
+<label>What are you looking to do? <span class="optional">(Optional)</span>
+<select name="business_interest">
+<option value="">Select an option</option><option>Buy</option><option>Lease</option><option>Build</option><option>Just researching</option>
+</select>
+</label>
+</div>
+<div class="community-conditional community-two-col" data-role-panel="Developer" hidden="">
+<label>Primary project type <span class="optional">(Optional)</span><input name="developer_type" placeholder="e.g., retail, industrial" type="text"/></label>
+<label>Geographic focus <span class="optional">(Optional)</span><input name="developer_market" placeholder="e.g., Collin County" type="text"/></label>
+</div>
+<div class="community-conditional community-two-col" data-role-panel="Broker / Referral Partner" hidden="">
+<label>Company <span class="optional">(Optional)</span><input autocomplete="organization" name="broker_company" placeholder="Company name" type="text"/></label>
+<label>Market served <span class="optional">(Optional)</span><input name="broker_market" placeholder="Primary market" type="text"/></label>
+</div>
+<div class="community-conditional" data-role-panel="Other" hidden="">
+<label>Tell us a little about yourself <span class="optional">(Optional)</span><textarea name="other_details" placeholder="How can Latitude Stone help?" rows="2"></textarea></label>
+</div>
+<p class="community-tailor">We’d like to tailor the information you receive. Additional fields appear only when relevant.</p>
+<label class="community-checkbox"><input name="opportunities" type="checkbox" value="Yes"/><span>I’d also like to receive new listings and investment opportunities.</span></label>
+<button class="community-submit" type="submit">Join the Community</button>
+<p class="community-privacy">We respect your privacy. Your information will never be shared.</p>
+</form>
+</div>
+<aside aria-label="Dallas skyline at night" class="community-image-panel">
+<div class="community-image-copy">
+<h3><span>North Texas</span><span>Commercial Real Estate</span></h3>
+<span class="community-image-rule"></span>
+<strong>LATITUDE STONE</strong>
+<small>REAL ESTATE GROUP</small>
+<em>A Higher Perspective on Commercial Real Estate</em>
+</div>
+</aside>
+</section>
+</div><script src="script.js"></script>
 </body>
 </html>
