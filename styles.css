@@ -3225,3 +3225,103 @@ footer .footer-grid b .footer-heading-link:visited{
     transform:translateX(-28px)!important;
   }
 }
+
+/* v4.8 — punch-list refinements */
+
+/* Intentionally balanced interior HERO supporting copy on desktop. */
+@media(min-width:861px){
+  .services-page .services-hero p,
+  .about-page .about-hero p{max-width:760px!important}
+  .hero-copy-break{display:block!important}
+}
+@media(max-width:860px){
+  .hero-copy-break{display:none!important}
+}
+
+/* Mobile interior typography: match the homepage's confident but not heavy weight. */
+@media(max-width:860px){
+  .about-page .about-hero h1,
+  .services-page .services-hero h1,
+  .about-page .about-story h2,
+  .about-page .about-focus h2,
+  .about-page .about-darin h2,
+  .about-page .about-careers h2,
+  .about-page .about-cta h2{
+    font-weight:500!important;
+  }
+}
+
+/* Community opt-in: vertically center the checkbox with its label. */
+.community-checkbox{
+  align-items:center!important;
+  column-gap:10px!important;
+}
+.community-checkbox input{
+  margin:0!important;
+  align-self:center!important;
+}
+.community-checkbox span{
+  display:block;
+  line-height:1.35;
+}
+
+/* Careers: integrate the supplied team image into the center/right background. */
+.about-page .about-careers{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:var(--latitude-light-gray,#f2f3f4);
+}
+.about-page .about-careers::before{
+  content:"";
+  position:absolute;
+  z-index:-2;
+  top:0;
+  bottom:0;
+  left:38%;
+  right:0;
+  background:url('assets/careers-team.jpg') 48% 46%/cover no-repeat;
+  opacity:.56;
+}
+.about-page .about-careers::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  background:
+    linear-gradient(90deg,#f2f3f4 0%,#f2f3f4 36%,rgba(242,243,244,.90) 46%,rgba(242,243,244,.34) 62%,rgba(242,243,244,.72) 82%,#f2f3f4 100%),
+    linear-gradient(180deg,#f2f3f4 0%,rgba(242,243,244,.08) 18%,rgba(242,243,244,.08) 82%,#f2f3f4 100%);
+}
+.about-page .about-careers-copy,
+.about-page .about-careers-statement{position:relative;z-index:1}
+.about-page .about-careers-statement{
+  background:rgba(242,243,244,.34);
+  backdrop-filter:blur(1px);
+}
+@media(max-width:860px){
+  .about-page .about-careers::before{
+    left:0;
+    top:46%;
+    background-position:50% 42%;
+    opacity:.28;
+  }
+  .about-page .about-careers::after{
+    background:linear-gradient(180deg,#f2f3f4 0%,#f2f3f4 43%,rgba(242,243,244,.76) 57%,rgba(242,243,244,.88) 100%);
+  }
+  .about-page .about-careers-statement{background:transparent;backdrop-filter:none}
+}
+
+/* First What We Do section: dedicated load-in animation, independent of scroll reveal. */
+.services-page #advisory.reveal{
+  opacity:0!important;
+  transform:translateX(-56px)!important;
+  transition:opacity .72s ease,transform .72s ease!important;
+}
+.services-page #advisory.reveal.visible{
+  opacity:1!important;
+  transform:translateX(0)!important;
+}
+@media(max-width:860px){.services-page #advisory.reveal{transform:translateX(-28px)!important}}
+@media(prefers-reduced-motion:reduce){
+  .services-page #advisory.reveal{opacity:1!important;transform:none!important;transition:none!important}
+}

@@ -1,0 +1,10 @@
+Latitude Stone Website v4.8
+
+Punch-list updates from v4.7:
+- What We Do Section 1 now has a dedicated left-to-right entrance shortly after page load; no scroll required.
+- What We Do HERO supporting copy has an intentional balanced two-line break on desktop.
+- About HERO supporting copy has an intentional balanced two-line break on desktop.
+- Mobile interior HERO/About heading weights reduced to better match the homepage typography.
+- Careers section now integrates the supplied overhead team photo as a softly faded center/right background while retaining the existing right-side culture statement.
+- Join the Community opt-in checkbox/text alignment corrected.
+- Light editorial polish across What We Do and About to reduce repeated confidence, long-term, clear, thoughtful, and build/built language without rewriting the site or adding corporate jargon.
