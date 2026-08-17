@@ -1,1 +1,271 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0; url=index.html#insights"><title>Market Intelligence | Latitude Stone</title></head><body><p><a href="index.html#insights">Market Intelligence</a></p></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="North Texas commercial real estate insights, market updates, and investment analysis tools from Latitude Stone Real Estate Group.">
+<title>Market Intelligence | Latitude Stone</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="insights-page">
+<header class="site-header">
+<a aria-label="Latitude Stone home" class="wordmark" href="index.html#home"><strong>LATITUDE STONE</strong><span>REAL ESTATE GROUP</span></a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle"><span></span><span></span></button>
+<nav aria-label="Primary navigation">
+<a href="index.html#home">Home</a>
+<a href="services.html">What we do</a>
+<a href="index.html#market">Our market</a>
+<a href="about.html">About</a>
+<a class="active" href="insights.html">Market intelligence</a>
+</nav>
+<a class="outline-button header-cta" href="schedule.html">Schedule a consultation</a>
+</header>
+
+<main>
+<section class="intel-hero">
+<div class="intel-hero-image" aria-hidden="true"></div>
+<div class="intel-hero-overlay"></div>
+<div class="intel-hero-copy reveal">
+<h1>Market intelligence.</h1>
+<p>Practical insight, market updates, and useful tools for commercial real estate decisions across North Texas.</p>
+</div>
+</section>
+
+<section class="intel-section intel-latest" id="latest-insights">
+<div class="intel-section-heading reveal">
+<p class="eyebrow">Latest insights</p>
+<h2>Perspective on the market.</h2>
+</div>
+<div class="intel-card-grid">
+<article class="intel-insight-card reveal">
+<img alt="Dallas skyline at sunset" src="assets/insight-market.jpg">
+<div class="intel-card-copy"><small>Market outlook</small><h3>Q3 North Texas Market Outlook</h3><p>Key trends shaping commercial real estate across DFW.</p><a href="#" aria-label="Read Q3 North Texas Market Outlook">Read insight <span>→</span></a></div>
+</article>
+<article class="intel-insight-card reveal">
+<img alt="Commercial development under construction" src="assets/insight-construction.jpg">
+<div class="intel-card-copy"><small>Development</small><h3>Industrial Development Pipeline Remains Strong</h3><p>New supply, tenant demand, and where activity is concentrating.</p><a href="#" aria-label="Read Industrial Development Pipeline">Read insight <span>→</span></a></div>
+</article>
+<article class="intel-insight-card reveal">
+<img alt="Mixed-use commercial development" src="assets/insight-mixed-use.jpg">
+<div class="intel-card-copy"><small>Investment insight</small><h3>Capital Markets Update: Opportunities Ahead</h3><p>What investors are watching as financing and pricing evolve.</p><a href="#" aria-label="Read Capital Markets Update">Read insight <span>→</span></a></div>
+</article>
+</div>
+</section>
+
+<section class="intel-community reveal">
+<div>
+<p class="eyebrow">Stay connected</p>
+<h2>Join the Latitude Stone Community.</h2>
+<p>Get market updates, new listings, development news, and investment opportunities delivered to you.</p>
+</div>
+<button class="gold-button community-trigger" type="button" aria-haspopup="dialog" aria-controls="community-modal">Join the Community <span>→</span></button>
+</section>
+
+<section class="intel-section intel-tools" id="tools">
+<div class="intel-section-heading reveal">
+<p class="eyebrow">Tools &amp; resources</p>
+<h2>Put the numbers to work.</h2>
+<p>Simple tools to help you evaluate an opportunity before the next conversation.</p>
+</div>
+
+<div class="intel-tools-layout">
+<div class="intel-tool-nav reveal">
+<button class="intel-tool-card active" type="button" data-tool-target="investment-calculator">
+<span class="tool-status">Available now</span>
+<strong>Investment Analysis</strong>
+<p>Evaluate purchase price, NOI, financing, cash flow, and debt coverage.</p>
+<span class="tool-link">Analyze an investment →</span>
+</button>
+<div class="intel-tool-card coming-soon">
+<span class="tool-status">Coming soon</span>
+<strong>Property Valuation</strong>
+<p>Get an initial indication of what your commercial property could be worth.</p>
+<span class="tool-link">Property valuation</span>
+</div>
+</div>
+
+<section class="investment-calculator reveal" id="investment-calculator" aria-labelledby="calculator-title">
+<div class="calculator-heading">
+<div>
+<p class="eyebrow">Investment analysis</p>
+<h3 id="calculator-title">Investment Analysis Calculator</h3>
+<p>Enter purchase price and annual NOI to get started. Financing assumptions are prefilled and can be changed.</p>
+</div>
+<button class="calculator-reset" id="calculator-reset" type="button">Reset</button>
+</div>
+
+<form class="calculator-form" id="investment-calculator-form" novalidate>
+<div class="calculator-primary">
+<label>Purchase Price
+<div class="money-input"><span>$</span><input id="calc-price" type="number" min="0" step="1000" value="1000000" inputmode="decimal"></div>
+</label>
+<label>Annual NOI
+<div class="money-input"><span>$</span><input id="calc-noi" type="number" min="0" step="1000" value="70000" inputmode="decimal"></div>
+</label>
+</div>
+
+<details class="calculator-assumptions">
+<summary>Adjust financing assumptions <span>+</span></summary>
+<div class="calculator-assumption-grid">
+<label>Down Payment %
+<div class="suffix-input"><input id="calc-down" type="number" min="0" max="100" step="1" value="35"><span>%</span></div>
+</label>
+<label>Interest Rate
+<div class="suffix-input"><input id="calc-rate" type="number" min="0" max="30" step="0.05" value="6"><span>%</span></div>
+</label>
+<label>Amortization
+<div class="suffix-input"><input id="calc-amort" type="number" min="1" max="50" step="1" value="25"><span>years</span></div>
+</label>
+</div>
+</details>
+</form>
+
+<div class="calculator-results" aria-live="polite">
+<div class="result-card"><span>Purchase Cap Rate</span><strong id="result-cap">7.00%</strong></div>
+<div class="result-card"><span>Loan Amount</span><strong id="result-loan">$650,000</strong></div>
+<div class="result-card"><span>Down Payment</span><strong id="result-equity">$350,000</strong></div>
+<div class="result-card"><span>Monthly Debt Service</span><strong id="result-monthly">$4,188</strong></div>
+<div class="result-card"><span>Annual Debt Service</span><strong id="result-annual-debt">$50,256</strong></div>
+<div class="result-card"><span>Annual Cash Flow</span><strong id="result-cashflow">$19,744</strong></div>
+<div class="result-card result-dscr"><span>Debt Service Coverage Ratio</span><strong id="result-dscr">1.39x</strong><small id="result-dscr-label">Healthy coverage</small></div>
+</div>
+
+<div class="dscr-guide">
+<div><strong>2.00x+</strong><span>Very strong coverage</span></div>
+<div><strong>1.25x – 1.99x</strong><span>Healthy coverage</span></div>
+<div><strong>1.00x – 1.24x</strong><span>Tighter coverage</span></div>
+<div><strong>Below 1.00x</strong><span>NOI does not fully cover debt service</span></div>
+</div>
+
+<div class="calculator-bottom">
+<p>This calculator is for educational and preliminary analysis only. Results are estimates based on the information provided and should not be relied upon for lending, tax, legal, appraisal, or investment decisions. Actual lender requirements and underwriting standards vary.</p>
+<button class="gold-button investment-lead-trigger" type="button" aria-haspopup="dialog" aria-controls="investment-modal">Review This Opportunity <span>→</span></button>
+</div>
+</section>
+</div>
+</section>
+
+<section class="intel-page-cta">
+<div class="interior-cta-inner reveal">
+<div class="interior-cta-copy">
+<h2>Have a property or opportunity in mind?</h2>
+<p>Let’s discuss your commercial real estate goals.</p>
+</div>
+<a class="gold-button interior-cta-button" href="schedule.html">Schedule a consultation <span>→</span></a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-grid">
+<div class="footer-brand"><strong>LATITUDE STONE</strong><span>REAL ESTATE GROUP</span><p>Boutique commercial real estate advisory and brokerage services throughout North Texas.</p></div>
+<div><b>Company</b><a href="about.html">About</a><a href="about.html#leadership">Our leadership</a><a href="about.html#careers">Careers</a><a href="mailto:Info@LatitudeStoneRealEstate.com">Contact</a></div>
+<div><b><a class="footer-heading-link" href="services.html">What we do</a></b><a href="services.html#advisory">Advisory services</a><a href="services.html#investment-sales">Investment sales</a><a href="services.html#property-disposition">Property disposition</a><a href="services.html#tenant-representation">Tenant representation</a><a href="services.html#property-management">Property &amp; asset management</a></div>
+<div><b>Resources</b><a href="index.html#market">Our market</a><a href="insights.html">Market intelligence</a><a aria-controls="community-modal" aria-haspopup="dialog" class="community-trigger footer-community-trigger" href="#community-modal">Join our community</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Latitude Stone Real Estate Group, LLC. All rights reserved.</p><p class="compliance-links"><a href="https://www.trec.texas.gov/forms/information-about-brokerage-services" rel="noopener" target="_blank">Information About Brokerage Services (IABS)</a><span>|</span><a href="https://www.trec.texas.gov/forms/consumer-protection-notice" rel="noopener" target="_blank">Consumer Protection Notice</a></p></div>
+</footer>
+
+<div aria-hidden="true" class="community-modal" id="community-modal">
+<div class="community-backdrop" data-community-close=""></div>
+<section aria-labelledby="community-title" aria-modal="true" class="community-dialog" role="dialog">
+<button aria-label="Close community form" class="community-close" data-community-close="" type="button">×</button>
+<div class="community-form-panel">
+<p class="community-kicker">Join the</p>
+<h2 id="community-title">Latitude Stone Community</h2>
+<p class="community-intro">Receive market intelligence, new listings, development updates, and investment opportunities across North Texas commercial real estate.</p>
+<form class="community-form" id="community-form">
+<div class="community-two-col">
+<label>Name <span aria-hidden="true">*</span><input autocomplete="name" name="name" placeholder="Enter your name" required="" type="text"/></label>
+<label>Email <span aria-hidden="true">*</span><input autocomplete="email" name="email" placeholder="Enter your email" required="" type="email"/></label>
+</div>
+<label>Phone <span class="optional">(Optional)</span><input autocomplete="tel" name="phone" placeholder="Enter your phone number" type="tel"/></label>
+<fieldset class="community-role-group">
+<legend>I am a(n): <span aria-hidden="true">*</span></legend>
+<div class="community-role-grid">
+<label><input name="role" required="" type="radio" value="Investor"/><span>Investor</span></label>
+<label><input name="role" type="radio" value="Developer"/><span>Developer</span></label>
+<label><input name="role" type="radio" value="Property Owner"/><span>Property Owner</span></label>
+<label><input name="role" type="radio" value="Broker / Referral Partner"/><span>Broker / Referral Partner</span></label>
+<label><input name="role" type="radio" value="Business Owner"/><span>Business Owner</span></label>
+<label><input name="role" type="radio" value="Other"/><span>Other</span></label>
+</div>
+</fieldset>
+<div class="community-conditional" data-role-panel="Investor" hidden="">
+<label>Investment focus <span class="optional">(Optional)</span>
+<select name="investor_focus">
+<option value="">Select an area</option><option>Retail</option><option>Industrial / Flex</option><option>Office</option><option>Land</option><option>Mixed-use</option><option>Multifamily</option><option>Self storage</option><option>Not sure yet</option>
+</select>
+</label>
+</div>
+<div class="community-conditional" data-role-panel="Property Owner" hidden="">
+<label>What are you interested in? <span class="optional">(Optional)</span>
+<select name="owner_interest">
+<option value="">Select an option</option><option>Selling</option><option>Leasing</option><option>Property management</option><option>Valuation</option><option>Market updates</option>
+</select>
+</label>
+</div>
+<div class="community-conditional" data-role-panel="Business Owner" hidden="">
+<label>What are you looking to do? <span class="optional">(Optional)</span>
+<select name="business_interest">
+<option value="">Select an option</option><option>Buy</option><option>Lease</option><option>Build</option><option>Just researching</option>
+</select>
+</label>
+</div>
+<div class="community-conditional community-two-col" data-role-panel="Developer" hidden="">
+<label>Primary project type <span class="optional">(Optional)</span><input name="developer_type" placeholder="e.g., retail, industrial" type="text"/></label>
+<label>Geographic focus <span class="optional">(Optional)</span><input name="developer_market" placeholder="e.g., Collin County" type="text"/></label>
+</div>
+<div class="community-conditional community-two-col" data-role-panel="Broker / Referral Partner" hidden="">
+<label>Company <span class="optional">(Optional)</span><input autocomplete="organization" name="broker_company" placeholder="Company name" type="text"/></label>
+<label>Market served <span class="optional">(Optional)</span><input name="broker_market" placeholder="Primary market" type="text"/></label>
+</div>
+<div class="community-conditional" data-role-panel="Other" hidden="">
+<label>Tell us a little about yourself <span class="optional">(Optional)</span><textarea name="other_details" placeholder="How can Latitude Stone help?" rows="2"></textarea></label>
+</div>
+<p class="community-tailor">We’d like to tailor the information you receive. Additional fields appear only when relevant.</p>
+<label class="community-checkbox"><input name="opportunities" type="checkbox" value="Yes"/><span>I’d also like to receive new listings and investment opportunities.</span></label>
+<button class="community-submit" type="submit">Join the Community</button>
+<p class="community-privacy">We respect your privacy. Your information will never be shared.</p>
+</form>
+</div>
+<aside aria-label="Dallas skyline at night" class="community-image-panel">
+<div class="community-image-copy">
+<h3><span>North Texas</span><span>Commercial Real Estate</span></h3>
+<span class="community-image-rule"></span>
+<strong>LATITUDE STONE</strong>
+<small>REAL ESTATE GROUP</small>
+<em>A Higher Perspective on Commercial Real Estate</em>
+</div>
+</aside>
+</section>
+</div>
+
+<div aria-hidden="true" class="community-modal investment-modal" id="investment-modal">
+<div class="community-backdrop" data-investment-close></div>
+<section aria-labelledby="investment-modal-title" aria-modal="true" class="community-dialog investment-dialog" role="dialog">
+<button aria-label="Close investment review form" class="community-close" data-investment-close type="button">×</button>
+<div class="community-form-panel">
+<p class="community-kicker">Review this opportunity</p>
+<h2 id="investment-modal-title">Talk through the numbers.</h2>
+<p class="community-intro">Send us the scenario you just analyzed and we’ll have a better starting point for the conversation.</p>
+<form class="community-form" id="investment-review-form">
+<div class="community-two-col">
+<label>Name <span aria-hidden="true">*</span><input autocomplete="name" name="name" required type="text" placeholder="Enter your name"></label>
+<label>Email <span aria-hidden="true">*</span><input autocomplete="email" name="email" required type="email" placeholder="Enter your email"></label>
+</div>
+<label>Phone <span class="optional">(Optional)</span><input autocomplete="tel" name="phone" type="tel" placeholder="Enter your phone number"></label>
+<div class="investment-summary" id="investment-summary"></div>
+<button class="community-submit" type="submit">Send opportunity <span>→</span></button>
+<p class="community-privacy">Your information will not be shared.</p>
+</form>
+</div>
+<div class="community-image-panel investment-image-panel">
+<div class="community-image-copy"><strong>North Texas<br/>Commercial Real Estate</strong><span>LATITUDE STONE</span><small>REAL ESTATE GROUP</small></div>
+</div>
+</section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

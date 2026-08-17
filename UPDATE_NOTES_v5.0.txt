@@ -1,0 +1,35 @@
+Latitude Stone Website v5.0 — Market Intelligence + Investment Analysis
+
+MARKET INTELLIGENCE
+- Replaced the redirect stub with a full Market Intelligence page.
+- Added approved Dallas aerial HERO image with subtle motion and dark overlay.
+- HERO copy kept concise to avoid repeating existing brand language.
+- Added Latest Insights section using the site's existing article imagery.
+- Added Join the Latitude Stone Community CTA between Insights and Tools.
+- Added Tools & Resources section with no icons.
+- Investment Analysis Calculator is functional.
+- Property Valuation is shown as Coming Soon.
+- Page uses white and light gray backgrounds only.
+- Reuses the established site header, CTA styling, Community modal, and footer.
+- Market Intelligence nav item is active with the muted-brass underline.
+- Sitewide Market Intelligence links now open insights.html.
+
+INVESTMENT ANALYSIS CALCULATOR
+- Required starting inputs: Purchase Price and Annual NOI.
+- Preset editable financing assumptions:
+  35% down payment
+  6.00% interest rate
+  25-year amortization
+- Calculates purchase cap rate, loan amount, down payment, monthly and annual debt service,
+  annual cash flow after debt service, and DSCR.
+- Includes DSCR guideline bands and a preliminary-analysis disclaimer.
+- Review This Opportunity opens a short lead form with the calculated scenario summarized.
+
+WHAT WE DO
+- Fixed duplicate HERO headline rendering.
+- Desktop headline now shows only:
+  Commercial real estate
+  expertise at every stage.
+- Mobile retains the intentional four-line layout.
+
+Note: Insight article links are visual placeholders until individual article pages are built.

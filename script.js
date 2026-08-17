@@ -211,3 +211,113 @@ if(document.body.classList.contains('services-page')){
     }
   }
 }
+
+
+// v5.0 — Market Intelligence investment calculator
+(() => {
+  const form=document.getElementById('investment-calculator-form');
+  if(!form) return;
+
+  const $=id=>document.getElementById(id);
+  const fields={
+    price:$('calc-price'),
+    noi:$('calc-noi'),
+    down:$('calc-down'),
+    rate:$('calc-rate'),
+    amort:$('calc-amort')
+  };
+
+  const fmtCurrency=value=>{
+    if(!Number.isFinite(value)) value=0;
+    return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
+  };
+  const num=el=>Math.max(0,parseFloat(el?.value)||0);
+
+  function calc(){
+    const price=num(fields.price);
+    const noi=num(fields.noi);
+    const downPct=Math.min(100,num(fields.down));
+    const ratePct=num(fields.rate);
+    const amortYears=Math.max(1,num(fields.amort));
+
+    const equity=price*(downPct/100);
+    const loan=Math.max(0,price-equity);
+    const monthlyRate=(ratePct/100)/12;
+    const n=amortYears*12;
+    const monthlyDebt=loan===0?0:(monthlyRate===0?loan/n:loan*(monthlyRate*Math.pow(1+monthlyRate,n))/(Math.pow(1+monthlyRate,n)-1));
+    const annualDebt=monthlyDebt*12;
+    const cashflow=noi-annualDebt;
+    const cap=price>0?noi/price:0;
+    const dscr=annualDebt>0?noi/annualDebt:0;
+
+    $('result-cap').textContent=(cap*100).toFixed(2)+'%';
+    $('result-loan').textContent=fmtCurrency(loan);
+    $('result-equity').textContent=fmtCurrency(equity);
+    $('result-monthly').textContent=fmtCurrency(monthlyDebt);
+    $('result-annual-debt').textContent=fmtCurrency(annualDebt);
+    $('result-cashflow').textContent=fmtCurrency(cashflow);
+    $('result-dscr').textContent=annualDebt>0?dscr.toFixed(2)+'x':'—';
+
+    let label='No debt service';
+    if(annualDebt>0){
+      if(dscr>=2) label='Very strong coverage';
+      else if(dscr>=1.25) label='Healthy coverage';
+      else if(dscr>=1) label='Tighter coverage';
+      else label='NOI does not fully cover debt service';
+    }
+    $('result-dscr-label').textContent=label;
+
+    return {price,noi,downPct,ratePct,amortYears,equity,loan,monthlyDebt,annualDebt,cashflow,cap,dscr,label};
+  }
+
+  Object.values(fields).forEach(el=>el?.addEventListener('input',calc));
+  $('calculator-reset')?.addEventListener('click',()=>{
+    fields.price.value=1000000;
+    fields.noi.value=70000;
+    fields.down.value=35;
+    fields.rate.value=6;
+    fields.amort.value=25;
+    calc();
+  });
+
+  document.querySelector('[data-tool-target="investment-calculator"]')?.addEventListener('click',()=>{
+    document.getElementById('investment-calculator')?.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  const modal=$('investment-modal');
+  const openInvestment=()=>{
+    const r=calc();
+    const summary=$('investment-summary');
+    if(summary){
+      summary.innerHTML=
+        '<strong>Scenario summary</strong><br>'+
+        'Purchase Price: '+fmtCurrency(r.price)+'<br>'+
+        'Annual NOI: '+fmtCurrency(r.noi)+'<br>'+
+        'Purchase Cap Rate: '+(r.cap*100).toFixed(2)+'%<br>'+
+        'Loan Amount: '+fmtCurrency(r.loan)+'<br>'+
+        'DSCR: '+(r.annualDebt>0?r.dscr.toFixed(2)+'x':'—');
+    }
+    modal?.classList.add('open');
+    modal?.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+  };
+  const closeInvestment=()=>{
+    modal?.classList.remove('open');
+    modal?.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+  };
+  document.querySelector('.investment-lead-trigger')?.addEventListener('click',openInvestment);
+  document.querySelectorAll('[data-investment-close]').forEach(el=>el.addEventListener('click',closeInvestment));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal?.classList.contains('open'))closeInvestment()});
+
+  $('investment-review-form')?.addEventListener('submit',e=>{
+    e.preventDefault();
+    const btn=e.currentTarget.querySelector('button[type="submit"]');
+    if(btn){
+      btn.textContent='Thank you';
+      btn.disabled=true;
+    }
+  });
+
+  calc();
+})();
