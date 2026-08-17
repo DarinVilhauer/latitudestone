@@ -27,7 +27,7 @@
 <div class="intel-hero-overlay"></div>
 <div class="intel-hero-copy reveal">
 <h1>Market intelligence.</h1>
-<p>Practical insight, market updates, and useful tools for commercial real estate decisions across North Texas.</p>
+<p>Practical insight, market updates, and useful tools<br/>for commercial real estate decisions across North Texas.</p>
 </div>
 </section>
 
@@ -58,7 +58,7 @@
 <h2>Join the Latitude Stone Community.</h2>
 <p>Get market updates, new listings, development news, and investment opportunities delivered to you.</p>
 </div>
-<button class="gold-button community-trigger" type="button" aria-haspopup="dialog" aria-controls="community-modal">Join the Community <span>→</span></button>
+<button class="gold-button community-trigger" type="button" aria-haspopup="dialog" aria-controls="community-modal">Join the LS Community <span>→</span></button>
 </section>
 
 <section class="intel-section intel-tools" id="tools">
@@ -70,26 +70,25 @@
 
 <div class="intel-tools-layout">
 <div class="intel-tool-nav reveal">
-<button class="intel-tool-card active" type="button" data-tool-target="investment-calculator">
-<span class="tool-status">Available now</span>
+<button class="intel-tool-card active" type="button" data-tool="investment" aria-pressed="true">
 <strong>Investment Analysis</strong>
 <p>Evaluate purchase price, NOI, financing, cash flow, and debt coverage.</p>
-<span class="tool-link">Analyze an investment →</span>
+<span class="tool-link">Analyze investment →</span>
 </button>
-<div class="intel-tool-card coming-soon">
-<span class="tool-status">Coming soon</span>
+<button class="intel-tool-card" type="button" data-tool="valuation" aria-pressed="false">
 <strong>Property Valuation</strong>
 <p>Get an initial indication of what your commercial property could be worth.</p>
-<span class="tool-link">Property valuation</span>
-</div>
+<span class="tool-link">Property valuation →</span>
+</button>
 </div>
 
-<section class="investment-calculator reveal" id="investment-calculator" aria-labelledby="calculator-title">
+<div class="calculator-stage">
+<section class="investment-calculator tool-panel active" id="investment-calculator" data-tool-panel="investment" aria-labelledby="calculator-title">
 <div class="calculator-heading">
 <div>
 <p class="eyebrow">Investment analysis</p>
 <h3 id="calculator-title">Investment Analysis Calculator</h3>
-<p>Enter purchase price and annual NOI to get started. Financing assumptions are prefilled and can be changed.</p>
+<p>Enter purchase price and annual NOI to get started.</p>
 </div>
 <button class="calculator-reset" id="calculator-reset" type="button">Reset</button>
 </div>
@@ -97,16 +96,16 @@
 <form class="calculator-form" id="investment-calculator-form" novalidate>
 <div class="calculator-primary">
 <label>Purchase Price
-<div class="money-input"><span>$</span><input id="calc-price" type="number" min="0" step="1000" value="1000000" inputmode="decimal"></div>
+<div class="money-input"><span>$</span><input id="calc-price" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter purchase price"></div>
 </label>
 <label>Annual NOI
-<div class="money-input"><span>$</span><input id="calc-noi" type="number" min="0" step="1000" value="70000" inputmode="decimal"></div>
+<div class="money-input"><span>$</span><input id="calc-noi" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter annual NOI"></div>
 </label>
 </div>
 
 <details class="calculator-assumptions">
 <summary>Adjust financing assumptions <span>+</span></summary>
-<div class="calculator-assumption-grid">
+<div class="calculator-assumption-grid calculator-assumption-grid-five">
 <label>Down Payment %
 <div class="suffix-input"><input id="calc-down" type="number" min="0" max="100" step="1" value="35"><span>%</span></div>
 </label>
@@ -116,25 +115,32 @@
 <label>Amortization
 <div class="suffix-input"><input id="calc-amort" type="number" min="1" max="50" step="1" value="25"><span>years</span></div>
 </label>
+<label>Vacancy
+<div class="suffix-input"><input id="calc-vacancy" type="number" min="0" max="100" step="0.5" value="6"><span>%</span></div>
+</label>
+<label>Reserves
+<div class="suffix-input"><input id="calc-reserves" type="number" min="0" max="100" step="0.5" value="3"><span>%</span></div>
+</label>
 </div>
 </details>
 </form>
 
 <div class="calculator-results" aria-live="polite">
-<div class="result-card"><span>Purchase Cap Rate</span><strong id="result-cap">7.00%</strong></div>
-<div class="result-card"><span>Loan Amount</span><strong id="result-loan">$650,000</strong></div>
-<div class="result-card"><span>Down Payment</span><strong id="result-equity">$350,000</strong></div>
-<div class="result-card"><span>Monthly Debt Service</span><strong id="result-monthly">$4,188</strong></div>
-<div class="result-card"><span>Annual Debt Service</span><strong id="result-annual-debt">$50,256</strong></div>
-<div class="result-card"><span>Annual Cash Flow</span><strong id="result-cashflow">$19,744</strong></div>
-<div class="result-card result-dscr"><span>Debt Service Coverage Ratio</span><strong id="result-dscr">1.39x</strong><small id="result-dscr-label">Healthy coverage</small></div>
+<div class="result-card"><span>Purchase Cap Rate</span><strong id="result-cap">—</strong></div>
+<div class="result-card"><span>Loan Amount</span><strong id="result-loan">—</strong></div>
+<div class="result-card"><span>Down Payment</span><strong id="result-equity">—</strong></div>
+<div class="result-card"><span>Monthly Debt Service</span><strong id="result-monthly">—</strong></div>
+<div class="result-card"><span>Adjusted NOI</span><strong id="result-adjusted-noi">—</strong></div>
+<div class="result-card"><span>Annual Debt Service</span><strong id="result-annual-debt">—</strong></div>
+<div class="result-card"><span>Annual Cash Flow</span><strong id="result-cashflow">—</strong></div>
+<div class="result-card result-dscr"><span>Debt Service Coverage Ratio</span><strong id="result-dscr">—</strong><small id="result-dscr-label">Enter property assumptions</small></div>
 </div>
 
 <div class="dscr-guide">
-<div><strong>2.00x+</strong><span>Very strong coverage</span></div>
-<div><strong>1.25x – 1.99x</strong><span>Healthy coverage</span></div>
-<div><strong>1.00x – 1.24x</strong><span>Tighter coverage</span></div>
-<div><strong>Below 1.00x</strong><span>NOI does not fully cover debt service</span></div>
+<div><strong>1.50x+</strong><span>Strong</span></div>
+<div><strong>1.25x – 1.49x</strong><span>Healthy</span></div>
+<div><strong>1.00x – 1.24x</strong><span>Limited</span></div>
+<div><strong>Below 1.00x</strong><span>Shortfall</span></div>
 </div>
 
 <div class="calculator-bottom">
@@ -142,6 +148,71 @@
 <button class="gold-button investment-lead-trigger" type="button" aria-haspopup="dialog" aria-controls="investment-modal">Review This Opportunity <span>→</span></button>
 </div>
 </section>
+
+<section class="investment-calculator valuation-calculator tool-panel" id="valuation-calculator" data-tool-panel="valuation" aria-labelledby="valuation-title" hidden>
+<div class="calculator-heading">
+<div>
+<p class="eyebrow">Property valuation</p>
+<h3 id="valuation-title">Property Value Calculator</h3>
+<p>Enter annual NOI and select a property type to estimate a value range.</p>
+</div>
+<button class="calculator-reset" id="valuation-reset" type="button">Reset</button>
+</div>
+
+<form class="calculator-form" id="valuation-calculator-form" novalidate>
+<div class="calculator-primary">
+<label>Annual NOI
+<div class="money-input"><span>$</span><input id="valuation-noi" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter annual NOI"></div>
+</label>
+<label>Property Type
+<div class="select-input"><select id="valuation-type">
+<option value="" selected>Select property type</option>
+<option value="retail">Retail</option>
+<option value="industrial">Industrial</option>
+<option value="office">Office</option>
+<option value="medical">Medical Office</option>
+<option value="multifamily">Multifamily</option>
+<option value="mixed">Mixed Use</option>
+<option value="other">Other</option>
+</select></div>
+</label>
+</div>
+
+<details class="calculator-assumptions">
+<summary>Adjust valuation assumptions <span>+</span></summary>
+<div class="calculator-assumption-grid">
+<label>Low Cap Rate
+<div class="suffix-input"><input id="valuation-low-cap" type="number" min="0.1" max="20" step="0.05" value="6.50"><span>%</span></div>
+</label>
+<label>High Cap Rate
+<div class="suffix-input"><input id="valuation-high-cap" type="number" min="0.1" max="20" step="0.05" value="7.50"><span>%</span></div>
+</label>
+</div>
+</details>
+</form>
+
+<div class="valuation-results" aria-live="polite">
+<div class="valuation-range-card">
+<span>Estimated Value Range</span>
+<strong id="valuation-range">—</strong>
+<small id="valuation-cap-note">Select a property type to apply a starting cap-rate range.</small>
+</div>
+<div class="valuation-result-grid">
+<div class="result-card"><span>Midpoint Estimate</span><strong id="valuation-midpoint">—</strong></div>
+<div class="result-card"><span>Cap Rate Range Used</span><strong id="valuation-cap-range">—</strong></div>
+</div>
+</div>
+
+<div class="calculator-bottom valuation-bottom">
+<div>
+<strong>Want a more precise estimate?</strong>
+<p>Property value can vary based on location, tenancy, lease structure, property condition, and current market conditions.</p>
+</div>
+<button class="gold-button valuation-lead-trigger" type="button" aria-haspopup="dialog" aria-controls="valuation-modal">Request an Opinion of Value <span>→</span></button>
+</div>
+<p class="valuation-disclaimer">This calculator provides a preliminary estimate only and is not an appraisal, broker opinion of value, or guarantee of market value. Starting cap-rate assumptions are illustrative and editable. Actual value may vary based on property-specific information and current market conditions.</p>
+</section>
+</div>
 </div>
 </section>
 
@@ -266,6 +337,30 @@
 </section>
 </div>
 
+<div aria-hidden="true" class="community-modal investment-modal" id="valuation-modal">
+<div class="community-backdrop" data-valuation-close></div>
+<section aria-labelledby="valuation-modal-title" aria-modal="true" class="community-dialog investment-dialog" role="dialog">
+<button aria-label="Close opinion of value form" class="community-close" data-valuation-close type="button">×</button>
+<div class="community-form-panel">
+<p class="community-kicker">Opinion of value</p>
+<h2 id="valuation-modal-title">Tell us about your property.</h2>
+<p class="community-intro">Share your information and the estimate you just reviewed so we have a better starting point for the conversation.</p>
+<form class="community-form" id="valuation-review-form">
+<div class="community-two-col">
+<label>Name <span aria-hidden="true">*</span><input autocomplete="name" name="name" required type="text" placeholder="Enter your name"></label>
+<label>Email <span aria-hidden="true">*</span><input autocomplete="email" name="email" required type="email" placeholder="Enter your email"></label>
+</div>
+<label>Phone <span class="optional">(Optional)</span><input autocomplete="tel" name="phone" type="tel" placeholder="Enter your phone number"></label>
+<div class="investment-summary" id="valuation-summary"></div>
+<button class="community-submit" type="submit">Request an Opinion of Value <span>→</span></button>
+<p class="community-privacy">Your information will not be shared.</p>
+</form>
+</div>
+<div class="community-image-panel investment-image-panel">
+<div class="community-image-copy"><strong>North Texas<br/>Commercial Real Estate</strong><span>LATITUDE STONE</span><small>REAL ESTATE GROUP</small></div>
+</div>
+</section>
+</div>
 <script src="script.js"></script>
 </body>
 </html>

@@ -3826,3 +3826,270 @@ button.intel-tool-card{cursor:pointer}
 @media(prefers-reduced-motion:reduce){
   .intel-hero-image{animation:none!important;transform:scale(1.025)!important}
 }
+
+
+/* v5.1 — Market Intelligence punch list + dual calculators */
+
+/* Market Intelligence header matches other interior pages */
+.insights-page .site-header{
+  position:absolute!important;
+  top:0; left:0; right:0;
+  z-index:30;
+  background:linear-gradient(180deg,rgba(3,9,15,.60),rgba(3,9,15,.08))!important;
+  border-bottom:1px solid rgba(255,255,255,.14)!important;
+}
+.insights-page .site-header .wordmark strong{color:#fff!important}
+.insights-page .site-header .wordmark span{color:var(--latitude-brass,#b5a078)!important}
+.insights-page .site-header .outline-button{
+  color:var(--latitude-brass,#b5a078)!important;
+  border-color:var(--latitude-brass,#b5a078)!important;
+  background:transparent!important;
+}
+.insights-page .site-header.scrolled{
+  position:fixed!important;
+  background:rgba(3,9,15,.96)!important;
+}
+
+/* Market Intelligence HERO aligns vertically with other interior HERO pages */
+.insights-page .intel-hero{
+  height:clamp(560px,67vh,690px)!important;
+  align-items:center!important;
+  padding:72px clamp(40px,5vw,90px) 0!important;
+}
+.insights-page .intel-hero-copy{
+  margin-top:42px;
+}
+.insights-page .intel-hero-image{
+  animation:intelHeroDrift 23s ease-in-out infinite alternate!important;
+}
+
+/* Market Intelligence small section labels */
+.insights-page .intel-section-heading .eyebrow,
+.insights-page .intel-community .eyebrow,
+.insights-page .calculator-heading .eyebrow{
+  color:var(--latitude-brass,#b5a078)!important;
+}
+
+/* Latest insight cards use the same restrained hover lift as homepage cards */
+.insights-page .intel-insight-card{
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+@media(hover:hover){
+  .insights-page .intel-insight-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 16px 34px rgba(7,15,22,.10);
+    border-color:rgba(181,160,120,.45);
+  }
+}
+
+/* Homepage secondary link beneath Join Community */
+.insights-page-link{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  margin-top:18px;
+  color:var(--latitude-brass,#b5a078);
+  font-size:13px;
+  font-weight:600;
+}
+
+/* Stay connected layout */
+.insights-page .intel-community>div{max-width:1050px!important}
+.insights-page .intel-community>div>p:last-child{
+  max-width:none!important;
+  white-space:nowrap;
+}
+.insights-page .intel-community .gold-button{
+  min-width:245px;
+  justify-self:end;
+  background:var(--latitude-brass,#b5a078)!important;
+  border-color:var(--latitude-brass,#b5a078)!important;
+  color:#081019!important;
+}
+
+/* Tool selector: active tool gets black fill + muted brass outline */
+.insights-page .intel-tool-card{
+  appearance:none;
+  border:1px solid #d7dbde!important;
+  background:#f2f3f4!important;
+  color:#0b1117!important;
+  transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s ease;
+}
+.insights-page .intel-tool-card p{color:#505861!important;opacity:1!important}
+.insights-page .intel-tool-card.active{
+  background:#081019!important;
+  color:#fff!important;
+  border-color:var(--latitude-brass,#b5a078)!important;
+  box-shadow:inset 0 0 0 1px var(--latitude-brass,#b5a078);
+}
+.insights-page .intel-tool-card.active p{color:#b9c0c6!important}
+.insights-page .intel-tool-card .tool-link{
+  color:var(--latitude-brass,#b5a078)!important;
+}
+.insights-page .intel-tool-card:hover{transform:translateY(-2px)}
+.insights-page .tool-status{display:none!important}
+
+/* Tool panels fade when switching */
+.calculator-stage{position:relative;min-width:0}
+.tool-panel{
+  display:none;
+  opacity:0;
+  transform:translateY(8px);
+}
+.tool-panel.active{
+  display:block;
+  opacity:1;
+  transform:none;
+  animation:toolPanelIn .26s ease;
+}
+@keyframes toolPanelIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:none}
+}
+
+/* Calculator labels / focus treatment */
+.insights-page .calculator-heading .eyebrow{color:var(--latitude-brass,#b5a078)!important}
+.money-input:focus-within,
+.suffix-input:focus-within,
+.select-input:focus-within{
+  border-color:var(--latitude-brass,#b5a078)!important;
+  box-shadow:0 0 0 1px var(--latitude-brass,#b5a078);
+}
+.select-input{
+  border:1px solid #ccd2d6;
+  min-height:50px;
+  background:#fff;
+}
+.select-input select{
+  width:100%;
+  min-height:50px;
+  border:0;
+  outline:0;
+  background:transparent;
+  padding:0 14px;
+  font:500 15px var(--sans);
+  color:#0b1117;
+}
+.calculator-assumption-grid-five{
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+}
+
+/* Results stay quiet before required inputs are entered */
+.result-card strong:empty{color:#9aa2a9}
+
+/* DSCR wording */
+.dscr-guide span{font-weight:500;color:#4f5861}
+.result-dscr small{font-weight:600}
+
+/* Fine print stays on one line on desktop */
+@media(min-width:1101px){
+  .investment-calculator .calculator-bottom>p{
+    white-space:nowrap;
+    font-size:9px!important;
+  }
+}
+
+/* Property valuation results */
+.valuation-results{
+  border-top:1px solid #e3e5e7;
+  margin-top:8px;
+}
+.valuation-range-card{
+  padding:34px 36px;
+  text-align:center;
+  border-bottom:1px solid #e3e5e7;
+}
+.valuation-range-card>span{
+  display:block;
+  color:#69737c;
+  font-size:12px;
+  margin-bottom:12px;
+}
+.valuation-range-card strong{
+  display:block;
+  font-size:clamp(34px,4vw,54px);
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+.valuation-range-card small{
+  display:block;
+  margin-top:9px;
+  color:#75684e;
+}
+.valuation-result-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.valuation-result-grid .result-card:last-child{border-right:0}
+.valuation-bottom>div{max-width:680px}
+.valuation-bottom>div>strong{
+  display:block;
+  font-size:18px;
+  margin-bottom:8px;
+}
+.valuation-bottom>div>p{font-size:13px!important}
+.valuation-disclaimer{
+  margin:0;
+  padding:0 36px 30px;
+  color:#727b83;
+  font-size:10px;
+  line-height:1.45;
+}
+
+/* Market Intelligence CTA exactly follows other interior page component */
+.insights-page .intel-page-cta{
+  background:#050c12!important;
+  color:#fff;
+  padding:58px clamp(34px,5vw,84px)!important;
+}
+.insights-page .intel-page-cta .interior-cta-inner{
+  max-width:1500px!important;
+  margin:0 auto!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:clamp(52px,7vw,110px)!important;
+  align-items:center!important;
+}
+.insights-page .intel-page-cta h2{
+  font-weight:400!important;
+  font-size:clamp(38px,3.7vw,56px)!important;
+}
+.insights-page .intel-page-cta .interior-cta-copy p{
+  color:var(--latitude-brass,#b5a078)!important;
+}
+.insights-page .intel-page-cta .gold-button{
+  background:var(--latitude-brass,#b5a078)!important;
+  border-color:var(--latitude-brass,#b5a078)!important;
+  color:#081019!important;
+}
+
+/* Remove the unwanted white/gray divider over the Careers background image */
+.about-page .about-careers-statement{
+  border-left:0!important;
+  border-top:0!important;
+}
+
+/* Mobile */
+@media(max-width:1000px){
+  .calculator-assumption-grid-five{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:860px){
+  .insights-page .intel-hero{
+    align-items:center!important;
+    padding:72px 28px 0!important;
+  }
+  .insights-page .intel-hero-copy{margin-top:34px}
+  .insights-page .intel-community>div>p:last-child{white-space:normal}
+  .insights-page .intel-community .gold-button{justify-self:stretch}
+  .insights-page .intel-page-cta .interior-cta-inner{grid-template-columns:1fr!important}
+  .valuation-result-grid{grid-template-columns:1fr}
+  .valuation-result-grid .result-card{border-right:0}
+}
+@media(max-width:560px){
+  .calculator-assumption-grid-five{grid-template-columns:1fr!important}
+  .valuation-range-card{padding-left:22px;padding-right:22px}
+  .valuation-disclaimer{padding-left:22px;padding-right:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .intel-insight-card,
+  .tool-panel{transition:none!important;animation:none!important}
+}

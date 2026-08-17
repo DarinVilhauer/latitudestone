@@ -213,111 +213,266 @@ if(document.body.classList.contains('services-page')){
 }
 
 
-// v5.0 — Market Intelligence investment calculator
+// v5.1 — Market Intelligence dual calculators
 (() => {
-  const form=document.getElementById('investment-calculator-form');
-  if(!form) return;
-
   const $=id=>document.getElementById(id);
-  const fields={
-    price:$('calc-price'),
-    noi:$('calc-noi'),
-    down:$('calc-down'),
-    rate:$('calc-rate'),
-    amort:$('calc-amort')
-  };
+  const investmentForm=$('investment-calculator-form');
+  const valuationForm=$('valuation-calculator-form');
+  if(!investmentForm && !valuationForm) return;
 
   const fmtCurrency=value=>{
-    if(!Number.isFinite(value)) value=0;
+    if(!Number.isFinite(value)) return '—';
     return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
   };
-  const num=el=>Math.max(0,parseFloat(el?.value)||0);
+  const rawNumber=value=>{
+    const cleaned=String(value??'').replace(/[^0-9.]/g,'');
+    return Math.max(0,parseFloat(cleaned)||0);
+  };
+  const formatMoneyInput=el=>{
+    if(!el) return;
+    const digits=el.value.replace(/\D/g,'');
+    el.value=digits ? Number(digits).toLocaleString('en-US') : '';
+  };
+  const bindMoneyInput=el=>{
+    if(!el) return;
+    el.addEventListener('input',()=>{
+      formatMoneyInput(el);
+      calculateInvestment();
+      calculateValuation();
+    });
+  };
 
-  function calc(){
-    const price=num(fields.price);
-    const noi=num(fields.noi);
-    const downPct=Math.min(100,num(fields.down));
-    const ratePct=num(fields.rate);
-    const amortYears=Math.max(1,num(fields.amort));
+  // Tool selector
+  const toolButtons=[...document.querySelectorAll('[data-tool]')];
+  const panels=[...document.querySelectorAll('[data-tool-panel]')];
+  function selectTool(name){
+    toolButtons.forEach(btn=>{
+      const active=btn.dataset.tool===name;
+      btn.classList.toggle('active',active);
+      btn.setAttribute('aria-pressed',active?'true':'false');
+    });
+    panels.forEach(panel=>{
+      const active=panel.dataset.toolPanel===name;
+      panel.classList.toggle('active',active);
+      panel.hidden=!active;
+    });
+  }
+  toolButtons.forEach(btn=>btn.addEventListener('click',()=>selectTool(btn.dataset.tool)));
+
+  // Investment Analysis
+  const inv={
+    price:$('calc-price'), noi:$('calc-noi'), down:$('calc-down'),
+    rate:$('calc-rate'), amort:$('calc-amort'),
+    vacancy:$('calc-vacancy'), reserves:$('calc-reserves')
+  };
+  bindMoneyInput(inv.price);
+  bindMoneyInput(inv.noi);
+
+  function clearInvestmentResults(){
+    ['result-cap','result-loan','result-equity','result-monthly','result-adjusted-noi',
+     'result-annual-debt','result-cashflow','result-dscr'].forEach(id=>{if($(id)) $(id).textContent='—'});
+    if($('result-dscr-label')) $('result-dscr-label').textContent='Enter property assumptions';
+  }
+
+  function calculateInvestment(){
+    if(!investmentForm) return {};
+    const price=rawNumber(inv.price?.value);
+    const noi=rawNumber(inv.noi?.value);
+    const downPct=Math.min(100,rawNumber(inv.down?.value));
+    const ratePct=rawNumber(inv.rate?.value);
+    const amortYears=Math.max(1,rawNumber(inv.amort?.value)||25);
+    const vacancyPct=Math.min(100,rawNumber(inv.vacancy?.value));
+    const reservesPct=Math.min(100,rawNumber(inv.reserves?.value));
+
+    if(!(price>0 && noi>0)){
+      clearInvestmentResults();
+      return {price,noi,downPct,ratePct,amortYears,vacancyPct,reservesPct};
+    }
 
     const equity=price*(downPct/100);
     const loan=Math.max(0,price-equity);
     const monthlyRate=(ratePct/100)/12;
     const n=amortYears*12;
-    const monthlyDebt=loan===0?0:(monthlyRate===0?loan/n:loan*(monthlyRate*Math.pow(1+monthlyRate,n))/(Math.pow(1+monthlyRate,n)-1));
+    const monthlyDebt=loan===0 ? 0 :
+      (monthlyRate===0 ? loan/n :
+       loan*(monthlyRate*Math.pow(1+monthlyRate,n))/(Math.pow(1+monthlyRate,n)-1));
     const annualDebt=monthlyDebt*12;
-    const cashflow=noi-annualDebt;
-    const cap=price>0?noi/price:0;
-    const dscr=annualDebt>0?noi/annualDebt:0;
+    const adjustedNoi=noi*(1-vacancyPct/100-reservesPct/100);
+    const cashflow=adjustedNoi-annualDebt;
+    const cap=noi/price;
+    const dscr=annualDebt>0 ? adjustedNoi/annualDebt : 0;
 
     $('result-cap').textContent=(cap*100).toFixed(2)+'%';
     $('result-loan').textContent=fmtCurrency(loan);
     $('result-equity').textContent=fmtCurrency(equity);
     $('result-monthly').textContent=fmtCurrency(monthlyDebt);
+    $('result-adjusted-noi').textContent=fmtCurrency(adjustedNoi);
     $('result-annual-debt').textContent=fmtCurrency(annualDebt);
     $('result-cashflow').textContent=fmtCurrency(cashflow);
-    $('result-dscr').textContent=annualDebt>0?dscr.toFixed(2)+'x':'—';
+    $('result-dscr').textContent=annualDebt>0 ? dscr.toFixed(2)+'x' : '—';
 
-    let label='No debt service';
+    let label='—';
     if(annualDebt>0){
-      if(dscr>=2) label='Very strong coverage';
-      else if(dscr>=1.25) label='Healthy coverage';
-      else if(dscr>=1) label='Tighter coverage';
-      else label='NOI does not fully cover debt service';
+      if(dscr>=1.50) label='Strong';
+      else if(dscr>=1.25) label='Healthy';
+      else if(dscr>=1.00) label='Limited';
+      else label='Shortfall';
     }
     $('result-dscr-label').textContent=label;
-
-    return {price,noi,downPct,ratePct,amortYears,equity,loan,monthlyDebt,annualDebt,cashflow,cap,dscr,label};
+    return {price,noi,downPct,ratePct,amortYears,vacancyPct,reservesPct,equity,loan,monthlyDebt,annualDebt,adjustedNoi,cashflow,cap,dscr,label};
   }
 
-  Object.values(fields).forEach(el=>el?.addEventListener('input',calc));
+  [inv.down,inv.rate,inv.amort,inv.vacancy,inv.reserves].forEach(el=>el?.addEventListener('input',calculateInvestment));
   $('calculator-reset')?.addEventListener('click',()=>{
-    fields.price.value=1000000;
-    fields.noi.value=70000;
-    fields.down.value=35;
-    fields.rate.value=6;
-    fields.amort.value=25;
-    calc();
+    inv.price.value='';
+    inv.noi.value='';
+    inv.down.value=35;
+    inv.rate.value=6;
+    inv.amort.value=25;
+    inv.vacancy.value=6;
+    inv.reserves.value=3;
+    clearInvestmentResults();
   });
 
-  document.querySelector('[data-tool-target="investment-calculator"]')?.addEventListener('click',()=>{
-    document.getElementById('investment-calculator')?.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-
-  const modal=$('investment-modal');
-  const openInvestment=()=>{
-    const r=calc();
+  const investmentModal=$('investment-modal');
+  function openInvestment(){
+    const r=calculateInvestment();
     const summary=$('investment-summary');
     if(summary){
       summary.innerHTML=
         '<strong>Scenario summary</strong><br>'+
-        'Purchase Price: '+fmtCurrency(r.price)+'<br>'+
-        'Annual NOI: '+fmtCurrency(r.noi)+'<br>'+
-        'Purchase Cap Rate: '+(r.cap*100).toFixed(2)+'%<br>'+
-        'Loan Amount: '+fmtCurrency(r.loan)+'<br>'+
-        'DSCR: '+(r.annualDebt>0?r.dscr.toFixed(2)+'x':'—');
+        'Purchase Price: '+(r.price?fmtCurrency(r.price):'Not entered')+'<br>'+
+        'Annual NOI: '+(r.noi?fmtCurrency(r.noi):'Not entered')+'<br>'+
+        'Adjusted NOI: '+(Number.isFinite(r.adjustedNoi)?fmtCurrency(r.adjustedNoi):'—')+'<br>'+
+        'Purchase Cap Rate: '+(Number.isFinite(r.cap)?(r.cap*100).toFixed(2)+'%':'—')+'<br>'+
+        'Loan Amount: '+(Number.isFinite(r.loan)?fmtCurrency(r.loan):'—')+'<br>'+
+        'DSCR: '+(Number.isFinite(r.dscr)&&r.annualDebt>0?r.dscr.toFixed(2)+'x':'—');
     }
-    modal?.classList.add('open');
-    modal?.setAttribute('aria-hidden','false');
+    investmentModal?.classList.add('open');
+    investmentModal?.setAttribute('aria-hidden','false');
     document.body.classList.add('modal-open');
-  };
-  const closeInvestment=()=>{
-    modal?.classList.remove('open');
-    modal?.setAttribute('aria-hidden','true');
+  }
+  function closeInvestment(){
+    investmentModal?.classList.remove('open');
+    investmentModal?.setAttribute('aria-hidden','true');
     document.body.classList.remove('modal-open');
-  };
+  }
   document.querySelector('.investment-lead-trigger')?.addEventListener('click',openInvestment);
   document.querySelectorAll('[data-investment-close]').forEach(el=>el.addEventListener('click',closeInvestment));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal?.classList.contains('open'))closeInvestment()});
 
-  $('investment-review-form')?.addEventListener('submit',e=>{
-    e.preventDefault();
-    const btn=e.currentTarget.querySelector('button[type="submit"]');
-    if(btn){
-      btn.textContent='Thank you';
-      btn.disabled=true;
+  // Property Value Calculator
+  const val={
+    noi:$('valuation-noi'), type:$('valuation-type'),
+    low:$('valuation-low-cap'), high:$('valuation-high-cap')
+  };
+  bindMoneyInput(val.noi);
+
+  // Illustrative starting cap-rate assumptions. Users can edit them.
+  const capRanges={
+    retail:[6.25,7.25],
+    industrial:[5.75,6.75],
+    office:[7.00,8.50],
+    medical:[6.25,7.25],
+    multifamily:[5.00,6.25],
+    mixed:[6.50,7.50],
+    other:[6.50,7.50]
+  };
+  const propertyLabels={
+    retail:'Retail',industrial:'Industrial',office:'Office',medical:'Medical Office',
+    multifamily:'Multifamily',mixed:'Mixed Use',other:'Other'
+  };
+
+  function clearValuationResults(){
+    if($('valuation-range')) $('valuation-range').textContent='—';
+    if($('valuation-midpoint')) $('valuation-midpoint').textContent='—';
+    if($('valuation-cap-range')) $('valuation-cap-range').textContent='—';
+    if($('valuation-cap-note')) $('valuation-cap-note').textContent='Select a property type to apply a starting cap-rate range.';
+  }
+
+  function applyPropertyRange(){
+    const range=capRanges[val.type?.value];
+    if(range){
+      val.low.value=range[0].toFixed(2);
+      val.high.value=range[1].toFixed(2);
     }
+    calculateValuation();
+  }
+
+  function calculateValuation(){
+    if(!valuationForm) return {};
+    const noi=rawNumber(val.noi?.value);
+    const type=val.type?.value||'';
+    const lowCap=rawNumber(val.low?.value);
+    const highCap=rawNumber(val.high?.value);
+
+    if(!(noi>0 && type && lowCap>0 && highCap>0)){
+      clearValuationResults();
+      return {noi,type,lowCap,highCap};
+    }
+
+    const lowRate=Math.min(lowCap,highCap)/100;
+    const highRate=Math.max(lowCap,highCap)/100;
+    const lowValue=noi/highRate;
+    const highValue=noi/lowRate;
+    const midpoint=(lowValue+highValue)/2;
+
+    $('valuation-range').textContent=fmtCurrency(lowValue)+' – '+fmtCurrency(highValue);
+    $('valuation-midpoint').textContent=fmtCurrency(midpoint);
+    $('valuation-cap-range').textContent=(lowRate*100).toFixed(2)+'% – '+(highRate*100).toFixed(2)+'%';
+    $('valuation-cap-note').textContent='Based on the cap-rate range shown below. Adjust assumptions if appropriate.';
+    return {noi,type,lowCap:lowRate*100,highCap:highRate*100,lowValue,highValue,midpoint};
+  }
+
+  val.type?.addEventListener('change',applyPropertyRange);
+  [val.low,val.high].forEach(el=>el?.addEventListener('input',calculateValuation));
+  $('valuation-reset')?.addEventListener('click',()=>{
+    val.noi.value='';
+    val.type.value='';
+    val.low.value='6.50';
+    val.high.value='7.50';
+    clearValuationResults();
   });
 
-  calc();
+  const valuationModal=$('valuation-modal');
+  function openValuation(){
+    const r=calculateValuation();
+    const summary=$('valuation-summary');
+    if(summary){
+      summary.innerHTML=
+        '<strong>Property estimate summary</strong><br>'+
+        'Property Type: '+(propertyLabels[r.type]||'Not selected')+'<br>'+
+        'Annual NOI: '+(r.noi?fmtCurrency(r.noi):'Not entered')+'<br>'+
+        'Cap Rate Range: '+(r.lowCap&&r.highCap?r.lowCap.toFixed(2)+'% – '+r.highCap.toFixed(2)+'%':'—')+'<br>'+
+        'Estimated Value Range: '+(Number.isFinite(r.lowValue)?fmtCurrency(r.lowValue)+' – '+fmtCurrency(r.highValue):'—');
+    }
+    valuationModal?.classList.add('open');
+    valuationModal?.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+  }
+  function closeValuation(){
+    valuationModal?.classList.remove('open');
+    valuationModal?.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+  }
+  document.querySelector('.valuation-lead-trigger')?.addEventListener('click',openValuation);
+  document.querySelectorAll('[data-valuation-close]').forEach(el=>el.addEventListener('click',closeValuation));
+
+  // Modal submission prototypes
+  [$('investment-review-form'),$('valuation-review-form')].forEach(formEl=>{
+    formEl?.addEventListener('submit',e=>{
+      e.preventDefault();
+      const btn=e.currentTarget.querySelector('button[type="submit"]');
+      if(btn){btn.textContent='Thank you';btn.disabled=true}
+    });
+  });
+
+  document.addEventListener('keydown',e=>{
+    if(e.key!=='Escape') return;
+    if(investmentModal?.classList.contains('open')) closeInvestment();
+    if(valuationModal?.classList.contains('open')) closeValuation();
+  });
+
+  clearInvestmentResults();
+  clearValuationResults();
+  selectTool('investment');
 })();

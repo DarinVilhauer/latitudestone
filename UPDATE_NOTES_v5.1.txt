@@ -1,0 +1,62 @@
+Latitude Stone Website v5.1 — Market Intelligence + Dual Calculators
+
+Built from the uploaded v5.0 package.
+
+MARKET INTELLIGENCE HEADER / HERO
+- Header now matches the established interior-page treatment: transparent over the HERO,
+  standard Latitude Stone wordmark, active muted-brass navigation, and muted-brass
+  Schedule a consultation button.
+- HERO retains subtle slow image movement.
+- HERO text block moved higher to align with other interior pages.
+- Supporting copy uses an intentional two-line break:
+  Practical insight, market updates, and useful tools
+  for commercial real estate decisions across North Texas.
+
+LATEST INSIGHTS / HOMEPAGE
+- Latest Insight cards now use a subtle hover lift.
+- Homepage Market Intelligence section now includes Explore Market Intelligence below
+  the Join the Latitude Stone Community button.
+
+STAY CONNECTED
+- Join the LS Community button is visible on the right and launches the existing popup.
+- Supporting sentence is allowed to stay on one line on desktop when space permits.
+
+INVESTMENT ANALYSIS CALCULATOR
+- Purchase Price and Annual NOI start blank.
+- Dollar inputs add comma formatting as the user types.
+- Active input fields receive a muted-brass focus outline.
+- Intro copy shortened to: Enter purchase price and annual NOI to get started.
+- Added editable Vacancy (6%) and Reserves (3%) assumptions.
+- Added Adjusted NOI to results; DSCR and cash flow use the adjusted NOI.
+- DSCR labels are now Strong / Healthy / Limited / Shortfall.
+- Fine-print disclaimer stays on one line on larger desktop screens.
+- Investment analysis label is muted brass.
+- Reset clears Purchase Price and NOI while restoring financing defaults.
+
+TOOLS & RESOURCES SELECTOR
+- Removed Available now and Coming soon labels.
+- Investment Analysis and Property Valuation are both selectable.
+- Selected tool uses black background, white/gray text, and muted-brass outline.
+- Inactive tool uses light gray background with dark text.
+- Bottom selector labels are Analyze investment → and Property valuation →.
+- Calculator panel switches with a subtle fade.
+
+PROPERTY VALUE CALCULATOR
+- Inputs: Annual NOI and Property Type.
+- Property types: Retail, Industrial, Office, Medical Office, Multifamily, Mixed Use, Other.
+- Each property type applies an editable illustrative starting cap-rate range.
+- Displays Estimated Value Range, Midpoint Estimate, and Cap Rate Range Used.
+- Does not deduct vacancy or reserves.
+- Request an Opinion of Value opens a lead form with the property estimate summary.
+- Does not use “complimentary valuation” language.
+- Includes preliminary-estimate / non-appraisal disclaimer.
+
+MARKET INTELLIGENCE CTA / ABOUT
+- Bottom Market Intelligence CTA now follows the same sizing, spacing, colors, and button
+  treatment as the other interior pages.
+- Latest insights, Stay connected, Tools & resources, and calculator eyebrow labels use muted brass.
+- Removed the unwanted vertical divider line over the Careers background image on About.
+
+Note:
+- Current form submissions remain front-end prototypes until the final CRM/form endpoint is connected.
+- Individual insight article links remain placeholders until article pages are built.
