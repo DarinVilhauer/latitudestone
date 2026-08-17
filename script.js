@@ -305,7 +305,6 @@ if(document.body.classList.contains('services-page')){
     $('result-cap').textContent=(cap*100).toFixed(2)+'%';
     $('result-loan').textContent=fmtCurrency(loan);
     $('result-equity').textContent=fmtCurrency(equity);
-    $('result-monthly').textContent=fmtCurrency(monthlyDebt);
     $('result-adjusted-noi').textContent=fmtCurrency(adjustedNoi);
     $('result-annual-debt').textContent=fmtCurrency(annualDebt);
     $('result-cashflow').textContent=fmtCurrency(cashflow);

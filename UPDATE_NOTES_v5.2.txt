@@ -1,0 +1,8 @@
+Latitude Stone Website v5.2 — Punch List
+
+- Investment Analysis: removed Monthly Debt Service and reordered results.
+- Property Valuation: added spacing/divider around valuation assumptions.
+- Property Valuation: changed copy to “Looking for a more precise estimate?” and removed redundant Opinion of Value button above the main CTA.
+- Market Intelligence CTA: changed headline to “Looking to acquire, sell, or evaluate a property?” and keeps it on one line on desktop.
+- Stay Connected: full “Join the Latitude Stone Community” button text; aligned section/button inward to mirror CTA proportions.
+- Homepage Market Intelligence: community button now muted brass with black text and no arrow; Explore Market Intelligence moved below as secondary text link with arrow.
