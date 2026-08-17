@@ -1,0 +1,24 @@
+Latitude Stone Website v4.9 — Careers + Mobile HERO Polish
+
+Based on the uploaded v4.8 package.
+
+HOMEPAGE
+- Homepage HERO supporting text now intentionally breaks after “property owners,”
+  so “and businesses across North Texas.” sits together on line two.
+
+ABOUT / CAREERS
+- Removed the translucent/background box behind the culture statement.
+- Desktop culture statement is right-aligned on the right side of the section.
+- Changed CTA wording from “Start a career conversation” to “Explore a career with us”.
+- Mobile career background image is centered.
+- Mobile career CTA receives slightly stronger emphasis and spacing.
+- Mobile culture statement remains left aligned.
+
+WHAT WE DO / MOBILE HERO
+- Mobile headline now keeps “real estate” together on line two:
+  Commercial
+  real estate
+  expertise at
+  every stage.
+- Supporting brass copy stays in its current position.
+- Darkened the mobile HERO gradient behind the copy for better contrast.
