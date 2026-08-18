@@ -98,14 +98,17 @@
 <label>Purchase Price
 <div class="money-input"><span>$</span><input id="calc-price" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter purchase price"></div>
 </label>
-<label>Annual NOI
+<label class="defined-term">Annual NOI <button class="term-info" type="button" aria-label="What is NOI?" data-definition="Net operating income. Property income after operating expenses, before debt service.">i</button>
 <div class="money-input"><span>$</span><input id="calc-noi" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter annual NOI"></div>
 </label>
 </div>
 
 <details class="calculator-assumptions">
 <summary>Adjust financing assumptions <span>+</span></summary>
-<div class="calculator-assumption-grid calculator-assumption-grid-five">
+<div class="calculator-assumption-grid calculator-assumption-grid-seven">
+<label class="defined-term">LTV % <button class="term-info" type="button" aria-label="What is LTV?" data-definition="Loan-to-value. The loan amount as a percentage of the property’s purchase price.">i</button>
+<div class="suffix-input"><input id="calc-ltv" type="number" min="0" max="100" step="1" value="65"><span>%</span></div>
+</label>
 <label>Down Payment %
 <div class="suffix-input"><input id="calc-down" type="number" min="0" max="100" step="1" value="35"><span>%</span></div>
 </label>
@@ -116,23 +119,26 @@
 <div class="suffix-input"><input id="calc-amort" type="number" min="1" max="50" step="1" value="25"><span>years</span></div>
 </label>
 <label>Vacancy
-<div class="suffix-input"><input id="calc-vacancy" type="number" min="0" max="100" step="0.5" value="6"><span>%</span></div>
+<div class="suffix-input"><input id="calc-vacancy" type="number" min="0" max="100" step="0.5" value="0"><span>%</span></div>
 </label>
-<label>Reserves
-<div class="suffix-input"><input id="calc-reserves" type="number" min="0" max="100" step="0.5" value="3"><span>%</span></div>
+<label class="defined-term">Reserves <button class="term-info" type="button" aria-label="What are reserves?" data-definition="A preliminary allowance for future capital repairs or replacements. This adjustment reduces NOI for this analysis.">i</button>
+<div class="suffix-input"><input id="calc-reserves" type="number" min="0" max="100" step="0.5" value="0"><span>%</span></div>
+</label>
+<label>Management
+<div class="suffix-input"><input id="calc-management" type="number" min="0" max="100" step="0.5" value="0"><span>%</span></div>
 </label>
 </div>
 </details>
 </form>
 
 <div class="calculator-results" aria-live="polite">
-<div class="result-card"><span>Purchase Cap Rate</span><strong id="result-cap">—</strong></div>
-<div class="result-card"><span>Adjusted NOI</span><strong id="result-adjusted-noi">—</strong></div>
+<div class="result-card defined-term"><span>Purchase Cap Rate</span><button class="term-info" type="button" aria-label="What is cap rate?" data-definition="Capitalization rate. Annual NOI divided by purchase price.">i</button><strong id="result-cap">—</strong></div>
+<div class="result-card defined-term"><span>Adjusted NOI</span><button class="term-info" type="button" aria-label="What is adjusted NOI?" data-definition="NOI after any vacancy, reserve, and management assumptions entered in this calculator.">i</button><strong id="result-adjusted-noi">—</strong></div>
 <div class="result-card"><span>Annual Debt Service</span><strong id="result-annual-debt">—</strong></div>
 <div class="result-card"><span>Annual Cash Flow</span><strong id="result-cashflow">—</strong></div>
 <div class="result-card"><span>Loan Amount</span><strong id="result-loan">—</strong></div>
 <div class="result-card"><span>Down Payment</span><strong id="result-equity">—</strong></div>
-<div class="result-card result-dscr"><span>Debt Service Coverage Ratio</span><strong id="result-dscr">—</strong><small id="result-dscr-label">Enter property assumptions</small></div>
+<div class="result-card result-dscr defined-term"><span>Debt Service Coverage Ratio</span><button class="term-info" type="button" aria-label="What is DSCR?" data-definition="Debt Service Coverage Ratio. Adjusted NOI divided by annual debt service; a measure of the property’s ability to cover debt payments.">i</button><strong id="result-dscr">—</strong><small id="result-dscr-label">Enter property assumptions</small></div>
 </div>
 
 <div class="dscr-guide">
@@ -142,9 +148,9 @@
 <div><strong>Below 1.00x</strong><span>Shortfall</span></div>
 </div>
 
-<div class="calculator-bottom">
-<p>This calculator is for educational and preliminary analysis only. Results are estimates based on the information provided and should not be relied upon for lending, tax, legal, appraisal, or investment decisions. Actual lender requirements and underwriting standards vary.</p>
-<button class="gold-button investment-lead-trigger" type="button" aria-haspopup="dialog" aria-controls="investment-modal">Review This Opportunity <span>→</span></button>
+<div class="calculator-bottom calculator-export-bottom">
+<p>For informational and preliminary analysis purposes only. Results are estimates based on user-provided information and assumptions and are not financial, lending, tax, legal, appraisal, or investment advice. Actual financing terms, lender requirements, expenses, and investment performance may vary. Users should independently verify all information before making a real estate or financing decision.</p>
+<div class="calculator-export-actions"><button type="button" class="calculator-text-action" data-email-results="investment">Email Results</button><span>|</span><button type="button" class="calculator-text-action" data-print-results="investment">Print / Save PDF</button></div>
 </div>
 </section>
 
@@ -160,7 +166,7 @@
 
 <form class="calculator-form" id="valuation-calculator-form" novalidate>
 <div class="calculator-primary">
-<label>Annual NOI
+<label class="defined-term">Annual NOI <button class="term-info" type="button" aria-label="What is NOI?" data-definition="Net operating income. Property income after operating expenses, before debt service.">i</button>
 <div class="money-input"><span>$</span><input id="valuation-noi" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter annual NOI"></div>
 </label>
 <label>Property Type
@@ -192,13 +198,13 @@
 
 <div class="valuation-results" aria-live="polite">
 <div class="valuation-range-card">
-<span>Estimated Value Range</span>
+<span>Estimated Value Range</span><button class="term-info" type="button" aria-label="How is estimated value range calculated?" data-definition="A preliminary range calculated by dividing the entered NOI by the selected low and high cap-rate assumptions.">i</button>
 <strong id="valuation-range">—</strong>
 <small id="valuation-cap-note">Select a property type to apply a starting cap-rate range.</small>
 </div>
 <div class="valuation-result-grid">
 <div class="result-card"><span>Midpoint Estimate</span><strong id="valuation-midpoint">—</strong></div>
-<div class="result-card"><span>Cap Rate Range Used</span><strong id="valuation-cap-range">—</strong></div>
+<div class="result-card defined-term"><span>Cap Rate Range Used</span><button class="term-info" type="button" aria-label="What is cap rate?" data-definition="Capitalization rate. Annual NOI divided by property value; the selected range drives this preliminary estimate.">i</button><strong id="valuation-cap-range">—</strong></div>
 </div>
 </div>
 
@@ -206,7 +212,7 @@
 <strong>Looking for a more precise estimate?</strong>
 <p>Property value can vary based on location, tenancy, lease structure, property condition, and current market conditions.</p>
 </div>
-<p class="valuation-disclaimer">This calculator provides a preliminary estimate only and is not an appraisal, broker opinion of value, or guarantee of market value. Starting cap-rate assumptions are illustrative and editable. Actual value may vary based on property-specific information and current market conditions.</p>
+<div class="valuation-disclaimer calculator-export-bottom"><p>For informational and preliminary estimation purposes only. Results are based on user-provided NOI and selected cap-rate assumptions and do not constitute an appraisal, broker opinion of value, or guarantee of market value. Actual property value may vary based on property-specific information and market conditions.</p><div class="calculator-export-actions"><button type="button" class="calculator-text-action" data-email-results="valuation">Email Results</button><span>|</span><button type="button" class="calculator-text-action" data-print-results="valuation">Print / Save PDF</button></div></div>
 </section>
 </div>
 </div>
@@ -357,6 +363,9 @@
 </div>
 </section>
 </div>
+
+<div class="results-modal" id="results-email-modal" aria-hidden="true"><div class="results-modal-backdrop" data-results-close></div><section class="results-dialog" role="dialog" aria-modal="true" aria-labelledby="results-email-title"><button class="results-close" type="button" data-results-close aria-label="Close">×</button><div id="results-email-form-view"><p class="eyebrow">Email results</p><h2 id="results-email-title">Email your results.</h2><p>Enter your email address and we’ll prepare a summary of your calculator results.</p><form id="results-email-form"><label>Email Address <span>*</span><input id="results-email-address" type="email" required autocomplete="email" placeholder="you@company.com"></label><label class="results-consent"><input id="results-marketing-consent" type="checkbox" checked> <span>I’d like to receive occasional market updates and insights from Latitude Stone.</span></label><button class="community-submit" type="submit">Send Results</button><p class="community-privacy">Your calculator results are separate from marketing consent. You may uncheck the box above.</p></form></div><div id="results-email-confirmation" hidden><div class="results-confirm-icon">✓</div><h2>Email ready.</h2><p>Your results have been prepared for <strong id="results-confirm-email"></strong>.</p><p class="results-email-note">Your email application will open with the summary ready to send.</p><button class="community-submit" type="button" data-results-close>Close</button></div></section></div>
+<div class="results-modal" id="results-preview-modal" aria-hidden="true"><div class="results-modal-backdrop" data-results-close></div><section class="results-dialog results-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="results-preview-title"><button class="results-close" type="button" data-results-close aria-label="Close">×</button><p class="eyebrow">Print / Save PDF</p><h2 id="results-preview-title">Preview your results.</h2><p>Review the Latitude Stone summary below, then print it or save it as a PDF.</p><div id="results-report-preview" class="results-report-preview"></div><button class="community-submit" id="results-print-confirm" type="button">Print / Save PDF</button></section></div>
 <script src="script.js"></script>
 </body>
 </html>

@@ -261,9 +261,9 @@ if(document.body.classList.contains('services-page')){
 
   // Investment Analysis
   const inv={
-    price:$('calc-price'), noi:$('calc-noi'), down:$('calc-down'),
+    price:$('calc-price'), noi:$('calc-noi'), ltv:$('calc-ltv'), down:$('calc-down'),
     rate:$('calc-rate'), amort:$('calc-amort'),
-    vacancy:$('calc-vacancy'), reserves:$('calc-reserves')
+    vacancy:$('calc-vacancy'), reserves:$('calc-reserves'), management:$('calc-management')
   };
   bindMoneyInput(inv.price);
   bindMoneyInput(inv.noi);
@@ -279,14 +279,16 @@ if(document.body.classList.contains('services-page')){
     const price=rawNumber(inv.price?.value);
     const noi=rawNumber(inv.noi?.value);
     const downPct=Math.min(100,rawNumber(inv.down?.value));
+    const ltvPct=Math.min(100,rawNumber(inv.ltv?.value));
     const ratePct=rawNumber(inv.rate?.value);
     const amortYears=Math.max(1,rawNumber(inv.amort?.value)||25);
     const vacancyPct=Math.min(100,rawNumber(inv.vacancy?.value));
     const reservesPct=Math.min(100,rawNumber(inv.reserves?.value));
+    const managementPct=Math.min(100,rawNumber(inv.management?.value));
 
     if(!(price>0 && noi>0)){
       clearInvestmentResults();
-      return {price,noi,downPct,ratePct,amortYears,vacancyPct,reservesPct};
+      return {price,noi,ltvPct,downPct,ratePct,amortYears,vacancyPct,reservesPct,managementPct};
     }
 
     const equity=price*(downPct/100);
@@ -297,7 +299,7 @@ if(document.body.classList.contains('services-page')){
       (monthlyRate===0 ? loan/n :
        loan*(monthlyRate*Math.pow(1+monthlyRate,n))/(Math.pow(1+monthlyRate,n)-1));
     const annualDebt=monthlyDebt*12;
-    const adjustedNoi=noi*(1-vacancyPct/100-reservesPct/100);
+    const adjustedNoi=noi*Math.max(0,1-vacancyPct/100-reservesPct/100-managementPct/100);
     const cashflow=adjustedNoi-annualDebt;
     const cap=noi/price;
     const dscr=annualDebt>0 ? adjustedNoi/annualDebt : 0;
@@ -318,18 +320,23 @@ if(document.body.classList.contains('services-page')){
       else label='Shortfall';
     }
     $('result-dscr-label').textContent=label;
-    return {price,noi,downPct,ratePct,amortYears,vacancyPct,reservesPct,equity,loan,monthlyDebt,annualDebt,adjustedNoi,cashflow,cap,dscr,label};
+    return {price,noi,ltvPct,downPct,ratePct,amortYears,vacancyPct,reservesPct,managementPct,equity,loan,monthlyDebt,annualDebt,adjustedNoi,cashflow,cap,dscr,label};
   }
 
-  [inv.down,inv.rate,inv.amort,inv.vacancy,inv.reserves].forEach(el=>el?.addEventListener('input',calculateInvestment));
+  let syncingLeverage=false;
+  inv.ltv?.addEventListener('input',()=>{if(syncingLeverage)return;syncingLeverage=true;const v=Math.min(100,rawNumber(inv.ltv.value));inv.down.value=(100-v).toFixed(0);syncingLeverage=false;calculateInvestment();});
+  inv.down?.addEventListener('input',()=>{if(syncingLeverage)return;syncingLeverage=true;const v=Math.min(100,rawNumber(inv.down.value));inv.ltv.value=(100-v).toFixed(0);syncingLeverage=false;calculateInvestment();});
+  [inv.rate,inv.amort,inv.vacancy,inv.reserves,inv.management].forEach(el=>el?.addEventListener('input',calculateInvestment));
   $('calculator-reset')?.addEventListener('click',()=>{
     inv.price.value='';
     inv.noi.value='';
+    inv.ltv.value=65;
     inv.down.value=35;
     inv.rate.value=6;
     inv.amort.value=25;
-    inv.vacancy.value=6;
-    inv.reserves.value=3;
+    inv.vacancy.value=0;
+    inv.reserves.value=0;
+    inv.management.value=0;
     clearInvestmentResults();
   });
 
@@ -465,10 +472,49 @@ if(document.body.classList.contains('services-page')){
     });
   });
 
+
+
+  // v5.4 contextual definitions
+  let tooltip;
+  function closeTooltip(){if(tooltip){tooltip.remove();tooltip=null}document.querySelectorAll('.term-info.active').forEach(b=>b.classList.remove('active'))}
+  document.addEventListener('click',e=>{
+    const btn=e.target.closest('.term-info');
+    if(!btn){closeTooltip();return}
+    e.preventDefault();e.stopPropagation();closeTooltip();btn.classList.add('active');
+    tooltip=document.createElement('div');tooltip.className='term-tooltip';tooltip.textContent=btn.dataset.definition||'';document.body.appendChild(tooltip);
+    const r=btn.getBoundingClientRect(), tw=tooltip.offsetWidth, th=tooltip.offsetHeight;
+    tooltip.style.left=Math.max(10,Math.min(window.innerWidth-tw-10,r.right-tw))+'px';
+    tooltip.style.top=Math.max(10,r.top-th-8)+'px';
+  });
+
+  // v5.4 branded result summaries / print preview / email fallback
+  let exportType='investment';
+  const emailModal=$('results-email-modal'), previewModal=$('results-preview-modal');
+  const esc=s=>String(s??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
+  const pct=n=>Number.isFinite(n)?Number(n).toFixed(2)+'%':'—';
+  function reportData(type){
+    if(type==='valuation'){
+      const r=calculateValuation();
+      return {title:'Property Value Summary', sections:[['Property Summary',[['Property Type',propertyLabels[r.type]||'—'],['Annual NOI',r.noi?fmtCurrency(r.noi):'—'],['Cap Rate Range',r.lowCap&&r.highCap?pct(r.lowCap)+' – '+pct(r.highCap):'—']]],['Estimated Results',[['Estimated Value Range',Number.isFinite(r.lowValue)?fmtCurrency(r.lowValue)+' – '+fmtCurrency(r.highValue):'—'],['Midpoint Estimate',Number.isFinite(r.midpoint)?fmtCurrency(r.midpoint):'—']]]], disclaimer:'For informational and preliminary estimation purposes only. Results are based on user-provided NOI and selected cap-rate assumptions and do not constitute an appraisal, broker opinion of value, or guarantee of market value. Actual property value may vary based on property-specific information and market conditions. Prepared by Latitude Stone Real Estate Group for preliminary informational purposes only.'};
+    }
+    const r=calculateInvestment();
+    return {title:'Investment Analysis Summary',sections:[['Property Overview',[['Purchase Price',r.price?fmtCurrency(r.price):'—'],['Annual NOI',r.noi?fmtCurrency(r.noi):'—'],['Purchase Cap Rate',Number.isFinite(r.cap)?pct(r.cap*100):'—']]],['Financing Assumptions',[['LTV',pct(r.ltvPct)],['Down Payment',pct(r.downPct)],['Interest Rate',pct(r.ratePct)],['Amortization',(r.amortYears||25)+' years']]],['Operating Assumptions',[['Vacancy',pct(r.vacancyPct)],['Reserves',pct(r.reservesPct)],['Management',pct(r.managementPct)] ]],['Calculation Results',[['Adjusted NOI',Number.isFinite(r.adjustedNoi)?fmtCurrency(r.adjustedNoi):'—'],['Loan Amount',Number.isFinite(r.loan)?fmtCurrency(r.loan):'—'],['Down Payment',Number.isFinite(r.equity)?fmtCurrency(r.equity):'—'],['Annual Debt Service',Number.isFinite(r.annualDebt)?fmtCurrency(r.annualDebt):'—'],['Annual Cash Flow',Number.isFinite(r.cashflow)?fmtCurrency(r.cashflow):'—'],['DSCR',Number.isFinite(r.dscr)&&r.annualDebt>0?r.dscr.toFixed(2)+'x':'—']]]],disclaimer:'For informational and preliminary analysis purposes only. Results are estimates based on user-provided information and assumptions and are not financial, lending, tax, legal, appraisal, or investment advice. Actual financing terms, lender requirements, expenses, and investment performance may vary. Users should independently verify all information before making a real estate or financing decision.'};
+  }
+  function reportHTML(type){const d=reportData(type),date=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});return `<div class="report-sheet"><div class="report-header"><div class="report-brand"><strong>LATITUDE STONE</strong><span>REAL ESTATE GROUP</span></div><div class="report-title"><strong>${esc(d.title)}</strong><span>${esc(date)}</span></div></div>${d.sections.map(([h,items])=>`<div class="report-section"><h4>${esc(h)}</h4><div class="report-grid">${items.map(([k,v])=>`<div class="report-item"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join('')}</div></div>`).join('')}<div class="report-disclaimer">${esc(d.disclaimer)}</div></div>`}
+  function plainSummary(type){const d=reportData(type);return [d.title,'Latitude Stone Real Estate Group','',...d.sections.flatMap(([h,items])=>[h,...items.map(([k,v])=>k+': '+v),'']),d.disclaimer].join('\n')}
+  function openResultsModal(modal){modal?.classList.add('open');modal?.setAttribute('aria-hidden','false');document.body.classList.add('modal-open')}
+  function closeResultsModals(){[emailModal,previewModal].forEach(m=>{m?.classList.remove('open');m?.setAttribute('aria-hidden','true')});document.body.classList.remove('modal-open')}
+  document.querySelectorAll('[data-results-close]').forEach(b=>b.addEventListener('click',closeResultsModals));
+  document.querySelectorAll('[data-email-results]').forEach(b=>b.addEventListener('click',()=>{exportType=b.dataset.emailResults;$('results-email-form-view').hidden=false;$('results-email-confirmation').hidden=true;$('results-email-address').value='';openResultsModal(emailModal)}));
+  document.querySelectorAll('[data-print-results]').forEach(b=>b.addEventListener('click',()=>{exportType=b.dataset.printResults;$('results-report-preview').innerHTML=reportHTML(exportType);openResultsModal(previewModal)}));
+  $('results-email-form')?.addEventListener('submit',e=>{e.preventDefault();const email=$('results-email-address').value.trim();if(!email)return;const subject=encodeURIComponent('Latitude Stone '+(exportType==='valuation'?'Property Value':'Investment Analysis')+' Results');const body=encodeURIComponent(plainSummary(exportType));window.location.href=`mailto:${encodeURIComponent(email)}?subject=${subject}&body=${body}`;$('results-confirm-email').textContent=email;$('results-email-form-view').hidden=true;$('results-email-confirmation').hidden=false;});
+  $('results-print-confirm')?.addEventListener('click',()=>{const html=reportHTML(exportType);const w=window.open('','_blank','width=900,height=1100');if(!w)return;w.document.write(`<!doctype html><html><head><title>Latitude Stone Results</title><style>body{font-family:Arial,sans-serif;margin:0;padding:32px;color:#17202a}.report-sheet{max-width:760px;margin:auto}.report-header{display:flex;justify-content:space-between;gap:30px;padding-bottom:15px;border-bottom:1px solid #d9d2c3}.report-brand{text-align:left}.report-brand strong{display:block;letter-spacing:4px;font-size:18px;font-weight:500}.report-brand span{display:block;letter-spacing:3px;font-size:8px;color:#8b7248;margin-top:4px}.report-title{text-align:right;font-size:11px}.report-title strong{display:block;font-size:14px}.report-section{margin-top:22px}.report-section h4{font-size:12px;margin:0 0 9px;padding-bottom:6px;border-bottom:1px solid #ddd}.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 20px}.report-item span{display:block;color:#69737c;font-size:9px}.report-item strong{display:block;margin-top:3px;font-size:12px}.report-disclaimer{margin-top:24px;padding-top:12px;border-top:1px solid #ddd;color:#69737c;font-size:8px;line-height:1.5}@media print{body{padding:0}}</style></head><body>${html}<script>window.onload=()=>setTimeout(()=>window.print(),200)<\/script></body></html>`);w.document.close();});
+
   document.addEventListener('keydown',e=>{
     if(e.key!=='Escape') return;
     if(investmentModal?.classList.contains('open')) closeInvestment();
     if(valuationModal?.classList.contains('open')) closeValuation();
+    if(emailModal?.classList.contains('open')||previewModal?.classList.contains('open')) closeResultsModals();
   });
 
   clearInvestmentResults();

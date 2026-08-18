@@ -1,0 +1,25 @@
+Latitude Stone Website v5.4
+
+Homepage
+- Why Latitude Stone link moved slightly higher and changed to “Learn more about Latitude Stone”.
+- Explore Market intelligence moved farther below the community button and uses lowercase “intelligence”.
+- Standardized homepage secondary-link weight/treatment.
+
+Investment Analysis
+- Added linked LTV (65%) and Down Payment (35%) assumptions.
+- Added Management assumption.
+- Vacancy, Reserves, and Management now default to 0%, so NOI and Adjusted NOI initially match.
+- Assumptions ordered: LTV, Down Payment, Interest Rate, Amortization / Vacancy, Reserves, Management.
+- Slightly enlarged collapsed + control.
+- Added selective contextual info definitions.
+- Strengthened disclaimer.
+
+Both Calculators
+- Added Email Results and Print / Save PDF actions in the disclaimer area.
+- Added branded report preview and browser Print / Save PDF flow.
+- Report header keeps LATITUDE STONE / REAL ESTATE GROUP fully left-aligned.
+- Added selective contextual info definitions.
+- Strengthened property-value disclaimer.
+
+Email implementation note
+- This static GitHub Pages build prepares a pre-addressed email in the visitor’s email application. True server-side automatic delivery and marketing-consent capture require the future CRM/email endpoint.
