@@ -4094,3 +4094,175 @@ button.intel-tool-card{cursor:pointer}
   .tool-panel{transition:none!important;animation:none!important}
 }
 \n\n/* v5.2 — Fine-tooth-comb punch list */\n/* Homepage Market Intelligence: primary community CTA + secondary link stacked */\n#insights .homepage-community-trigger{\n  display:flex!important;\n  background:var(--latitude-brass,#b5a078)!important;\n  border-color:var(--latitude-brass,#b5a078)!important;\n  color:#081019!important;\n  justify-content:center!important;\n}\n#insights .insights-page-link{display:flex!important;width:max-content!important;margin-top:16px!important;}\n\n/* Market Intelligence Stay Connected mirrors the interior CTA alignment */\n.insights-page .intel-community{\n  padding:58px clamp(34px,5vw,84px)!important;\n  grid-template-columns:minmax(0,1fr) auto!important;\n  gap:clamp(52px,7vw,110px)!important;\n}\n.insights-page .intel-community>div{\n  max-width:1500px!important;\n  padding-left:clamp(24px,6vw,118px)!important;\n}\n.insights-page .intel-community .gold-button{\n  justify-self:end!important;\n  margin-right:clamp(70px,7vw,135px)!important;\n  min-width:285px!important;\n  justify-content:center!important;\n}\n\n/* Investment results: 4 items on row one; Cap Rate, Adjusted NOI + DSCR on row two */\n.insights-page .calculator-results{grid-template-columns:repeat(4,1fr)!important;}\n.insights-page .calculator-results .result-card:nth-child(4){border-right:0!important;}\n.insights-page .calculator-results .result-card:nth-child(5),\n.insights-page .calculator-results .result-card:nth-child(6){border-top:1px solid #e3e5e7;}\n.insights-page .calculator-results .result-dscr{\n  grid-column:3/5!important;\n  grid-row:2!important;\n}\n\n/* Property valuation assumptions: give the expandable assumptions more separation */\n.insights-page .valuation-calculator .calculator-assumptions{\n  margin-top:26px!important;\n  margin-bottom:18px!important;\n  border-top:1px solid #e2e5e7!important;\n  border-bottom:1px solid #e2e5e7!important;\n}\n.insights-page .valuation-calculator .calculator-assumptions summary{padding:20px 0!important;}\n.insights-page .valuation-calculator .valuation-results{margin-top:20px!important;}\n.insights-page .valuation-bottom{grid-template-columns:1fr!important;}\n\n/* Market Intelligence CTA headline remains one line on desktop */\n@media(min-width:1101px){\n  .insights-page .intel-page-cta h2{white-space:nowrap!important;font-size:clamp(34px,3vw,50px)!important;}\n}\n@media(max-width:860px){\n  .insights-page .intel-community>div{padding-left:0!important;}\n  .insights-page .intel-community .gold-button{margin-right:0!important;justify-self:stretch!important;}\n}\n
+
+/* v5.3 — homepage deep links + Market Intelligence calculator/layout polish */
+
+/* Homepage What We Do cards are fully clickable */
+.home-page .service-card-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+}
+.home-page .service-card-link h3,
+.home-page .service-card-link p{color:inherit}
+.home-page .service-card-link:focus-visible{
+  outline:1px solid var(--latitude-brass,#b5a078);
+  outline-offset:4px;
+}
+
+/* Homepage Why Latitude Stone secondary link */
+.home-page .why-learn-more{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  margin-top:34px;
+  color:var(--latitude-brass,#b5a078);
+  font-size:13px;
+  font-weight:600;
+}
+
+/* Homepage Market Intelligence CTA hierarchy */
+.home-page .homepage-community-trigger{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:26px;
+  min-height:50px;
+  padding:0 24px;
+  background:var(--latitude-brass,#b5a078)!important;
+  border:1px solid var(--latitude-brass,#b5a078)!important;
+  color:#081019!important;
+}
+.home-page .insights-page-link{
+  color:var(--latitude-brass,#b5a078)!important;
+}
+.home-page .insights-page-link-desktop{
+  display:flex;
+  width:max-content;
+  margin-top:18px;
+}
+.home-page .insights-page-link-mobile{display:none}
+
+/* Deep-link destinations should clear the fixed header */
+.services-page #advisory,
+.services-page #investment-sales,
+.services-page #property-disposition,
+.services-page #tenant-representation,
+.services-page #property-management,
+.about-page #leadership{
+  scroll-margin-top:88px;
+}
+
+/* Market Intelligence Stay Connected uses same inner alignment rhythm as shared CTA */
+.insights-page .intel-community{
+  padding:0!important;
+}
+.insights-page .intel-community{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:clamp(52px,7vw,110px)!important;
+  align-items:center!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:58px max(clamp(34px,5vw,84px),calc((100vw - 1500px)/2 + clamp(34px,5vw,84px)))!important;
+}
+.insights-page .intel-community>div{
+  max-width:none!important;
+}
+.insights-page .intel-community .gold-button{
+  justify-self:end!important;
+}
+
+/* Investment calculator results: 4 across, then 2 + wide DSCR */
+.insights-page .calculator-results{
+  grid-template-columns:repeat(4,1fr)!important;
+}
+.insights-page .calculator-results .result-card:nth-child(4){
+  border-right:0!important;
+}
+.insights-page .calculator-results .result-card:nth-child(5),
+.insights-page .calculator-results .result-card:nth-child(6){
+  border-top:1px solid #e3e5e7;
+}
+.insights-page .calculator-results .result-dscr{
+  grid-column:3/5!important;
+  grid-row:2!important;
+  border:1px solid var(--latitude-brass,#b5a078)!important;
+  margin:10px!important;
+}
+.insights-page .calculator-bottom{
+  padding-bottom:14px!important;
+}
+
+/* Property Value estimator: gray precision band, white disclaimer beneath */
+.insights-page .valuation-precision-band{
+  background:#f2f3f4;
+  padding:24px 36px;
+  border-top:1px solid #e0e3e5;
+  border-bottom:1px solid #e0e3e5;
+}
+.insights-page .valuation-precision-band strong{
+  display:block;
+  font-size:18px;
+  margin-bottom:8px;
+}
+.insights-page .valuation-precision-band p{
+  margin:0;
+  color:#66717b;
+  font-size:13px;
+}
+.insights-page .valuation-disclaimer{
+  background:#fff;
+  padding-top:18px!important;
+  padding-bottom:18px!important;
+}
+
+/* Market Intelligence CTA headline stays on one line on desktop */
+@media(min-width:1001px){
+  .insights-page .intel-page-cta .interior-cta-copy h2{
+    white-space:nowrap;
+  }
+}
+
+/* About leadership photo crop for new portrait */
+.about-page .about-darin-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 48%;
+}
+
+@media(max-width:860px){
+  .home-page .insights-page-link-desktop{display:none!important}
+  .home-page .insights-page-link-mobile{
+    display:flex!important;
+    width:max-content;
+    margin-top:28px;
+  }
+
+  .insights-page .intel-community{
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+    padding:48px 26px!important;
+  }
+  .insights-page .intel-community .gold-button{
+    justify-self:start!important;
+    width:100%!important;
+  }
+
+  .insights-page .calculator-results{
+    grid-template-columns:1fr 1fr!important;
+  }
+  .insights-page .calculator-results .result-dscr{
+    grid-column:1/-1!important;
+    grid-row:auto!important;
+  }
+  .insights-page .calculator-bottom{
+    padding-bottom:8px!important;
+  }
+
+  .about-page .about-darin-photo img{
+    object-position:center 44%;
+  }
+}

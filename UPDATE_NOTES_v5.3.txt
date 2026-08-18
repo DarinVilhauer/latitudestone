@@ -1,0 +1,27 @@
+Latitude Stone Website v5.3 — Homepage Links + Market Intelligence Polish
+
+Based on uploaded v5.2.
+
+MARKET INTELLIGENCE
+- Investment Analysis results reordered:
+  Row 1: Purchase Cap Rate, Adjusted NOI, Annual Debt Service, Annual Cash Flow
+  Row 2: Loan Amount, Down Payment, DSCR
+- Reduced excess whitespace beneath the investment calculator fine print, with tighter mobile spacing.
+- Property Value Estimator now places “Looking for a more precise estimate?” in a light-gray band.
+- Property Value disclaimer remains on white below the gray band.
+- Bottom CTA headline changed to “Looking to evaluate a property?” and stays on one line on desktop.
+- Stay Connected section now uses the same horizontal alignment rhythm as the shared CTA component.
+- Join the Latitude Stone Community button is pulled inward to align with the CTA button.
+
+HOMEPAGE
+- Join the Latitude Stone Community button under Market Intelligence is filled muted brass with black text and no arrow.
+- Explore Market Intelligence is below the button on desktop.
+- On mobile, Join Community appears before the three insight cards; Explore Market Intelligence appears after all three cards.
+- All five What We Do service cards are fully clickable and deep-link to their corresponding What We Do sections.
+- Read Darin’s Story now deep-links to About > Our Leadership.
+- Added “Learn More About Latitude Stone →” to the Why Latitude Stone section.
+- Added scroll offsets so deep-linked service/leadership sections clear the fixed header.
+
+ABOUT
+- Replaced Darin & Michelle leadership photo with the newly supplied image.
+- CSS crop/positioning is responsive; original photo pixels are not edited.
