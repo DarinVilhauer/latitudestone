@@ -4413,3 +4413,96 @@ button.intel-tool-card{cursor:pointer}
     max-height:none!important;
   }
 }
+
+
+/* v5.7 — investment utility spacing + compact preview + homepage nav active state */
+
+/* Investment Analysis bottom utility bar: give disclaimer room to wrap and keep actions clear */
+@media(min-width:861px){
+  .insights-page .investment-calculator:not(.valuation-calculator) .calculator-export-bottom{
+    grid-template-columns:minmax(0,760px) auto!important;
+    justify-content:space-between!important;
+    align-items:center!important;
+    gap:48px!important;
+    padding:26px 36px!important;
+  }
+  .insights-page .investment-calculator:not(.valuation-calculator) .calculator-export-bottom>p{
+    max-width:760px!important;
+    white-space:normal!important;
+    line-height:1.55!important;
+  }
+  .insights-page .investment-calculator:not(.valuation-calculator) .calculator-export-actions{
+    align-self:center!important;
+  }
+}
+
+/* On-screen report preview only: fit the full summary without scrolling.
+   The print/save document keeps the spacious print CSS in script.js unchanged. */
+@media(min-width:861px){
+  .results-preview-dialog{
+    width:min(820px,96vw)!important;
+    max-height:96vh!important;
+    overflow:hidden!important;
+    display:flex!important;
+    flex-direction:column!important;
+    padding:22px 28px 20px!important;
+  }
+  .results-preview-dialog>p.eyebrow{
+    margin:0 0 2px!important;
+  }
+  .results-preview-dialog>h2{
+    margin:2px 0 5px!important;
+    font-size:25px!important;
+  }
+  .results-preview-dialog>h2 + p{
+    margin:0!important;
+    font-size:12px!important;
+    line-height:1.35!important;
+  }
+  .results-report-preview{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    overflow:hidden!important;
+    margin:10px 0!important;
+    padding:8px!important;
+  }
+  .results-report-preview .report-sheet{
+    padding:18px!important;
+    font-size:9.5px!important;
+    box-shadow:none!important;
+  }
+  .results-report-preview .report-header{
+    padding-bottom:10px!important;
+  }
+  .results-report-preview .report-brand strong{
+    font-size:14px!important;
+  }
+  .results-report-preview .report-section{
+    margin-top:13px!important;
+  }
+  .results-report-preview .report-section h4{
+    margin-bottom:5px!important;
+    padding-bottom:4px!important;
+    font-size:10px!important;
+  }
+  .results-report-preview .report-grid{
+    gap:7px 14px!important;
+  }
+  .results-report-preview .report-item span{
+    font-size:8px!important;
+  }
+  .results-report-preview .report-item strong{
+    margin-top:2px!important;
+    font-size:10px!important;
+  }
+  .results-report-preview .report-disclaimer{
+    margin-top:13px!important;
+    padding-top:7px!important;
+    font-size:7px!important;
+    line-height:1.35!important;
+  }
+  .results-preview-dialog #results-print-confirm{
+    margin-top:0!important;
+    min-height:42px!important;
+  }
+}

@@ -18,7 +18,7 @@ if(document.body.classList.contains('home-page')){
     const activeHref = current==='what-we-do' ? 'services.html'
       : (current==='darin'||current==='why') ? 'about.html'
       : current==='market' ? '#market'
-      : current==='insights' ? '#insights'
+      : current==='insights' ? 'insights.html'
       : current==='contact' ? ''
       : '#home';
     links.forEach(a=>a.classList.toggle('active',activeHref && (a.getAttribute('href')||'')===activeHref));

@@ -1,0 +1,19 @@
+Latitude Stone Website v5.7 — Preview + Navigation Polish
+
+Based on uploaded v5.6.
+
+INVESTMENT ANALYSIS
+- Added more white space in the bottom disclaimer/action section.
+- Reduced the disclaimer text width so it wraps naturally to a second line sooner.
+- Kept Email Results and Print / Save PDF clearly separated on the right.
+- Desktop treatment now more closely matches the Property Valuation calculator.
+- Mobile layout remains unchanged.
+
+PRINT / SAVE PREVIEW
+- Compact on-screen preview only so the full report fits in the preview without scrolling on desktop.
+- Tightened preview-only typography and section spacing.
+- Actual print / Save as PDF document styling remains unchanged and retains the more spacious one-page layout.
+
+HOMEPAGE HEADER
+- Fixed the active muted-brass underline for Market Intelligence while scrolling through the homepage.
+- Existing active navigation behavior for the other homepage sections is unchanged.
