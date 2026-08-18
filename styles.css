@@ -4296,3 +4296,47 @@ button.intel-tool-card{cursor:pointer}
 .results-report-preview{margin:24px 0;background:#f2f3f4;padding:18px}.report-sheet{background:#fff;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.08);font-size:11px;color:#17202a}.report-header{display:flex;justify-content:space-between;gap:30px;padding-bottom:15px;border-bottom:1px solid #d9d2c3}.report-brand{text-align:left}.report-brand strong{display:block;letter-spacing:4px;font-size:15px;font-weight:500}.report-brand span{display:block;letter-spacing:3px;font-size:7px;color:#8b7248;margin-top:4px}.report-title{text-align:right}.report-title strong{display:block;font-size:13px}.report-section{margin-top:18px}.report-section h4{font-size:11px;margin:0 0 8px;padding-bottom:5px;border-bottom:1px solid #dedede}.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 18px}.report-item span{display:block;color:#69737c;font-size:9px}.report-item strong{display:block;margin-top:3px;font-size:11px}.report-disclaimer{margin-top:20px;padding-top:10px;border-top:1px solid #ddd;color:#69737c;font-size:8px;line-height:1.5}
 @media(max-width:860px){.insights-page .calculator-assumption-grid-seven{grid-template-columns:1fr 1fr!important}.calculator-export-bottom{align-items:flex-start!important;flex-direction:column!important;padding:16px 22px!important;gap:12px!important}.calculator-export-actions{width:100%;justify-content:flex-start}.results-dialog{padding:30px 24px}.report-grid{grid-template-columns:1fr 1fr}.report-header{flex-direction:column}.report-title{text-align:left}.home-page .insights-page-link-mobile{margin-top:36px!important}}
 @media(max-width:520px){.insights-page .calculator-assumption-grid-seven{grid-template-columns:1fr!important}.report-grid{grid-template-columns:1fr}.results-report-preview{padding:8px}.report-sheet{padding:18px}}
+
+/* v5.5 — refinement punch list */
+/* Investment export actions: keep disclaimer and actions separated on desktop */
+.insights-page .investment-calculator:not(.valuation-calculator) .calculator-export-bottom>p{
+  flex:1 1 auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  padding-right:24px!important;
+}
+.insights-page .investment-calculator:not(.valuation-calculator) .calculator-export-actions{
+  flex:0 0 auto!important;
+  margin-left:auto!important;
+}
+
+/* Export previews: use more of the page and give sections breathing room */
+.results-report-preview .report-section{margin-top:28px!important}
+.results-report-preview .report-grid{gap:16px 18px!important}
+.results-report-preview .report-disclaimer{margin-top:30px!important;padding-top:14px!important}
+
+/* Homepage Market Intelligence: desktop-only extra separation */
+@media(min-width:861px){
+  .home-page .insights-page-link-desktop{margin-top:40px!important}
+}
+
+/* Mobile Meet Darin: identify the section before the portrait */
+.darin-eyebrow-mobile{display:none}
+@media(max-width:860px){
+  .home-page .meet-darin .darin-eyebrow-mobile{
+    display:block!important;
+    grid-row:1;
+    margin:0 0 -14px!important;
+  }
+  .home-page .meet-darin .portrait-wrap{grid-row:2}
+  .home-page .meet-darin .darin-copy{grid-row:3}
+  .home-page .meet-darin .darin-copy>.darin-eyebrow{display:none!important}
+
+  /* Market Intelligence hero supporting copy: intentional three-line mobile lockup */
+  .insights-page .intel-hero-lead span{display:block!important;white-space:nowrap}
+  .insights-page .intel-hero-lead{font-size:clamp(14px,3.7vw,17px)!important}
+
+  /* Mobile DSCR guide uses horizontal separators only */
+  .insights-page .dscr-guide div{border-right:0!important}
+  .insights-page .dscr-guide div:last-child{border-bottom:0!important}
+}

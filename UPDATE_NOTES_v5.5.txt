@@ -1,0 +1,9 @@
+Latitude Stone Website v5.5
+- Fixed Investment Analysis disclaimer/export action overlap.
+- Cleaned mobile DSCR guide to horizontal dividers only.
+- Increased spacing in Investment Analysis and Property Valuation print/save reports.
+- Simplified whole-number percentage formatting in reports.
+- Reordered Investment Analysis report calculation results.
+- Added desktop spacing between Community CTA and Explore Market intelligence link.
+- Moved Meet Darin label above portrait on mobile.
+- Set Market Intelligence mobile hero supporting copy to three lines.
