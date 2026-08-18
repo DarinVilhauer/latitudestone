@@ -4340,3 +4340,76 @@ button.intel-tool-card{cursor:pointer}
   .insights-page .dscr-guide div{border-right:0!important}
   .insights-page .dscr-guide div:last-child{border-bottom:0!important}
 }
+
+
+/* v5.6 — desktop export utility fix, report spacing, HERO wrap, mobile About crop */
+
+/* Investment calculator desktop export area: true two-column layout, no text/action collision */
+@media(min-width:861px){
+  .insights-page .investment-calculator:not(.valuation-calculator) .calculator-export-bottom{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto!important;
+    align-items:center!important;
+    gap:30px!important;
+  }
+  .insights-page .investment-calculator:not(.valuation-calculator) .calculator-export-bottom>p{
+    min-width:0!important;
+    max-width:none!important;
+    padding-right:0!important;
+    white-space:normal!important;
+    line-height:1.45!important;
+  }
+  .insights-page .investment-calculator:not(.valuation-calculator) .calculator-export-actions{
+    justify-self:end!important;
+    margin-left:0!important;
+    flex:none!important;
+  }
+}
+
+/* Report preview: more breathing room while retaining a single-page report feel */
+.results-report-preview .report-sheet{
+  padding:34px!important;
+}
+.results-report-preview .report-header{
+  padding-bottom:22px!important;
+}
+.results-report-preview .report-section{
+  margin-top:34px!important;
+}
+.results-report-preview .report-section h4{
+  margin-bottom:11px!important;
+  padding-bottom:7px!important;
+}
+.results-report-preview .report-grid{
+  gap:20px 20px!important;
+}
+.results-report-preview .report-disclaimer{
+  margin-top:38px!important;
+  padding-top:16px!important;
+}
+
+/* Desktop Market Intelligence HERO: two-line supporting copy */
+@media(min-width:861px){
+  .insights-page .intel-hero-lead span:first-child{
+    display:block!important;
+  }
+  .insights-page .intel-hero-lead span:nth-child(2),
+  .insights-page .intel-hero-lead span:nth-child(3){
+    display:inline!important;
+    white-space:normal!important;
+  }
+}
+
+/* Mobile About image uses a source crop with embedded black bars removed */
+.about-page .about-darin-photo picture{
+  display:block;
+  width:100%;
+}
+@media(max-width:620px){
+  .about-page .about-darin-photo picture,
+  .about-page .about-darin-photo img{
+    width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+  }
+}

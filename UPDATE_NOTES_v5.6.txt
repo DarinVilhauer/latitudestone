@@ -1,0 +1,23 @@
+Latitude Stone Website v5.6 — Desktop Utility + Report Polish
+
+Based on uploaded v5.5.
+
+INVESTMENT ANALYSIS
+- Fixed the PC-only Email Results / Print / Save PDF overlap.
+- Disclaimer and actions now use a true two-column desktop layout.
+- Mobile utility layout remains unchanged.
+
+PRINT / SAVE REPORTS
+- Increased vertical spacing across both Investment Analysis and Property Value reports.
+- Added more room between header, major sections, result rows, and disclaimer.
+- Reports remain designed to fit on one printed page.
+
+MARKET INTELLIGENCE HERO
+- Desktop muted-brass supporting copy now intentionally displays on two lines:
+  Practical insight, market updates, and useful tools
+  for commercial real estate decisions across North Texas.
+- Mobile three-line treatment remains unchanged.
+
+ABOUT — MOBILE
+- Removed the black bars from the Darin & Michelle photo on mobile using a dedicated crop.
+- Desktop continues using the existing original image treatment.
